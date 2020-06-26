@@ -1,0 +1,6 @@
+framework module Pods_Spacebar {
+  umbrella header "Pods-Spacebar-umbrella.h"
+
+  export *
+  module * { export * }
+}
