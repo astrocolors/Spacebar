@@ -10,7 +10,7 @@ import UIKit
 
 class SBAvatarImageView: UIImageView {
     
-    let placeholderImage  = UIImage(named: "Spacebar")
+    let placeholderImage  = UIImage(named: "Spacebar")! // Change this to a better placeholder image
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,10 +28,10 @@ class SBAvatarImageView: UIImageView {
         translatesAutoresizingMaskIntoConstraints = false
         layer.borderWidth                         = 2
         layer.borderColor                         = UIColor.black.cgColor
-        layer.cornerRadius                        = frame.height/2
+        layer.cornerRadius                        = 10 // Change this to a circle
         layer.masksToBounds                       = false
         clipsToBounds                             = true
-        image                                     = placeholderImage! // force unless downloading
+        image                                     = placeholderImage
         
         
     }

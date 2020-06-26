@@ -20,6 +20,8 @@
 		DD9DB9D524A407FF00070888 /* ShortVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9D424A407FF00070888 /* ShortVC.swift */; };
 		DD9DB9D724A4081D00070888 /* NotiVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9D624A4081D00070888 /* NotiVC.swift */; };
 		DD9DB9D924A4083000070888 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9D824A4083000070888 /* ProfileVC.swift */; };
+		DDAD9D9124A69A21006DE756 /* SearchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAD9D9024A69A21006DE756 /* SearchUser.swift */; };
+		DDAD9D9324A69D81006DE756 /* SBBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAD9D9224A69D81006DE756 /* SBBodyLabel.swift */; };
 		DDCB6F8624A45EAF0080517E /* DMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6F8524A45EAF0080517E /* DMVC.swift */; };
 		DDCB6F8824A463EC0080517E /* SBButtonV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6F8724A463EC0080517E /* SBButtonV2.swift */; };
 		DDCB6F8E24A510030080517E /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6F8D24A510030080517E /* MessagesCell.swift */; };
@@ -64,6 +66,8 @@
 		DD9DB9D424A407FF00070888 /* ShortVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortVC.swift; sourceTree = "<group>"; };
 		DD9DB9D624A4081D00070888 /* NotiVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiVC.swift; sourceTree = "<group>"; };
 		DD9DB9D824A4083000070888 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		DDAD9D9024A69A21006DE756 /* SearchUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUser.swift; sourceTree = "<group>"; };
+		DDAD9D9224A69D81006DE756 /* SBBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBBodyLabel.swift; sourceTree = "<group>"; };
 		DDCB6F8524A45EAF0080517E /* DMVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMVC.swift; sourceTree = "<group>"; };
 		DDCB6F8724A463EC0080517E /* SBButtonV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBButtonV2.swift; sourceTree = "<group>"; };
 		DDCB6F8D24A510030080517E /* MessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				DDCB6F8724A463EC0080517E /* SBButtonV2.swift */,
 				DD9DB9BE24A3BAF700070888 /* SBTextField.swift */,
 				DDCB6F9E24A51FA60080517E /* SBTitleLabel.swift */,
+				DDAD9D9224A69D81006DE756 /* SBBodyLabel.swift */,
 				DDCB6FA024A520830080517E /* SBAvatarImageView.swift */,
 			);
 			path = Elements;
@@ -200,6 +205,7 @@
 			children = (
 				DDCB6FA724A5277B0080517E /* User.swift */,
 				DDCB6FA324A525E70080517E /* Follower.swift */,
+				DDAD9D9024A69A21006DE756 /* SearchUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDCB6F9F24A51FA60080517E /* SBTitleLabel.swift in Sources */,
+				DDAD9D9324A69D81006DE756 /* SBBodyLabel.swift in Sources */,
 				DDCB6FA424A525E70080517E /* Follower.swift in Sources */,
 				DDCB6F9224A5103E0080517E /* SearchUsersCell.swift in Sources */,
 				DD9DB9D324A407F100070888 /* LiveVC.swift in Sources */,
@@ -437,6 +444,7 @@
 				DD9DB9CF24A407D700070888 /* HomeVC.swift in Sources */,
 				DD9DB9C524A4015A00070888 /* SignUpV1VC.swift in Sources */,
 				DD9DB9D724A4081D00070888 /* NotiVC.swift in Sources */,
+				DDAD9D9124A69A21006DE756 /* SearchUser.swift in Sources */,
 				DDCB6F9524A5106D0080517E /* DMUserCells.swift in Sources */,
 				DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */,
 				DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */,
