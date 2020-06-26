@@ -101,7 +101,7 @@ class SignUpV3VC: UIViewController {
         errorLabel.textAlignment = .center
         errorLabel.isEnabled = true
         errorLabel.textColor = .red
-        errorLabel.alpha = 1
+        errorLabel.alpha = 0
         
         NSLayoutConstraint.activate([
             

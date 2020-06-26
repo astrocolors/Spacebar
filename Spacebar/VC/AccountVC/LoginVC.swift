@@ -78,7 +78,7 @@ class LoginVC: UIViewController {
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.textAlignment = .center
         errorLabel.textColor = .red
-        errorLabel.alpha = 1
+        errorLabel.alpha = 0
         
         NSLayoutConstraint.activate([
             
