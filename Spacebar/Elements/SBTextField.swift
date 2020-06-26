@@ -26,7 +26,7 @@ class SBTextField: UITextField {
         
         self.returnKeyType = ReturnType
         self.keyboardType = KeyboardType
-        self.text = Text
+        self.placeholder = Text
         
         configure()
         

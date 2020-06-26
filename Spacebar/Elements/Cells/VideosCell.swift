@@ -5,6 +5,7 @@
 //  Created by Shamik Patro on 6/25/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
+//  These are the cells that pops up every time there is a video on the screen
 
 import UIKit
 

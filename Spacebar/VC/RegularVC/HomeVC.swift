@@ -43,9 +43,11 @@ class HomeVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let messageItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushAddMessageVC))
+        let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pushSearchUsersVC))
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
+       
         
-        navigationItem.setRightBarButton(messageItem, animated: true)
+        navigationItem.setRightBarButtonItems([messageItem, searchItem], animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
         
     }
@@ -140,6 +142,14 @@ class HomeVC: UIViewController {
         
     }
     
+    @objc func pushSearchUsersVC(){
+        
+        let searchUsersVC = SearchUsersVC()
+        
+        navigationController?.pushViewController(searchUsersVC, animated: true)
+        
+    }
+    
     @objc func pushInitialScreen(){
         
         let initialScreen = UINavigationController(rootViewController: InitialScreen())
@@ -149,5 +159,6 @@ class HomeVC: UIViewController {
         present(initialScreen, animated: true)
         
     }
+
     
 }

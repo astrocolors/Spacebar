@@ -24,9 +24,7 @@ class VideosVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pushAddVideoVC))
-        
-        let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pushSearchUsersVC))
-        
+        let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pushSearchVideosVC))
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
         
         navigationItem.setRightBarButtonItems([addItem, searchItem], animated: true)
@@ -50,12 +48,13 @@ class VideosVC: UIViewController {
         
     }
     
-    @objc func pushSearchUsersVC(){
+    @objc func pushSearchVideosVC(){
         
-        let searchUsersVC = SearchUsersVC()
+        let searchVideosVC = SearchVideosVC()
         
-        navigationController?.pushViewController(searchUsersVC, animated: true)
+        navigationController?.pushViewController(searchVideosVC, animated: true)
         
     }
+    
     
 }

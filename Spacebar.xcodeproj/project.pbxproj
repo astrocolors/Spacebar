@@ -22,6 +22,7 @@
 		DD9DB9D924A4083000070888 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9D824A4083000070888 /* ProfileVC.swift */; };
 		DDAD9D9124A69A21006DE756 /* SearchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAD9D9024A69A21006DE756 /* SearchUser.swift */; };
 		DDAD9D9324A69D81006DE756 /* SBBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAD9D9224A69D81006DE756 /* SBBodyLabel.swift */; };
+		DDAD9D9724A6B29F006DE756 /* SearchVideosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDAD9D9624A6B29F006DE756 /* SearchVideosVC.swift */; };
 		DDCB6F8624A45EAF0080517E /* DMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6F8524A45EAF0080517E /* DMVC.swift */; };
 		DDCB6F8824A463EC0080517E /* SBButtonV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6F8724A463EC0080517E /* SBButtonV2.swift */; };
 		DDCB6F8E24A510030080517E /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6F8D24A510030080517E /* MessagesCell.swift */; };
@@ -68,6 +69,7 @@
 		DD9DB9D824A4083000070888 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		DDAD9D9024A69A21006DE756 /* SearchUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUser.swift; sourceTree = "<group>"; };
 		DDAD9D9224A69D81006DE756 /* SBBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBBodyLabel.swift; sourceTree = "<group>"; };
+		DDAD9D9624A6B29F006DE756 /* SearchVideosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVideosVC.swift; sourceTree = "<group>"; };
 		DDCB6F8524A45EAF0080517E /* DMVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMVC.swift; sourceTree = "<group>"; };
 		DDCB6F8724A463EC0080517E /* SBButtonV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBButtonV2.swift; sourceTree = "<group>"; };
 		DDCB6F8D24A510030080517E /* MessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				DDCFA7F724A44D24007D85FE /* AddVideoVC.swift */,
+				DDAD9D9624A6B29F006DE756 /* SearchVideosVC.swift */,
 			);
 			path = VideosVC;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				DDCFA7F324A44CF6007D85FE /* SideMenuVC.swift */,
+				DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */,
 				DDCFA7FE24A45B9D007D85FE /* HomeVC */,
 				DDCFA7FF24A45BB9007D85FE /* ShortVC */,
 				DDCB6FA924A52CEE0080517E /* VideosVC */,
@@ -251,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */,
-				DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */,
 				DDCFA7F624A44D1B007D85FE /* AddShortVC.swift in Sources */,
 				DDEBF6C724A3B377006D45A1 /* SceneDelegate.swift in Sources */,
+				DDAD9D9724A6B29F006DE756 /* SearchVideosVC.swift in Sources */,
 				DDCFA7F424A44CF6007D85FE /* SideMenuVC.swift in Sources */,
 				DDCB6F8E24A510030080517E /* MessagesCell.swift in Sources */,
 				DDCB6F8624A45EAF0080517E /* DMVC.swift in Sources */,

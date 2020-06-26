@@ -5,12 +5,13 @@
 //  Created by Shamik Patro on 6/25/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
+//  Purpose: These are the cells that pop up every time there is a message on the screen
 
 import UIKit
 
 class MessagesCell: UICollectionViewCell {
     
-    static let reuseID = "UserCell"
+    static let reuseID = "MessageCell"
     let avatarImageView = SBAvatarImageView(frame: .zero)
     let usernameLabel = SBTitleLabel()
     
