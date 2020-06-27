@@ -10,7 +10,16 @@ import UIKit
 
 class SearchUsersVC: UIViewController {
     
-    var username: String?
+    enum Section {
+        
+        case Main
+        
+    }
+    
+    var username: String! = "3b1b"
+    var searchUsers: [SearchUser]! = []
+    var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<Section, SearchUser>!
     
     let searchTextField = UISearchBar()
 
@@ -19,6 +28,8 @@ class SearchUsersVC: UIViewController {
         
         configure()
         configureNavigationBar()
+        configureCollectionView()
+        configureDataSource()
     }
     
     
@@ -26,17 +37,91 @@ class SearchUsersVC: UIViewController {
         
         view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
-        
     }
     
     func configureNavigationBar(){
         
         searchTextField.sizeToFit()
         searchTextField.placeholder = "@Username"
+        searchTextField.delegate = self
         navigationItem.hidesBackButton = true
         navigationItem.titleView = searchTextField
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popSearchVC))
         
+        
+    }
+    
+    func configureCollectionView(){
+        
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: configureCollectionViewFlowLayout())
+        
+        view.addSubview(collectionView)
+        
+        collectionView.backgroundColor = #colorLiteral(red: 0.0431372549, green: 0.6862745098, blue: 0.7450980392, alpha: 1)
+        
+        collectionView.register(SearchUsersCell.self, forCellWithReuseIdentifier: SearchUsersCell.reuseID)
+        
+    }
+    
+    func configureCollectionViewFlowLayout() -> UICollectionViewFlowLayout{
+        
+        let width               = view.bounds.width
+        let height              = view.bounds.height
+        let flowLayout          = UICollectionViewFlowLayout()
+        
+        flowLayout.itemSize     = CGSize(width: width, height: height)
+        
+        
+        
+        return UICollectionViewFlowLayout()
+        
+    }
+    
+    func getSearchUsers(){
+        
+        NetworkManager.shared.getSearchUsers(for: username, page: 1) { (SearchUsers, errorMessage) in
+            
+            guard SearchUsers != nil else {
+                
+             print("Network Failure")
+                
+                return
+            }
+            
+            self.searchUsers = SearchUsers
+            
+            self.updateData()
+            
+        }
+        
+    }
+    
+    func configureDataSource(){
+        
+        dataSource = UICollectionViewDiffableDataSource<Section, SearchUser>(collectionView: collectionView, cellProvider: { (collectionview, indexpath, searchUser) -> UICollectionViewCell? in
+            
+            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: SearchUsersCell.reuseID, for: indexpath) as! SearchUsersCell
+            
+            cell.set(searchUser: searchUser)
+            
+            return cell
+            
+        })
+        
+        
+    }
+    
+    func updateData(){
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Section, SearchUser>()
+        snapshot.appendSections([.Main])
+        snapshot.appendItems(searchUsers)
+        
+        DispatchQueue.main.async {
+            
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+            
+        }
         
     }
     
@@ -47,4 +132,15 @@ class SearchUsersVC: UIViewController {
     }
     
 
+}
+
+extension SearchUsersVC: UISearchBarDelegate {
+    
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        getSearchUsers()
+        
+    }
+    
 }

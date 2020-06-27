@@ -30,6 +30,7 @@ class SearchUsersCell: UICollectionViewCell {
     func set(searchUser: SearchUser) {
         
         usernameLabel.text = searchUser.login
+        //avatarImageView.image = searchUser.avatarUrl
         
     }
     
