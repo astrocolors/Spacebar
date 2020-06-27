@@ -40,6 +40,12 @@ class SignUpV3VC: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Add custom animation here
+        
+    }
+    
     func configurePasswordTextField(){
         
         view.addSubview(passwordTextField)

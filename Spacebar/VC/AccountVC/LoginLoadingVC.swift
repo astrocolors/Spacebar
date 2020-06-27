@@ -22,6 +22,9 @@ class LoginLoadingVC: UIViewController {
         super.viewDidLoad()
         
         configure()
+        
+        // Add custom animation here
+        
     }
     
     func configure(){

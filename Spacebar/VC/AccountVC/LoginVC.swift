@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 import Firebase
 import FirebaseAuth
 import FirebaseCore
@@ -29,6 +31,13 @@ class LoginVC: UIViewController {
         configurePasswordTextField()
         configureLoginButton()
         configureErrorLabel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // add custom animation here
+        
     }
     
     func createDismissKeyboardTapGesture(){

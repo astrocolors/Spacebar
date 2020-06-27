@@ -25,6 +25,9 @@ class SignUpLoadingVC: UIViewController {
         configure()
         addNewUserToDatabase()
         
+        // Add custom animation here
+        
+        
     }
     
     func configure(){

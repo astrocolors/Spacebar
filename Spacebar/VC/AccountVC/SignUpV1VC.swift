@@ -28,6 +28,12 @@ class SignUpV1VC: UIViewController {
         configureErrorLabel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // add custom animation here
+        
+    }
+    
 
     func configureFirstNameTextField(){
         

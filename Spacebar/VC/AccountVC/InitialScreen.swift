@@ -25,6 +25,8 @@ class InitialScreen: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // add custom animation here
+        
 
     }
     
