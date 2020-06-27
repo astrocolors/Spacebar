@@ -10,7 +10,7 @@ import UIKit
 
 class SBAvatarImageView: UIImageView {
     
-    let placeholderImage  = UIImage(named: "Spacebar")! // Change this to a better placeholder image
+    let placeholderImage = UIImage(named: "Spacebar")!// Change this to a better placeholder image
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,11 +26,10 @@ class SBAvatarImageView: UIImageView {
     private func configure(){
         
         translatesAutoresizingMaskIntoConstraints = false
-        layer.borderWidth                         = 2
-        layer.borderColor                         = UIColor.black.cgColor
-        layer.cornerRadius                        = 10 // Change this to a circle
+        layer.cornerRadius                        = frame.size.height / 2
         layer.masksToBounds                       = false
         clipsToBounds                             = true
+        contentMode                               = UIView.ContentMode.scaleAspectFill
         image                                     = placeholderImage
         
         
@@ -38,13 +37,30 @@ class SBAvatarImageView: UIImageView {
     
     func downloadImage(from URLString: String){
         
-        let image = UIImage(named: "Spacebar")
+        guard let url = URL(string: URLString) else { return }
         
-        DispatchQueue.main.async {
-            self.image = image
+        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            
+            guard let self = self else { return }
+            
+            if error != nil { return }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
+            
+            guard let data = data else { return }
+            
+            guard let image = UIImage(data: data) else { return }
+            
+            DispatchQueue.main.async {
+                
+                self.image = image
+                
+            }
+            
+            
         }
         
-        self.image = image
+        task.resume()
         
     }
     

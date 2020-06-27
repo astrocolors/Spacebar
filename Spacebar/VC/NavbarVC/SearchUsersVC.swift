@@ -16,7 +16,7 @@ class SearchUsersVC: UIViewController {
         
     }
     
-    var username: String! = "3b1b"
+    var username: String!
     var searchUsers: [SearchUser]! = []
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, SearchUser>!
@@ -53,33 +53,22 @@ class SearchUsersVC: UIViewController {
     
     func configureCollectionView(){
         
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: configureCollectionViewFlowLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: Utilities.configureCollectionViewFlowLayout(view: view))
         
         view.addSubview(collectionView)
         
         collectionView.backgroundColor = #colorLiteral(red: 0.0431372549, green: 0.6862745098, blue: 0.7450980392, alpha: 1)
         
         collectionView.register(SearchUsersCell.self, forCellWithReuseIdentifier: SearchUsersCell.reuseID)
-        
-    }
-    
-    func configureCollectionViewFlowLayout() -> UICollectionViewFlowLayout{
-        
-        let width               = view.bounds.width
-        let height              = view.bounds.height
-        let flowLayout          = UICollectionViewFlowLayout()
-        
-        flowLayout.itemSize     = CGSize(width: width, height: height)
-        
-        
-        
-        return UICollectionViewFlowLayout()
+
         
     }
     
     func getSearchUsers(){
         
-        NetworkManager.shared.getSearchUsers(for: username, page: 1) { (SearchUsers, errorMessage) in
+        NetworkManager.shared.getSearchUsers(for: username, page: 1) { [weak self] (SearchUsers, errorMessage) in
+            
+            guard let self = self else { return }
             
             guard SearchUsers != nil else {
                 
@@ -91,6 +80,7 @@ class SearchUsersVC: UIViewController {
             self.searchUsers = SearchUsers
             
             self.updateData()
+            
             
         }
         
@@ -136,8 +126,9 @@ class SearchUsersVC: UIViewController {
 
 extension SearchUsersVC: UISearchBarDelegate {
     
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        username = searchBar.text!
         
         getSearchUsers()
         

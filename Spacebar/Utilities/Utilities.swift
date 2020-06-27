@@ -7,10 +7,9 @@
 //
 //  Utilities: Mainly textfield & password validation
 
-import Foundation
 import UIKit
 
-class Utilities {
+struct Utilities {
     
     static func isTextFieldValid(TextField: UITextField) -> Bool {
         
@@ -33,6 +32,22 @@ class Utilities {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
 
         return passwordTest.evaluate(with: Password)
+        
+    }
+    
+    static func configureCollectionViewFlowLayout(view: UIView) -> UICollectionViewFlowLayout{
+        
+        let width                           = view.bounds.width
+        let height: CGFloat                 = view.bounds.height / 20
+        
+        let flowLayout                      = UICollectionViewFlowLayout()
+        
+        flowLayout.estimatedItemSize        = .zero
+        flowLayout.itemSize                 = CGSize(width: width, height: height)
+        flowLayout.invalidateLayout()
+
+        
+        return flowLayout
         
     }
     

@@ -13,7 +13,7 @@ class SearchUsersCell: UICollectionViewCell {
     
     static let reuseID = "SearchUserCell"
     
-    let avatarImageView = SBAvatarImageView(frame: .zero)
+    let avatarImageView = SBAvatarImageView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
     let usernameLabel = SBTitleLabel() // Adjust title label class and set to custom label - Still needs to be adjusted
     
     override init(frame: CGRect) {
@@ -30,7 +30,7 @@ class SearchUsersCell: UICollectionViewCell {
     func set(searchUser: SearchUser) {
         
         usernameLabel.text = searchUser.login
-        //avatarImageView.image = searchUser.avatarUrl
+        avatarImageView.downloadImage(from: searchUser.avatarUrl!)
         
     }
     
@@ -39,21 +39,23 @@ class SearchUsersCell: UICollectionViewCell {
         addSubview(avatarImageView)
         addSubview(usernameLabel)
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             
-            avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            avatarImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor)
+            avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            avatarImageView.trailingAnchor.constraint(equalTo: avatarImageView.leadingAnchor, constant: 120),
+            avatarImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor)
             
         ])
         
         NSLayoutConstraint.activate([
             
-            usernameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 12),
-            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8),
-            usernameLabel.heightAnchor.constraint(equalToConstant: 20)
+            usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
+            usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 8),
+            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            usernameLabel.heightAnchor.constraint(equalTo: avatarImageView.heightAnchor, constant: 8)
             
         ])
         
