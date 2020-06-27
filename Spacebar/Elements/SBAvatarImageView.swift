@@ -11,6 +11,7 @@ import UIKit
 
 class SBAvatarImageView: UIImageView {
     
+    let cache = NetworkManager.shared.cache
     let placeholderImage = UIImage(named: "Spacebar")!// Change this to a better placeholder image
 
     override init(frame: CGRect) {
@@ -38,6 +39,16 @@ class SBAvatarImageView: UIImageView {
     
     func downloadImage(from URLString: String){
         
+        let cacheKey = NSString(string: URLString)
+        
+        if let image = cache.object(forKey: cacheKey){
+            
+            self.image = image
+            
+            return
+            
+        }
+        
         guard let url = URL(string: URLString) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
@@ -51,6 +62,8 @@ class SBAvatarImageView: UIImageView {
             guard let data = data else { return }
             
             guard let image = UIImage(data: data) else { return }
+            
+            self.cache.setObject(image, forKey: cacheKey)
             
             DispatchQueue.main.async {
                 

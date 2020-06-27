@@ -10,16 +10,22 @@
 import UIKit
 
 class CreateTabBar: UITabBarController {
+    
+    var sideMenuVC: UIViewController!
+    var isExpanded = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure()
+        
     }
     
     func createHomeNC() -> UINavigationController {
     
         let homeVC = HomeVC()
+        
+        homeVC.delegate = self
         
         homeVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
     
@@ -31,6 +37,8 @@ class CreateTabBar: UITabBarController {
         
         let shortVC = ShortVC()
         
+        shortVC.delegate = self
+        
         shortVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
         
         return UINavigationController(rootViewController: shortVC)
@@ -40,6 +48,8 @@ class CreateTabBar: UITabBarController {
     func createVideosNC() -> UINavigationController {
         
         let videosVC = VideosVC()
+        
+        videosVC.delegate = self
         
         videosVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
         
@@ -51,6 +61,8 @@ class CreateTabBar: UITabBarController {
         
         let notiVC = NotiVC()
         
+        notiVC.delegate = self
+        
         notiVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 3)
         
         return UINavigationController(rootViewController: notiVC)
@@ -59,6 +71,8 @@ class CreateTabBar: UITabBarController {
     func createProfileNC() -> UINavigationController {
         
         let profileVC = ProfileVC()
+        
+        profileVC.delegate = self
         
         profileVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 4)
         
@@ -72,6 +86,65 @@ class CreateTabBar: UITabBarController {
         UITabBar.appearance().tintColor = .yellow
         
         setViewControllers([createHomeNC(), createShortNC(), createVideosNC(), createNotiNC(), createProfileNC()], animated: true)
+        
+        configureSideMenu()
+        
     }
+    
+    func configureSideMenu(){
+        
+        if sideMenuVC == nil {
+            
+            sideMenuVC = SideMenuVC()
+            
+            print("I'm working!")
+            
+        }
+        
+        
+    }
+    
+    func showSideMenu(shouldExpand: Bool){
+        
+        if shouldExpand {
+            
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                
+                self.view.frame.origin.x = self.view.frame.width - 80
+                
+            }, completion: nil)
+            
+            
+        }
+        
+        else {
+        
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseOut, animations: {
+                
+                self.view.frame.origin.x = 0
+                
+            }, completion: nil)
+            
+        }
+        
+    }
+    
 
+}
+
+extension CreateTabBar: ViewControllerDelegate {
+    
+    func sideMenuToggle() {
+        
+        if !isExpanded {
+            
+            configureSideMenu()
+            
+        }
+        
+        showSideMenu(shouldExpand: isExpanded)
+        isExpanded = !isExpanded
+        
+    }
+    
 }

@@ -9,18 +9,19 @@
 //
 //  TODO: Change the base URL to your database!
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     
     static let shared       = NetworkManager()
     let baseURL             = "https://api.github.com"
+    let cache               = NSCache<NSString, UIImage>()
     
     private init(){}
         
     func getSearchUsers(for username: String, page: Int, completed: @escaping ([SearchUser]?, String?) -> Void){
             
-        let endpoint = baseURL + "/users/\(username)/followers?per_page=10&page=\(page)"
+        let endpoint = baseURL + "/users/\(username)/followers?per_page=100&page=\(page)"
             
         guard let url = URL(string: endpoint) else{
                 

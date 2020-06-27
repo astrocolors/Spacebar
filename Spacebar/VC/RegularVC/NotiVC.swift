@@ -10,6 +10,8 @@
 import UIKit
 
 class NotiVC: UIViewController {
+    
+    var delegate: ViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +37,7 @@ class NotiVC: UIViewController {
     
     @objc func pushSideMenuVC(){
         
-        let sideMenuVC = SideMenuVC()
-        
-        navigationController?.pushViewController(sideMenuVC, animated: true)
+        delegate?.sideMenuToggle()
         
     }
     

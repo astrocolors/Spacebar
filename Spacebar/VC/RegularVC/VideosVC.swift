@@ -10,6 +10,8 @@
 import UIKit
 
 class VideosVC: UIViewController {
+    
+    var delegate: ViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +36,7 @@ class VideosVC: UIViewController {
     
     @objc func pushSideMenuVC(){
         
-        let sideMenuVC = SideMenuVC()
-        
-        navigationController?.pushViewController(sideMenuVC, animated: true)
+        delegate?.sideMenuToggle()
         
     }
     

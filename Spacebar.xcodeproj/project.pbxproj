@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		786DC1DC42D444D56EA5B147 /* Pods_Spacebar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CC562C1B6CCF938E822F32 /* Pods_Spacebar.framework */; };
 		DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD107E0524A3B54200A7E234 /* InitialScreen.swift */; };
+		DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */; };
 		DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BC24A3BAE300070888 /* SBButton.swift */; };
 		DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BE24A3BAF700070888 /* SBTextField.swift */; };
 		DD9DB9C124A3FB1C00070888 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9C024A3FB1C00070888 /* LoginVC.swift */; };
@@ -44,6 +45,7 @@
 		DDCFA7FA24A45AF9007D85FE /* AccountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7F924A45AF9007D85FE /* AccountSettingsVC.swift */; };
 		DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */; };
 		DDD5186224A3B77200EADA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDD5186124A3B77200EADA93 /* GoogleService-Info.plist */; };
+		DDE5D98A24A7DDD90029E3FD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5D98924A7DDD90029E3FD /* Protocols.swift */; };
 		DDEBF6C524A3B377006D45A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBF6C424A3B377006D45A1 /* AppDelegate.swift */; };
 		DDEBF6C724A3B377006D45A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBF6C624A3B377006D45A1 /* SceneDelegate.swift */; };
 		DDEBF6CE24A3B377006D45A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDEBF6CD24A3B377006D45A1 /* Assets.xcassets */; };
@@ -55,6 +57,7 @@
 		68CC562C1B6CCF938E822F32 /* Pods_Spacebar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spacebar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728D3490101F6EBBC4264F60 /* Pods-Spacebar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacebar.debug.xcconfig"; path = "Target Support Files/Pods-Spacebar/Pods-Spacebar.debug.xcconfig"; sourceTree = "<group>"; };
 		DD107E0524A3B54200A7E234 /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
+		DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		DD9DB9BC24A3BAE300070888 /* SBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBButton.swift; sourceTree = "<group>"; };
 		DD9DB9BE24A3BAF700070888 /* SBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTextField.swift; sourceTree = "<group>"; };
 		DD9DB9C024A3FB1C00070888 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 		DDCFA7F924A45AF9007D85FE /* AccountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsVC.swift; sourceTree = "<group>"; };
 		DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageVC.swift; sourceTree = "<group>"; };
 		DDD5186124A3B77200EADA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DDE5D98924A7DDD90029E3FD /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DDEBF6C124A3B377006D45A1 /* Spacebar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacebar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEBF6C424A3B377006D45A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDEBF6C624A3B377006D45A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				DDCB6F9124A5103E0080517E /* SearchUsersCell.swift */,
 				DDCB6F9824A510B90080517E /* VideosCell.swift */,
 				DDCB6F9424A5106D0080517E /* DMUserCells.swift */,
+				DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				DDCB6FB724A5ABD00080517E /* Utilities.swift */,
+				DDE5D98924A7DDD90029E3FD /* Protocols.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -439,12 +445,14 @@
 				DD9DB9C724A4016900070888 /* SignUpV2VC.swift in Sources */,
 				DDCFA7FA24A45AF9007D85FE /* AccountSettingsVC.swift in Sources */,
 				DDF1575A24A78E3100939F0F /* SearchVideo.swift in Sources */,
+				DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */,
 				DD9DB9D924A4083000070888 /* ProfileVC.swift in Sources */,
 				DDCB6F9924A510B90080517E /* VideosCell.swift in Sources */,
 				DD9DB9CF24A407D700070888 /* HomeVC.swift in Sources */,
 				DD9DB9C524A4015A00070888 /* SignUpV1VC.swift in Sources */,
 				DD9DB9D724A4081D00070888 /* NotiVC.swift in Sources */,
 				DDAD9D9124A69A21006DE756 /* SearchUser.swift in Sources */,
+				DDE5D98A24A7DDD90029E3FD /* Protocols.swift in Sources */,
 				DDCB6F9524A5106D0080517E /* DMUserCells.swift in Sources */,
 				DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */,
 				DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */,

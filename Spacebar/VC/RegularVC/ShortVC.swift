@@ -10,6 +10,8 @@
 import UIKit
 
 class ShortVC: UIViewController {
+    
+    var delegate: ViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +36,8 @@ class ShortVC: UIViewController {
     
     @objc func pushSideMenuVC(){
         
-        let sideMenuVC = SideMenuVC()
+        delegate?.sideMenuToggle()
         
-        navigationController?.pushViewController(sideMenuVC, animated: true)
     }
     
     @objc func pushAddShortVC(){

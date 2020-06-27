@@ -10,6 +10,8 @@
 import UIKit
 
 class ProfileVC: UIViewController {
+    
+    var delegate: ViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +37,8 @@ class ProfileVC: UIViewController {
     
     @objc func pushSideMenuVC(){
         
-        let sideMenuVC = SideMenuVC()
+       delegate?.sideMenuToggle()
         
-        navigationController?.pushViewController(sideMenuVC, animated: true)
     }
     
     @objc func pushAccountSettingsVC(){
