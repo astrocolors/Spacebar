@@ -5,6 +5,7 @@
 //  Created by Shamik Patro on 6/24/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
+//  Purpose: Initial login / signup screen
 
 import UIKit
 
@@ -26,7 +27,6 @@ class InitialScreen: UIViewController {
         super.viewDidAppear(animated)
         
         // add custom animation here
-        
 
     }
     

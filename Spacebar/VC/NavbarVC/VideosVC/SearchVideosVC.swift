@@ -5,6 +5,7 @@
 //  Created by Shamik Patro on 6/26/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
+//  Purpose: View controller seen every time a user wants to search for a video
 
 import UIKit
 

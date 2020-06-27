@@ -5,7 +5,7 @@
 //  Created by Shamik Patro on 6/25/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
-//  Utilities: Mainly textfield & password validation
+//  Purpose: Mainly text and field validation - with some extras thrown in
 
 import UIKit
 

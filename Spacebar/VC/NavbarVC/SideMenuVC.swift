@@ -5,6 +5,7 @@
 //  Created by Shamik Patro on 6/24/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
+//  Purpose: This is the side menu that pops up every time the hamburger icon is pressed (3 horizonal lines)
 
 import UIKit
 

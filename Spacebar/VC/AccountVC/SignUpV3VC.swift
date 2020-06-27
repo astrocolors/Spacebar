@@ -5,7 +5,7 @@
 //  Created by Shamik Patro on 6/24/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
-// Purpose: Allow users to enter password (repeat)
+//  Purpose: Allow users to enter password (repeat)
 
 import UIKit
 import Firebase

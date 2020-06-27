@@ -17,12 +17,6 @@ class HomeVC: UIViewController {
         
     }
     
-    var collectionView: UICollectionView!
-    
-    var followers: [Follower] = []
-    
-    var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
-    
     let loginButton = SBButtonV2(Text: "Login", Color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), CornerRadius: 0)
 
     override func viewDidLoad() {
@@ -66,64 +60,6 @@ class HomeVC: UIViewController {
             loginButton.heightAnchor.constraint(equalToConstant: 50)
             
         ])
-        
-    }
-    
-    func configureCollectionView(){
-        
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: configureCollectionLayout())
-        
-        view.addSubview(collectionView)
-        
-        collectionView.backgroundColor = .orange
-        
-        collectionView.register(MessagesCell.self, forCellWithReuseIdentifier: MessagesCell.reuseID)
-        
-        
-    }
-    
-    func configureCollectionLayout() -> UICollectionViewFlowLayout{
-        
-        let width               = view.bounds.width
-        let flowLayout          = UICollectionViewFlowLayout()
-        
-        flowLayout.itemSize     = CGSize(width: width, height: 20)
-        
-        return flowLayout
-    }
-    
-    func getFollowers(){
-        
-        
-        
-        
-        
-    }
-    
-    func configureDataSource(){
-        
-        dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, IndexPath, follower) -> UICollectionViewCell? in
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MessagesCell.reuseID, for: IndexPath) as! MessagesCell
-            
-            cell.backgroundColor = .blue
-            
-            cell.set(follower: follower)
-            
-            return cell
-            
-        })
-    }
-    
-    func updateData(){
-        
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
-        snapshot.appendSections([.Main])
-        snapshot.appendItems(followers)
-        DispatchQueue.main.async { self.dataSource.apply(snapshot, animatingDifferences: true) }
-        
-        dataSource.apply(snapshot, animatingDifferences: true)
-
         
     }
     

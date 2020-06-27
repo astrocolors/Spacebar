@@ -5,7 +5,9 @@
 //  Created by Shamik Patro on 6/25/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
-//  Change the base URL to your database!
+//  Purpose: This manages the overall network calls in the application
+//
+//  TODO: Change the base URL to your database!
 
 import Foundation
 
@@ -71,6 +73,15 @@ class NetworkManager {
             
         task.resume()
             
+    }
+    
+    func getSearchVideos(){
+        
+        
+        // Implement search videos function
+        
+        
+        
     }
         
 }

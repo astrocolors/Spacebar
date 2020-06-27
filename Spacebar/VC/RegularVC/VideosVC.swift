@@ -5,6 +5,7 @@
 //  Created by Shamik Patro on 6/25/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
+//  Purpose: Scrollable regular videos
 
 import UIKit
 
@@ -23,11 +24,10 @@ class VideosVC: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pushAddVideoVC))
         let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pushSearchVideosVC))
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
         
-        navigationItem.setRightBarButtonItems([addItem, searchItem], animated: true)
+        navigationItem.setRightBarButton(searchItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
         
     }
@@ -37,14 +37,6 @@ class VideosVC: UIViewController {
         let sideMenuVC = SideMenuVC()
         
         navigationController?.pushViewController(sideMenuVC, animated: true)
-        
-    }
-    
-    @objc func pushAddVideoVC(){
-        
-        let addVideoVC = AddVideoVC()
-        
-        navigationController?.pushViewController(addVideoVC, animated: true)
         
     }
     

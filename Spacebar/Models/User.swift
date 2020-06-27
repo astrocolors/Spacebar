@@ -5,7 +5,7 @@
 //  Created by Shamik Patro on 6/25/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
-//  First video in the networking section - This is for display the user after searching for them
+//  Purpose: First video in the networking section - This is the information for the user once clicked on
 
 import Foundation
 

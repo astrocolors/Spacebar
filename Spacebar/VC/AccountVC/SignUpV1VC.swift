@@ -5,7 +5,7 @@
 //  Created by Shamik Patro on 6/24/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
-// Purpose: Allow users to enter first name and last name
+//  Purpose: Allow users to enter first name and last name
 
 import UIKit
 

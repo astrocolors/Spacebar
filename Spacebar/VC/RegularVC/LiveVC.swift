@@ -5,7 +5,9 @@
 //  Created by Shamik Patro on 6/24/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
-//  Purpose: Scrollable regular videos & livestreams
+//  Purpose: Scrollable livestreams
+//
+//  TODO: Change nav bar button to livestreaming button
 
 import UIKit
 
@@ -24,13 +26,11 @@ class LiveVC: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pushAddVideoVC))
-        
         let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pushSearchUsersVC))
         
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
         
-        navigationItem.setRightBarButtonItems([addItem, searchItem], animated: true)
+        navigationItem.setRightBarButton(searchItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
         
     }
@@ -43,13 +43,6 @@ class LiveVC: UIViewController {
         
     }
     
-    @objc func pushAddVideoVC(){
-        
-        let addVideoVC = AddVideoVC()
-        
-        navigationController?.pushViewController(addVideoVC, animated: true)
-        
-    }
     
     @objc func pushSearchUsersVC(){
         

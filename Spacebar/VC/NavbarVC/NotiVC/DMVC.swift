@@ -5,6 +5,7 @@
 //  Created by Shamik Patro on 6/24/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
+//  Purpose: View controller seen every time a user wants to see their DM's
 
 import UIKit
 

@@ -25,13 +25,6 @@ class MessagesCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(follower: Follower){
-        
-        // Set username
-        
-        avatarImageView.downloadImage(from: "URL")
-        
-    }
     
     private func configure(){
         
