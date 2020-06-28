@@ -16,31 +16,36 @@ class SideMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .blue
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.topItem?.title = "Orbiting"
+        navigationController?.hidesBarsOnSwipe = true
         
-        //configureTableView()
+        configureTableView()
         
     }
     
     func configureTableView(){
         
-        tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView                       = UITableView()
+        view.addSubview(tableView)
+        tableView.rowHeight             = 60
+        tableView.separatorStyle        = .none
+        tableView.delegate              = self
+        tableView.dataSource            = self
         tableView.register(SideMenuCell.self, forCellReuseIdentifier: SideMenuCell.reuseID)
         
-        tableView.backgroundColor = .green
-        
-        view.addSubview(tableView)
-        view.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
+
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
-            
+
         ])
         
     }
@@ -51,7 +56,7 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return 40
         
     }
     
@@ -59,7 +64,7 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuCell.reuseID, for: indexPath) as! SideMenuCell
         
-        cell.backgroundColor = .blue
+        cell.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
         return cell
         

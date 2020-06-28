@@ -13,7 +13,7 @@ class SearchUsersCell: UICollectionViewCell {
     
     static let reuseID = "SearchUserCell"
     
-    let avatarImageView = SBAvatarImageView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+    let avatarImageView = SBAvatarImageView(frame: .zero)
     let usernameLabel = SBTitleLabel() // Adjust title label class and set to custom label - Still needs to be adjusted
     
     override init(frame: CGRect) {
@@ -46,7 +46,8 @@ class SearchUsersCell: UICollectionViewCell {
             avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             avatarImageView.trailingAnchor.constraint(equalTo: avatarImageView.leadingAnchor, constant: 120),
-            avatarImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor)
+            avatarImageView.heightAnchor.constraint(equalToConstant: 80),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 80)
             
         ])
         

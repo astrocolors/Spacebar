@@ -86,21 +86,22 @@ class CreateTabBar: UITabBarController {
         UITabBar.appearance().tintColor = .yellow
         
         setViewControllers([createHomeNC(), createShortNC(), createVideosNC(), createNotiNC(), createProfileNC()], animated: true)
-        
-        configureSideMenu()
+
+        //configureSideMenu()
         
     }
     
-    func configureSideMenu(){
+    func configureSideMenu() {
         
         if sideMenuVC == nil {
             
             sideMenuVC = SideMenuVC()
             
-            print("I'm working!")
+            view.insertSubview(sideMenuVC.view, at: 0)
+            addChild(sideMenuVC)
+            sideMenuVC.didMove(toParent: self)
             
         }
-        
         
     }
     
@@ -138,7 +139,7 @@ extension CreateTabBar: ViewControllerDelegate {
         
         if !isExpanded {
             
-            configureSideMenu()
+            //configureSideMenu()
             
         }
 

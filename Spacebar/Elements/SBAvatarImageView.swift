@@ -28,7 +28,7 @@ class SBAvatarImageView: UIImageView {
     private func configure(){
         
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius                        = frame.size.height / 2
+        layer.cornerRadius                        = 40
         layer.masksToBounds                       = false
         clipsToBounds                             = true
         contentMode                               = UIView.ContentMode.scaleAspectFill
