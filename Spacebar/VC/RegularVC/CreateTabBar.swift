@@ -141,9 +141,10 @@ extension CreateTabBar: ViewControllerDelegate {
             configureSideMenu()
             
         }
-        
-        showSideMenu(shouldExpand: isExpanded)
+
         isExpanded = !isExpanded
+        showSideMenu(shouldExpand: isExpanded)
+
         
     }
     

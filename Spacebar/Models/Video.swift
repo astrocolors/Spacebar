@@ -1,21 +1,20 @@
 //
-//  SearchVideo.swift
+//  Video.swift
 //  Spacebar
 //
 //  Created by Shamik Patro on 6/27/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
-//  Purpose: This is the information for the video when searched for
+//  Purpose: This is the information for videos on screen
 
-import Foundation
+import UIKit
 
-struct SearchVideo: Codable, Hashable{
+struct Video: Codable, Hashable{
     
     var ThumbnailURL: String?
     
-    var VideoTitle: String?
+    var Title: String?
     
     var VideoURL: String?
-    
     
 }

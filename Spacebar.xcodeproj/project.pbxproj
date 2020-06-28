@@ -10,6 +10,7 @@
 		786DC1DC42D444D56EA5B147 /* Pods_Spacebar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CC562C1B6CCF938E822F32 /* Pods_Spacebar.framework */; };
 		DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD107E0524A3B54200A7E234 /* InitialScreen.swift */; };
 		DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */; };
+		DD6E849C24A8433200CD7D94 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E849B24A8433200CD7D94 /* Video.swift */; };
 		DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BC24A3BAE300070888 /* SBButton.swift */; };
 		DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BE24A3BAF700070888 /* SBTextField.swift */; };
 		DD9DB9C124A3FB1C00070888 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9C024A3FB1C00070888 /* LoginVC.swift */; };
@@ -50,7 +51,6 @@
 		DDEBF6C724A3B377006D45A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBF6C624A3B377006D45A1 /* SceneDelegate.swift */; };
 		DDEBF6CE24A3B377006D45A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDEBF6CD24A3B377006D45A1 /* Assets.xcassets */; };
 		DDEBF6D124A3B377006D45A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDEBF6CF24A3B377006D45A1 /* LaunchScreen.storyboard */; };
-		DDF1575A24A78E3100939F0F /* SearchVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF1575924A78E3100939F0F /* SearchVideo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +58,7 @@
 		728D3490101F6EBBC4264F60 /* Pods-Spacebar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacebar.debug.xcconfig"; path = "Target Support Files/Pods-Spacebar/Pods-Spacebar.debug.xcconfig"; sourceTree = "<group>"; };
 		DD107E0524A3B54200A7E234 /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
 		DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		DD6E849B24A8433200CD7D94 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		DD9DB9BC24A3BAE300070888 /* SBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBButton.swift; sourceTree = "<group>"; };
 		DD9DB9BE24A3BAF700070888 /* SBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTextField.swift; sourceTree = "<group>"; };
 		DD9DB9C024A3FB1C00070888 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		DDEBF6CD24A3B377006D45A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDEBF6D024A3B377006D45A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDEBF6D224A3B377006D45A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDF1575924A78E3100939F0F /* SearchVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVideo.swift; sourceTree = "<group>"; };
 		F421AC1CA5A01D863B3C0A5F /* Pods-Spacebar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacebar.release.xcconfig"; path = "Target Support Files/Pods-Spacebar/Pods-Spacebar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,8 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				DDCB6FA724A5277B0080517E /* User.swift */,
+				DD6E849B24A8433200CD7D94 /* Video.swift */,
 				DDAD9D9024A69A21006DE756 /* SearchUser.swift */,
-				DDF1575924A78E3100939F0F /* SearchVideo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -444,7 +444,6 @@
 				DDCB6FA824A5277B0080517E /* User.swift in Sources */,
 				DD9DB9C724A4016900070888 /* SignUpV2VC.swift in Sources */,
 				DDCFA7FA24A45AF9007D85FE /* AccountSettingsVC.swift in Sources */,
-				DDF1575A24A78E3100939F0F /* SearchVideo.swift in Sources */,
 				DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */,
 				DD9DB9D924A4083000070888 /* ProfileVC.swift in Sources */,
 				DDCB6F9924A510B90080517E /* VideosCell.swift in Sources */,
@@ -456,6 +455,7 @@
 				DDCB6F9524A5106D0080517E /* DMUserCells.swift in Sources */,
 				DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */,
 				DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */,
+				DD6E849C24A8433200CD7D94 /* Video.swift in Sources */,
 				DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */,
 				DD9DB9C124A3FB1C00070888 /* LoginVC.swift in Sources */,
 				DDEBF6C524A3B377006D45A1 /* AppDelegate.swift in Sources */,
