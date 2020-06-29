@@ -12,5 +12,6 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'Firebase/Analytics'
 pod 'Firebase/Storage'
+pod 'KMPlaceholderTextView'
 
 end

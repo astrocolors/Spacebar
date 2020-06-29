@@ -10,9 +10,11 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import KMPlaceholderTextView
 
 class AddMessageVC: UIViewController {
     
+    var messageTextField = KMPlaceholderTextView()
     var sendButton = SBButtonV2(Text: "Upload", Color: .blue, CornerRadius: 10)
     var getButton = SBButtonV2(Text: "Download", Color: .blue, CornerRadius: 10)
     var imageView = UIImageView(image: UIImage(named: "Spacebar.png"))
@@ -22,11 +24,38 @@ class AddMessageVC: UIViewController {
 
         view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
-        configureSendButton()
-        configureGetButton()
-        configureImageView()
+        //configureObservers()
+        configureTextField()
+        //configureSendButton()
+        //configureGetButton()
+        //configureImageView()
         
     }
+    
+    func configureTextField(){
+        
+        view.addSubview(messageTextField)
+        
+        // Remember to set the delegate
+        
+        messageTextField.translatesAutoresizingMaskIntoConstraints = false
+        messageTextField.placeholder = "What would you like to say?"
+        messageTextField.font = UIFont.preferredFont(forTextStyle: .body)
+        messageTextField.becomeFirstResponder()
+        
+        messageTextField.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        
+        NSLayoutConstraint.activate([
+            
+            messageTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            messageTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            messageTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+            messageTextField.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: 12)
+            
+        ])
+        
+    }
+    
     
     func configureSendButton(){
 
@@ -126,6 +155,55 @@ class AddMessageVC: UIViewController {
             }
             
         }
+        
+    }
+    
+    @objc func sendMessage(){
+        
+        print("Message Sent!")
+        
+        
+    }
+
+}
+
+extension AddMessageVC {
+    
+    func configureObservers(){
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        guard let userInfo = notification.userInfo else { return }
+        
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        
+        let keyboardFrame = keyboardSize.cgRectValue
+        
+        if self.view.frame.origin.y == 0{
+            self.view.frame.origin.y -= keyboardFrame.height
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        
+        guard let userInfo = notification.userInfo else { return }
+        
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        
+        let keyboardFrame = keyboardSize.cgRectValue
+        
+        if self.view.frame.origin.y == 0{
+            self.view.frame.origin.y += keyboardFrame.height
+        }
+        
         
         
     }

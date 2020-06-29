@@ -8,6 +8,7 @@
 //  Purpose: View controller seen every time a user checks their settings
 
 import UIKit
+import Firebase
 
 class AccountSettingsVC: UIViewController {
     
@@ -27,9 +28,11 @@ class AccountSettingsVC: UIViewController {
         
         settingsTableView.rowHeight = 50
         settingsTableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        settingsTableView.delegate = self
+        settingsTableView.dataSource = self
         settingsTableView.separatorStyle = .singleLine
         settingsTableView.separatorInset = .zero
-        
+        settingsTableView.register(SettingsCell.self, forCellReuseIdentifier: SettingsCell.reuseID)
         
         settingsTableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -45,4 +48,43 @@ class AccountSettingsVC: UIViewController {
         
     }
 
+}
+
+extension AccountSettingsVC: UITableViewDelegate, UITableViewDataSource {
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 4
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.reuseID, for: indexPath) as! SettingsCell
+        
+        cell.settingsLabel.text = cell.settingsChoices[indexPath.row]
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.row).")
+        
+        if (indexPath.row == 3) {
+            
+            do {
+                try Auth.auth().signOut()
+                print("Signed Out!")
+                
+            } catch let err {
+                
+                print(err)
+                
+            }
+            
+        }
+        
+    }
+    
 }

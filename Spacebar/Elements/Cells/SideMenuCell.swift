@@ -52,7 +52,21 @@ class SideMenuCell: UITableViewCell {
     
     func configureUserLogin(){
         
+        userLogin.translatesAutoresizingMaskIntoConstraints = false
+        userLogin.text = "Astronaut"
+        userLogin.adjustsFontSizeToFitWidth = true
         
+        addSubview(userLogin)
+        
+        NSLayoutConstraint.activate([
+            
+            userLogin.centerYAnchor.constraint(equalTo: centerYAnchor),
+            userLogin.leadingAnchor.constraint(equalTo: userAvatar.trailingAnchor, constant: 15),
+            userLogin.trailingAnchor.constraint(equalTo: trailingAnchor),
+            userLogin.heightAnchor.constraint(equalToConstant: 30),
+            userLogin.widthAnchor.constraint(equalToConstant: 100)
+            
+        ])
         
         
         

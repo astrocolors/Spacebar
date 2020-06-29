@@ -16,9 +16,11 @@ class SideMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "Orbiting"
+        navigationController?.navigationBar.topItem?.title = "Following"
         navigationController?.hidesBarsOnSwipe = true
         
         configureTableView()
