@@ -27,7 +27,7 @@ class CreateTabBar: UITabBarController {
         
         homeVC.delegate = self
         
-        homeVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 4)
     
         return UINavigationController(rootViewController: homeVC)
         
@@ -39,7 +39,7 @@ class CreateTabBar: UITabBarController {
         
         shortVC.delegate = self
         
-        shortVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        shortVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 1)
         
         return UINavigationController(rootViewController: shortVC)
         
@@ -51,7 +51,7 @@ class CreateTabBar: UITabBarController {
         
         videosVC.delegate = self
         
-        videosVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
+        videosVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 2)
         
         return UINavigationController(rootViewController: videosVC)
         
@@ -63,7 +63,7 @@ class CreateTabBar: UITabBarController {
         
         notiVC.delegate = self
         
-        notiVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 3)
+        notiVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 3)
         
         return UINavigationController(rootViewController: notiVC)
     }
@@ -74,7 +74,7 @@ class CreateTabBar: UITabBarController {
         
         profileVC.delegate = self
         
-        profileVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 4)
+        profileVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 4)
         
         return UINavigationController(rootViewController: profileVC)
         
@@ -86,6 +86,8 @@ class CreateTabBar: UITabBarController {
         UITabBar.appearance().tintColor = .yellow
         
         setViewControllers([createHomeNC(), createShortNC(), createVideosNC(), createNotiNC(), createProfileNC()], animated: true)
+        
+        selectedIndex = 2
 
         //configureSideMenu()
         

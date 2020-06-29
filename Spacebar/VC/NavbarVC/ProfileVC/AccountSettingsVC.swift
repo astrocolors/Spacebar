@@ -9,23 +9,40 @@
 
 import UIKit
 
-class AccountSettingsVC: UITableViewController {
+class AccountSettingsVC: UIViewController {
+    
+    var settingsTableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .orange
+        
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        configureTableView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func configureTableView(){
+        
+        view.addSubview(settingsTableView)
+        
+        settingsTableView.rowHeight = 50
+        settingsTableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        settingsTableView.separatorStyle = .singleLine
+        settingsTableView.separatorInset = .zero
+        
+        
+        settingsTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            settingsTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            settingsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            settingsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            settingsTableView.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
+        
+        
     }
-    */
 
 }

@@ -12,6 +12,8 @@ import UIKit
 class ShortVC: UIViewController {
     
     var delegate: ViewControllerDelegate?
+    var ImagePicker: UIImagePickerController!
+    var alert: UIAlertController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,27 @@ class ShortVC: UIViewController {
         
     }
     
+    func showImagePickerController(){
+        
+        let imagePicker = UIImagePickerController()
+        
+        let alert = UIAlertController(title: "Choose your video", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Choose from Library", style: .default, handler: { (action) in
+            imagePicker.sourceType = .photoLibrary
+        }))
+        
+        
+        alert.addAction(UIAlertAction(title: "Take from Camera", style: .default, handler: { (action) in
+            imagePicker.sourceType = .camera
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true)
+        
+    }
+    
     @objc func pushSideMenuVC(){
         
         delegate?.sideMenuToggle()
@@ -44,7 +67,9 @@ class ShortVC: UIViewController {
         
         let addShortVC = AddShortVC()
         
-        navigationController?.pushViewController(addShortVC, animated: true)
+        showImagePickerController()
+        
+        //navigationController?.pushViewController(addShortVC, animated: true)
         
     }
 

@@ -9,23 +9,63 @@
 
 import UIKit
 
-class DMVC: UICollectionViewController {
+class DMVC: UIViewController {
+    
+    var DMTableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .purple
+        
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        configureTableView()
     }
     
+    func configureTableView(){
+        
+        view.addSubview(DMTableView)
+        
+        DMTableView.rowHeight                       = 80
+        DMTableView.separatorStyle                  = .singleLine
+        DMTableView.separatorInset                  = .zero
+        DMTableView.delegate                        = self
+        DMTableView.dataSource                      = self
+        DMTableView.register(DMUserCells.self, forCellReuseIdentifier: DMUserCells.reuseID)
+        
+        DMTableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        
+        DMTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
 
-    /*
-    // MARK: - Navigation
+            DMTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            DMTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            DMTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            DMTableView.heightAnchor.constraint(equalTo: view.heightAnchor)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        ])
+        
     }
-    */
+    
+}
 
+extension DMVC: UITableViewDelegate, UITableViewDataSource {
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 40
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: DMUserCells.reuseID, for: indexPath) as! DMUserCells
+        
+        cell.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        
+        return cell
+        
+    }
+    
 }

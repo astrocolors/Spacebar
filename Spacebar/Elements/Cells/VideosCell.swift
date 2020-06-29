@@ -38,7 +38,7 @@ class VideosCell: UITableViewCell {
     
     func configureImageView(){
         
-        videoImageView.translatesAutoresizingMaskIntoConstraints    = false
+        videoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
 
