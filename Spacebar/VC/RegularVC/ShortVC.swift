@@ -8,6 +8,8 @@
 //  Purpose: Scrollable short videos
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class ShortVC: UIViewController {
     
@@ -19,6 +21,23 @@ class ShortVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.2784313725, alpha: 1)
+        
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!))
+        let layer = AVPlayerLayer(player: player)
+        
+//        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { [weak self] _ in
+//            player.seek(to: CMTime.zero)
+//            player.play()
+//        }
+        
+        
+        layer.frame = view.bounds
+        layer.videoGravity = .resizeAspectFill
+        
+        view.layer.addSublayer(layer)
+        
+        player.play()
+        
         
         configureNavBar()
         

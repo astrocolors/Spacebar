@@ -9,16 +9,19 @@
 
 import UIKit
 
-class MessagesCell: UICollectionViewCell {
+class MessagesCell: UITableViewCell {
     
     static let reuseID = "MessageCell"
     let avatarImageView = SBAvatarImageView(frame: .zero)
     let usernameLabel = SBTitleLabel()
+    let messageLabel = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        configure()
+        configureUserAvatar()
+        configureUsernameLabel()
+        configureMessageLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -26,19 +29,55 @@ class MessagesCell: UICollectionViewCell {
     }
     
     
-    private func configure(){
+    private func configureUserAvatar(){
         
         addSubview(avatarImageView)
         
+        avatarImageView.backgroundColor = #colorLiteral(red: 0.03921568627, green: 0.5176470588, blue: 1, alpha: 1)
+        
         NSLayoutConstraint.activate([
             
-            avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            avatarImageView.centerXAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            avatarImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            avatarImageView.heightAnchor.constraint(equalTo: avatarImageView.widthAnchor)
+            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 60),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 60)
             
         ])
 
+        
+    }
+    
+    private func configureUsernameLabel(){
+        
+        addSubview(usernameLabel)
+        
+        usernameLabel.text = "@Astronaut"
+        
+        NSLayoutConstraint.activate([
+            
+            usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
+            usernameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10)
+            
+        ])
+        
+    }
+    
+    private func configureMessageLabel(){
+        
+        addSubview(messageLabel)
+        
+        messageLabel.text = "Testing out the message label."
+        
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            messageLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
+            messageLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5)
+            
+        ])
+        
+        
         
     }
     

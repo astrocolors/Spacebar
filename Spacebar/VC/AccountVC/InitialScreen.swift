@@ -8,6 +8,8 @@
 //  Purpose: Initial login / signup screen
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class InitialScreen: UIViewController {
     

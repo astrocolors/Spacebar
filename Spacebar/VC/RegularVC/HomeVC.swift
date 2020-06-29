@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
         
         configureNavBar()
         configureLoginButton() // temporary
-        //configureTableView()
+        configureTableView()
         
     }
     
@@ -76,7 +76,7 @@ class HomeVC: UIViewController {
         tableView.rowHeight = 80
         tableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         tableView.separatorInset = .zero
-        tableView.register(VideosCell.self, forCellReuseIdentifier: "VideoCell")
+        tableView.register(MessagesCell.self, forCellReuseIdentifier: "MessagesCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -128,16 +128,15 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return videos.count
+        return 10
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! VideosCell
-        let video = videos[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
         
-        cell.set(video: video)
+        cell.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
         return cell
         

@@ -12,7 +12,7 @@ import UIKit
 class SBAvatarImageView: UIImageView {
     
     let cache = NetworkManager.shared.cache
-    let placeholderImage = UIImage(named: "Spacebar")!// Change this to a better placeholder image
+    let placeholderImage = UIImage(named: "ElonMusk")!// Change this to a better placeholder image
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +28,7 @@ class SBAvatarImageView: UIImageView {
     private func configure(){
         
         translatesAutoresizingMaskIntoConstraints = false
-        layer.cornerRadius                        = 40
+        layer.cornerRadius                        = 30
         layer.masksToBounds                       = false
         clipsToBounds                             = true
         contentMode                               = UIView.ContentMode.scaleAspectFill

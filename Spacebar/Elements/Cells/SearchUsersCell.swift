@@ -43,19 +43,16 @@ class SearchUsersCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             
-            avatarImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            avatarImageView.trailingAnchor.constraint(equalTo: avatarImageView.leadingAnchor, constant: 120),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 80),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 80)
+            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            avatarImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 60),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 60)
             
         ])
         
         NSLayoutConstraint.activate([
             
-            usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 8),
-            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             usernameLabel.heightAnchor.constraint(equalTo: avatarImageView.heightAnchor, constant: 8)
             
         ])

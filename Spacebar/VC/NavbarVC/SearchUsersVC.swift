@@ -20,6 +20,7 @@ class SearchUsersVC: UIViewController {
     var username: String!
     var searchUsers: [SearchUser]! = []
     var collectionView: UICollectionView!
+    var tableView: UITableView!
     var dataSource: UICollectionViewDiffableDataSource<Section, SearchUser>!
     
     let searchTextField = UISearchBar()
