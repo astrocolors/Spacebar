@@ -30,7 +30,6 @@ class ShortVC: UIViewController {
 //            player.play()
 //        }
         
-        
         layer.frame = view.bounds
         layer.videoGravity = .resizeAspectFill
         

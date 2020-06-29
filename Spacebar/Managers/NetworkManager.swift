@@ -113,61 +113,39 @@ class NetworkManager {
         
     }
     
-    func getUserSpecificClips(for Username: String, completed: @escaping([Clip]?, String?) -> Void){
+    func getUserSpecificClips(for Username: String, completed: @escaping([URL?], String?) -> Void){
         
         let folderURL = baseURL + "\(Username)/Clips/"
         
-        let endpoint = folderURL
+        let storageRef = Storage.storage().reference().child(folderURL)
         
-        guard let url = URL(string: endpoint) else{
+        storageRef.listAll { (result, error) in
+            
+            if let error = error {
                 
-            completed(nil, "Error: Invalid username request! Did you type in the correct username? - Houston")
+                print(error.localizedDescription)
                 
-            return
-                
-        }
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                
-            if let _ = error {
-                    
-                completed(nil, "Error: Check your connection! - Houston")
-                    
-                return
-                    
             }
+            
+            for item in result.items {
                 
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                item.downloadURL { (url, error) in
                     
-                completed(nil, "Error: Mission control couldn't send the requested data. Please try again! - Houston")
+                    if let error = error {
+                        
+                        print(error.localizedDescription)
+                        
+                    }
                     
-                return
-            }
+                    let clipsURL = [url]
+                    
+                    completed(clipsURL, nil)
+                    
+                }
                 
-            guard let data = data else {
-                    
-                completed(nil, error?.localizedDescription)
-                    
-                return
-                    
-            }
-        
-            do{
-                  
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let clip = try decoder.decode([Clip].self, from: data)
-                completed(clip, nil)
-                    
-            } catch{
-                    
-                completed(nil, error.localizedDescription)
-                    
             }
             
         }
-        
-        task.resume()
         
     }
     
@@ -190,7 +168,6 @@ class NetworkManager {
                 item.getData(maxSize: (4*1024*1024)) { (data, error) in
                     
                     if let error = error {
-                        
                         
                         print(error.localizedDescription)
                         
