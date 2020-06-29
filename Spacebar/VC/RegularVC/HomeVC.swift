@@ -8,6 +8,7 @@
 //  Purpose: Scrollable short messages and pictures
 
 import UIKit
+import Firebase
 
 class HomeVC: UIViewController {
     
@@ -21,6 +22,7 @@ class HomeVC: UIViewController {
     var videos: [Video] = []
     var delegate: ViewControllerDelegate?
     let loginButton = SBButtonV2(Text: "Login", Color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), CornerRadius: 0)
+    let signOutButton = SBButtonV2(Text: "Sign Out", Color: #colorLiteral(red: 0.2196078431, green: 0.007843137255, blue: 0.8549019608, alpha: 1), CornerRadius: 0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,8 @@ class HomeVC: UIViewController {
         
         configureNavBar()
         configureLoginButton()
-        configureTableView()
+        configureSignOutButton() // temporary
+        //configureTableView()
         
     }
     
@@ -62,6 +65,24 @@ class HomeVC: UIViewController {
             loginButton.heightAnchor.constraint(equalToConstant: 50)
             
         ])
+        
+    }
+    
+    func configureSignOutButton(){
+        
+        view.addSubview(signOutButton)
+        
+        signOutButton.addTarget(self, action: #selector(signOut), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            
+            signOutButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
+            signOutButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            signOutButton.heightAnchor.constraint(equalToConstant: 50)
+            
+        ])
+        
         
     }
     
@@ -117,9 +138,22 @@ class HomeVC: UIViewController {
         initialScreen.modalPresentationStyle = .fullScreen
         
         present(initialScreen, animated: true)
-        
+                
     }
-
+    
+    @objc func signOut(){
+        
+        // REMOVE ME!!!
+        
+        do {
+            try Auth.auth().signOut()
+            print("Signed out!")
+            
+        } catch let err {
+            print(err)
+        }
+                
+    }
     
 }
 
