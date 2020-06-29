@@ -9,18 +9,17 @@
 
 import UIKit
 
-class SearchUsersCell: UICollectionViewCell {
+class SearchUsersCell: UITableViewCell {
     
     static let reuseID = "SearchUserCell"
     
     let avatarImageView = SBAvatarImageView(frame: .zero)
     let usernameLabel = SBTitleLabel() // Adjust title label class and set to custom label - Still needs to be adjusted
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configure()
-        
     }
     
     required init?(coder: NSCoder) {

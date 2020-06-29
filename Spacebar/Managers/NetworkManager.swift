@@ -10,11 +10,12 @@
 //  TODO: Change the base URL to your database!
 
 import UIKit
+import FirebaseStorage
 
 class NetworkManager {
     
     static let shared       = NetworkManager()
-    let baseURL             = "gs://spacebar-21236.appspot.com/Users/"
+    let baseURL             = "Users/"
     let baseURLV2           = "https://api.github.com"
     let cache               = NSCache<NSString, UIImage>()
     
@@ -86,9 +87,9 @@ class NetworkManager {
         
     }
     
-    func getOrbiters(){
+    func getFollowers(){
         
-        let endpoint = baseURLV2 + ""
+        let endpoint = baseURL + ""
         
         
         
@@ -96,6 +97,7 @@ class NetworkManager {
     
     func getDMUsers(){
         
+        let endpoint = baseURL + ""
         
         
         
@@ -104,7 +106,113 @@ class NetworkManager {
     
     func getDMMessages(){
         
+        let endpoint = baseURL + ""
         
+        
+        
+        
+    }
+    
+    func getUserSpecificClips(for Username: String, completed: @escaping([Clip]?, String?) -> Void){
+        
+        let folderURL = baseURL + "\(Username)/Clips/"
+        
+        let endpoint = folderURL
+        
+        guard let url = URL(string: endpoint) else{
+                
+            completed(nil, "Error: Invalid username request! Did you type in the correct username? - Houston")
+                
+            return
+                
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                
+            if let _ = error {
+                    
+                completed(nil, "Error: Check your connection! - Houston")
+                    
+                return
+                    
+            }
+                
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    
+                completed(nil, "Error: Mission control couldn't send the requested data. Please try again! - Houston")
+                    
+                return
+            }
+                
+            guard let data = data else {
+                    
+                completed(nil, error?.localizedDescription)
+                    
+                return
+                    
+            }
+        
+            do{
+                  
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let clip = try decoder.decode([Clip].self, from: data)
+                completed(clip, nil)
+                    
+            } catch{
+                    
+                completed(nil, error.localizedDescription)
+                    
+            }
+            
+        }
+        
+        task.resume()
+        
+    }
+    
+    func getUserSpecificPhotos(for Username: String, completed: @escaping([Data?], String?) -> Void){
+        
+        let folderURL = baseURL + "\(Username)/Pictures/"
+        
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        storageRef.listAll { (result, error) in
+            
+            if let error = error{
+                
+                print(error.localizedDescription)
+                
+            }
+            
+            for item in result.items {
+                
+                item.getData(maxSize: (4*1024*1024)) { (data, error) in
+                    
+                    if let error = error {
+                        
+                        
+                        print(error.localizedDescription)
+                        
+                        
+                    }
+                    
+                    let pictureData = [data]
+                    
+                    completed(pictureData, nil)
+                    
+                }
+                
+            }
+            
+        }
+        
+        
+    }
+    
+    func uploadMessage(){
+        
+        let endpoint = baseURLV2 + ""
         
         
         
@@ -112,5 +220,23 @@ class NetworkManager {
     }
     
     
+    func uploadClips(){
         
+        let endpoint = baseURLV2 + ""
+        
+        
+        
+        
+    }
+    
+    
+    func sendDM(){
+        
+        let endpoint = baseURLV2 + ""
+        
+        
+        
+    }
+    
+    
 }

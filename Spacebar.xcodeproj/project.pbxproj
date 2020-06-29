@@ -11,9 +11,12 @@
 		DD0A959424A9295A0088BF53 /* EverythingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A959324A9295A0088BF53 /* EverythingVC.swift */; };
 		DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD107E0524A3B54200A7E234 /* InitialScreen.swift */; };
 		DD2336AD24A9E187003B0960 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DD2336AC24A9E187003B0960 /* video.mp4 */; };
+		DD54B44B24AA74C500738C35 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54B44A24AA74C500738C35 /* Picture.swift */; };
 		DD662C5C24A9D71A00F95319 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD662C5B24A9D71A00F95319 /* SettingsCell.swift */; };
 		DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */; };
 		DD6E849C24A8433200CD7D94 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E849B24A8433200CD7D94 /* Video.swift */; };
+		DD7EDCC324AA5AC9001035E8 /* DMMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7EDCC224AA5AC9001035E8 /* DMMessage.swift */; };
+		DD7EDCC524AA5AE6001035E8 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7EDCC424AA5AE6001035E8 /* Clip.swift */; };
 		DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BC24A3BAE300070888 /* SBButton.swift */; };
 		DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BE24A3BAF700070888 /* SBTextField.swift */; };
 		DD9DB9C124A3FB1C00070888 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9C024A3FB1C00070888 /* LoginVC.swift */; };
@@ -62,9 +65,12 @@
 		DD0A959324A9295A0088BF53 /* EverythingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingVC.swift; sourceTree = "<group>"; };
 		DD107E0524A3B54200A7E234 /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
 		DD2336AC24A9E187003B0960 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		DD54B44A24AA74C500738C35 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		DD662C5B24A9D71A00F95319 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		DD6E849B24A8433200CD7D94 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		DD7EDCC224AA5AC9001035E8 /* DMMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMMessage.swift; sourceTree = "<group>"; };
+		DD7EDCC424AA5AE6001035E8 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		DD9DB9BC24A3BAE300070888 /* SBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBButton.swift; sourceTree = "<group>"; };
 		DD9DB9BE24A3BAF700070888 /* SBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTextField.swift; sourceTree = "<group>"; };
 		DD9DB9C024A3FB1C00070888 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -219,6 +225,9 @@
 				DDCB6FA724A5277B0080517E /* User.swift */,
 				DD6E849B24A8433200CD7D94 /* Video.swift */,
 				DDAD9D9024A69A21006DE756 /* SearchUser.swift */,
+				DD7EDCC424AA5AE6001035E8 /* Clip.swift */,
+				DD7EDCC224AA5AC9001035E8 /* DMMessage.swift */,
+				DD54B44A24AA74C500738C35 /* Picture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				DDCFA7F324A44CF6007D85FE /* SideMenuVC.swift */,
-				DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */,
 				DDCFA7FE24A45B9D007D85FE /* HomeVC */,
 				DDCFA7FF24A45BB9007D85FE /* ShortVC */,
 				DDCB6FA924A52CEE0080517E /* VideosVC */,
@@ -266,6 +274,7 @@
 		DDCFA7FE24A45B9D007D85FE /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */,
 				DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */,
 			);
 			path = HomeVC;
@@ -468,6 +477,8 @@
 				DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */,
 				DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */,
 				DD6E849C24A8433200CD7D94 /* Video.swift in Sources */,
+				DD7EDCC524AA5AE6001035E8 /* Clip.swift in Sources */,
+				DD54B44B24AA74C500738C35 /* Picture.swift in Sources */,
 				DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */,
 				DD9DB9C124A3FB1C00070888 /* LoginVC.swift in Sources */,
 				DDEBF6C524A3B377006D45A1 /* AppDelegate.swift in Sources */,
@@ -482,6 +493,7 @@
 				DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */,
 				DDCFA7F624A44D1B007D85FE /* AddShortVC.swift in Sources */,
 				DDEBF6C724A3B377006D45A1 /* SceneDelegate.swift in Sources */,
+				DD7EDCC324AA5AC9001035E8 /* DMMessage.swift in Sources */,
 				DDAD9D9724A6B29F006DE756 /* SearchVideosVC.swift in Sources */,
 				DDCFA7F424A44CF6007D85FE /* SideMenuVC.swift in Sources */,
 				DDCB6F8E24A510030080517E /* MessagesCell.swift in Sources */,

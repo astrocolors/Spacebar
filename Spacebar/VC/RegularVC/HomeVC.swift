@@ -30,7 +30,7 @@ class HomeVC: UIViewController {
         
         configureNavBar()
         configureLoginButton() // temporary
-        configureTableView()
+        //configureTableView()
         
     }
     

@@ -19,9 +19,8 @@ class SearchUsersVC: UIViewController {
     
     var username: String!
     var searchUsers: [SearchUser]! = []
-    var collectionView: UICollectionView!
-    var tableView: UITableView!
-    var dataSource: UICollectionViewDiffableDataSource<Section, SearchUser>!
+    var UserTableView = UITableView()
+    var dataSource: UITableViewDiffableDataSource<Section, SearchUser>!
     
     let searchTextField = UISearchBar()
 
@@ -30,7 +29,7 @@ class SearchUsersVC: UIViewController {
         
         configure()
         configureNavigationBar()
-        configureCollectionView()
+        configureTableView()
         configureDataSource()
     }
     
@@ -53,16 +52,30 @@ class SearchUsersVC: UIViewController {
         
     }
     
-    func configureCollectionView(){
+    func configureTableView(){
         
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: Utilities.configureCollectionViewFlowLayout(view: view))
+        view.addSubview(UserTableView)
         
-        view.addSubview(collectionView)
+        UserTableView.rowHeight = 60
+        UserTableView.separatorStyle = .none
+        UserTableView.separatorInset = .zero
+        UserTableView.delegate = self
+        UserTableView.dataSource = self
+        UserTableView.register(SearchUsersCell.self, forCellReuseIdentifier: SearchUsersCell.reuseID)
         
-        collectionView.backgroundColor = #colorLiteral(red: 0.0431372549, green: 0.6862745098, blue: 0.7450980392, alpha: 1)
+        UserTableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
-        collectionView.register(SearchUsersCell.self, forCellWithReuseIdentifier: SearchUsersCell.reuseID)
-
+        UserTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            UserTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            UserTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            UserTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            UserTableView.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
+        
         
     }
     
@@ -90,9 +103,9 @@ class SearchUsersVC: UIViewController {
     
     func configureDataSource(){
         
-        dataSource = UICollectionViewDiffableDataSource<Section, SearchUser>(collectionView: collectionView, cellProvider: { (collectionview, indexpath, searchUser) -> UICollectionViewCell? in
+        dataSource = UITableViewDiffableDataSource<Section, SearchUser>(tableView: UserTableView, cellProvider: { (tableview, indexpath, searchUser) -> UITableViewCell? in
             
-            let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: SearchUsersCell.reuseID, for: indexpath) as! SearchUsersCell
+            let cell = self.UserTableView.dequeueReusableCell(withIdentifier: SearchUsersCell.reuseID, for: indexpath) as! SearchUsersCell
             
             cell.set(searchUser: searchUser)
             
@@ -126,7 +139,23 @@ class SearchUsersVC: UIViewController {
 
 }
 
-extension SearchUsersVC: UISearchBarDelegate {
+extension SearchUsersVC: UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return [searchUsers].count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchUsersCell.reuseID, for: indexPath) as! SearchUsersCell
+        
+        cell.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        
+        return cell
+        
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
@@ -137,3 +166,4 @@ extension SearchUsersVC: UISearchBarDelegate {
     }
     
 }
+
