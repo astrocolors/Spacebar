@@ -65,8 +65,8 @@ class UserPageVC: UIViewController {
     
     func configureSegmentedController(){
         
-        let media = ["Messages/Photos", "Clips", "Videos", "Interactions"]
-        let segmentedControl = UISegmentedControl(items: media)
+        let mediaType = ["Messages/Photos", "Clips", "Videos", "Interactions"]
+        let segmentedControl = UISegmentedControl(items: mediaType)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.addTarget(self, action: #selector(mediaSelection(segmentedControl:)), for: .valueChanged)
         segmentedControl.selectedSegmentIndex = 0

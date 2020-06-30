@@ -18,6 +18,7 @@ class AddMessageVC: UIViewController {
     var sendButton = SBButtonV2(Text: "Upload", Color: .blue, CornerRadius: 10)
     var getButton = SBButtonV2(Text: "Download", Color: .blue, CornerRadius: 10)
     var imageView = UIImageView(image: UIImage(named: "Spacebar.png"))
+    var keyboardToolbar = UIToolbar()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,27 @@ class AddMessageVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
         //configureObservers()
+        configureKeyboardToolbar()
         configureTextField()
         //configureSendButton()
         //configureGetButton()
         //configureImageView()
+        
+    }
+    
+    func configureKeyboardToolbar(){
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
+        
+        let sendButton = UIBarButtonItem(title: "Launch!", style: .done, target: self, action: #selector(sendMessage))
+        
+        keyboardToolbar.sizeToFit()
+        keyboardToolbar.isTranslucent = true
+        
+        keyboardToolbar.items = [flexibleSpace, flexibleSpace, sendButton]
+        
+        messageTextField.inputAccessoryView = keyboardToolbar
+    
         
     }
     
@@ -115,6 +133,16 @@ class AddMessageVC: UIViewController {
         
     }
     
+    @objc func sendMessage(){
+        
+        // Network call
+        
+        print("Message Sent!")
+        
+        
+        
+    }
+    
     @objc func upload(){
         
         let user: String? = Firebase.Auth.auth().currentUser?.email
@@ -155,13 +183,6 @@ class AddMessageVC: UIViewController {
             }
             
         }
-        
-    }
-    
-    @objc func sendMessage(){
-        
-        print("Message Sent!")
-        
         
     }
 

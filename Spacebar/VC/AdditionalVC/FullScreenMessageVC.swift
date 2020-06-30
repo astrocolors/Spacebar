@@ -9,22 +9,55 @@
 import UIKit
 
 class FullScreenMessageVC: UIViewController {
+    
+    let userAvatar = UIImageView()
+    let userMessage = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
 
-        // Do any additional setup after loading the view.
+        configureUserAvatar()
+        configureUserMessage()
     }
     
+    func configureUserAvatar(){
+        
+        view.addSubview(userAvatar)
+        
+        userAvatar.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        NSLayoutConstraint.activate([
+            
+            userAvatar.topAnchor.constraint(equalTo: view.topAnchor),
+            userAvatar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            userAvatar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            userAvatar.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        
     }
-    */
+    
+    func configureUserMessage(){
+        
+        view.addSubview(userMessage)
+        
+        userMessage.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            userMessage.topAnchor.constraint(equalTo: view.topAnchor),
+            userMessage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            userMessage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            userMessage.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
+        
+    }
+
 
 }
