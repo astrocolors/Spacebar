@@ -20,26 +20,44 @@ class UserPageVC: UIViewController {
 
         view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
-        configureUserLabel()
+        configureUserLogin()
         configureUserBio()
         configureUserAvatar()
         configureSegmentedController()
         
     }
     
-    func configureUserLabel(){
+    func configureUserLogin(){
         
+        view.addSubview(userLogin)
         
+        userLogin.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        NSLayoutConstraint.activate([
+            
+            userLogin.topAnchor.constraint(equalTo: view.topAnchor),
+            userLogin.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            userLogin.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            userLogin.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
         
     }
     
     func configureUserBio(){
         
+        view.addSubview(userBio)
         
+        userBio.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        NSLayoutConstraint.activate([
+            
+            userBio.topAnchor.constraint(equalTo: view.topAnchor),
+            userBio.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            userBio.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            userBio.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
         
     }
     
@@ -59,8 +77,6 @@ class UserPageVC: UIViewController {
         ])
 
         
-        
-        
     }
     
     func configureSegmentedController(){
@@ -75,9 +91,10 @@ class UserPageVC: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            segmentedControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -75)
+            segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            segmentedControl.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             
         ])
         

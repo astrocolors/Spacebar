@@ -135,10 +135,11 @@ class AddMessageVC: UIViewController {
     
     @objc func sendMessage(){
         
-        // Network call
+        let user = Auth.auth().currentUser?.email
         
-        print("Message Sent!")
+        let messageText = messageTextField.text
         
+        NetworkManager.shared.uploadMessage(for: user!, Message: messageText!)
         
         
     }

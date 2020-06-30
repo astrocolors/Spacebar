@@ -111,6 +111,7 @@ class HomeVC: UIViewController {
         
         navigationController?.pushViewController(searchUsersVC, animated: true)
         
+        
     }
     
     @objc func pushInitialScreen(){
@@ -145,9 +146,9 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let userPageVC = UserPageVC()
+        let fullScreenMessageVC = FullScreenMessageVC()
         
-        navigationController?.pushViewController(userPageVC, animated: true)
+        navigationController?.pushViewController(fullScreenMessageVC, animated: true)
         
         
     }

@@ -187,12 +187,18 @@ class NetworkManager {
         
     }
     
-    func uploadMessage(){
+    func uploadMessage(for Username: String, Message: String){
         
-        let endpoint = baseURLV2 + ""
+        let randomID = UUID.init().uuidString
+        let folderURL = baseURL + "\(Username)/Messages/\(randomID)/"
         
+        let metadata = StorageMetadata()
+        metadata.contentType = "text/plain"
         
-        
+        let storageRef = Storage.storage().reference().child(folderURL)
+        let messageData = Message.data(using: .ascii)
+
+        storageRef.putData(messageData!, metadata: metadata)
         
     }
     
