@@ -9,10 +9,10 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Codable, Hashable {
     
     var login: String?
-    var avatarUrl: String?
+    var avatarData: Data?
     var name: String?
     var bio: String?
     var followers: Int

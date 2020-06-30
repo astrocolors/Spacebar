@@ -87,9 +87,29 @@ class NetworkManager {
         
     }
     
-    func getFollowers(){
+    func getFollowers(for Username: String, completed: @escaping([String?], String?) -> Void){
         
-        let endpoint = baseURL + ""
+        let folderURL = baseURL + "\(Username)/Followers/"
+        
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        storageRef.listAll { (result, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+                
+            }
+            
+            for item in result.items {
+                
+                let followers = [item.name]
+                
+                completed(followers, nil)
+                
+            }
+            
+        }
         
         
         
@@ -104,9 +124,40 @@ class NetworkManager {
         
     }
     
-    func getDMMessages(){
+    func getDMMessages(for Username: String, for User: String, completed: @escaping([Data?], String?) -> Void){
         
-        let endpoint = baseURL + ""
+        let folderURL = baseURL + "\(Username)/DM/RecievedMessage/\(User)/"
+        
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        storageRef.listAll { (result, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+                
+            }
+            
+            for item in result.items {
+                
+                item.getData(maxSize: (4*1024*1024)) { (data, error) in
+                    
+                    if let error = error {
+                        
+                        print(error.localizedDescription)
+                        
+                    }
+                    
+                    let DMMessages = [data]
+                    
+                    completed(DMMessages, nil)
+                    
+                }
+                
+            }
+            
+            
+        }
         
         
         
@@ -114,6 +165,8 @@ class NetworkManager {
     }
     
     func getUserSpecificClips(for Username: String, completed: @escaping([URL?], String?) -> Void){
+        
+        // FIX ME!!!
         
         let folderURL = baseURL + "\(Username)/Clips/"
         
@@ -187,6 +240,46 @@ class NetworkManager {
         
     }
     
+    func getUserSpecificMessages(for Username: String, completed: @escaping([Data?], String?) -> Void){
+        
+        let folderURL = baseURL + "\(Username)/Messages"
+        
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        storageRef.listAll { (result, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+                
+            }
+            
+            for items in result.items {
+                
+                items.getData(maxSize: (4*1024*1024)) { (data, error) in
+                    
+                    if let error = error {
+                    
+                        print(error.localizedDescription)
+                        
+                    }
+                    
+                    let messageData = [data]
+                    
+                    completed(messageData, nil)
+                    
+                    
+                }
+                
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
     func uploadMessage(for Username: String, Message: String){
         
         let randomID = UUID.init().uuidString
@@ -196,7 +289,7 @@ class NetworkManager {
         metadata.contentType = "text/plain"
         
         let storageRef = Storage.storage().reference().child(folderURL)
-        let messageData = Message.data(using: .ascii)
+        let messageData = Message.data(using: .utf16)
 
         storageRef.putData(messageData!, metadata: metadata)
         

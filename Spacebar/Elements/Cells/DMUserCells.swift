@@ -58,7 +58,7 @@ class DMUserCells: UITableViewCell {
         addSubview(userLogin)
         
         userLogin.translatesAutoresizingMaskIntoConstraints = false
-        userLogin.text = "@ShamikPatro"
+        userLogin.text = "Coming Soon!"
         userLogin.textColor = .darkText
         userLogin.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)
         
@@ -80,7 +80,7 @@ class DMUserCells: UITableViewCell {
         addSubview(messagePreview)
         
         messagePreview.translatesAutoresizingMaskIntoConstraints = false
-        messagePreview.text = "Sent you a message"
+        messagePreview.text = "Sent you a message • Not Available in Beta"
         messagePreview.textColor = .darkGray
         messagePreview.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)
         

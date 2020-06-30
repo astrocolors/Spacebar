@@ -20,7 +20,7 @@ class HomeVC: UIViewController {
     }
     
     var tableView = UITableView()
-    var messages: [Video] = []
+    var messages: [message] = []
     var delegate: ViewControllerDelegate?
     let loginButton = SBButtonV2(Text: "Login", Color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), CornerRadius: 0)
 

@@ -148,13 +148,13 @@ extension SearchUsersVC: UISearchBarDelegate, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchUsersCell.reuseID, for: indexPath) as! SearchUsersCell
-        
+
         cell.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
-        
+
         return cell
-        
+
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

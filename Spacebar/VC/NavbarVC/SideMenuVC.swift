@@ -8,6 +8,7 @@
 //  Purpose: This is the side menu that pops up every time the hamburger icon is pressed (3 horizonal lines)
 
 import UIKit
+import Firebase
 
 class SideMenuVC: UIViewController {
     
@@ -17,13 +18,18 @@ class SideMenuVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+
+        configureNavBar()
+        configureTableView()
         
+    }
+    
+    func configureNavBar(){
+        
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.topItem?.title = "Following"
         navigationController?.hidesBarsOnSwipe = true
-        
-        configureTableView()
         
     }
     

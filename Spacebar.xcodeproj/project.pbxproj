@@ -11,6 +11,7 @@
 		DD0A959424A9295A0088BF53 /* EverythingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A959324A9295A0088BF53 /* EverythingVC.swift */; };
 		DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD107E0524A3B54200A7E234 /* InitialScreen.swift */; };
 		DD2336AD24A9E187003B0960 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DD2336AC24A9E187003B0960 /* video.mp4 */; };
+		DD368E8924AB527500C7A3C0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD368E8824AB527500C7A3C0 /* Message.swift */; };
 		DD54B44B24AA74C500738C35 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54B44A24AA74C500738C35 /* Picture.swift */; };
 		DD662C5C24A9D71A00F95319 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD662C5B24A9D71A00F95319 /* SettingsCell.swift */; };
 		DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */; };
@@ -67,6 +68,7 @@
 		DD0A959324A9295A0088BF53 /* EverythingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingVC.swift; sourceTree = "<group>"; };
 		DD107E0524A3B54200A7E234 /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
 		DD2336AC24A9E187003B0960 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		DD368E8824AB527500C7A3C0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DD54B44A24AA74C500738C35 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		DD662C5B24A9D71A00F95319 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				DD7EDCC424AA5AE6001035E8 /* Clip.swift */,
 				DD7EDCC224AA5AC9001035E8 /* DMMessage.swift */,
 				DD54B44A24AA74C500738C35 /* Picture.swift */,
+				DD368E8824AB527500C7A3C0 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				DDCB6F8E24A510030080517E /* MessagesCell.swift in Sources */,
 				DDCB6F8624A45EAF0080517E /* DMVC.swift in Sources */,
 				DDCB6F8824A463EC0080517E /* SBButtonV2.swift in Sources */,
+				DD368E8924AB527500C7A3C0 /* Message.swift in Sources */,
 				DDCB6FA124A520830080517E /* SBAvatarImageView.swift in Sources */,
 				DDCFA7F224A44CDD007D85FE /* SearchUsersVC.swift in Sources */,
 			);

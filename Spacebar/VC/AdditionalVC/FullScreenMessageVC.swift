@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class FullScreenMessageVC: UIViewController {
     
     let userAvatar = UIImageView()
+    let userLogin = UILabel()
     let userMessage = UILabel()
+    var messages: [Data?] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,33 @@ class FullScreenMessageVC: UIViewController {
     func configureUserMessage(){
         
         view.addSubview(userMessage)
+        
+        let user = Auth.auth().currentUser?.email
+        
+        //let user = userLogin.text!
+        
+        NetworkManager.shared.getUserSpecificMessages(for: user!) { (data, error) in
+            
+            if let error = error {
+                
+                print(error)
+                
+                
+            }
+            
+            self.messages = data
+            
+            for item in self.messages {
+                
+                let data = item!
+                
+                let message = String(data: data, encoding: .utf16)
+                
+                print(message!)
+                
+            }
+            
+        }
         
         userMessage.translatesAutoresizingMaskIntoConstraints = false
         
