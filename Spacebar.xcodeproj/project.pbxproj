@@ -15,6 +15,8 @@
 		DD662C5C24A9D71A00F95319 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD662C5B24A9D71A00F95319 /* SettingsCell.swift */; };
 		DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */; };
 		DD6E849C24A8433200CD7D94 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E849B24A8433200CD7D94 /* Video.swift */; };
+		DD7DAF4024AAE85900D6F2BC /* UserPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7DAF3F24AAE85900D6F2BC /* UserPageVC.swift */; };
+		DD7DAF4224AAF2B500D6F2BC /* FullScreenMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7DAF4124AAF2B500D6F2BC /* FullScreenMessageVC.swift */; };
 		DD7EDCC324AA5AC9001035E8 /* DMMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7EDCC224AA5AC9001035E8 /* DMMessage.swift */; };
 		DD7EDCC524AA5AE6001035E8 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7EDCC424AA5AE6001035E8 /* Clip.swift */; };
 		DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BC24A3BAE300070888 /* SBButton.swift */; };
@@ -69,6 +71,8 @@
 		DD662C5B24A9D71A00F95319 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		DD6E849B24A8433200CD7D94 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		DD7DAF3F24AAE85900D6F2BC /* UserPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageVC.swift; sourceTree = "<group>"; };
+		DD7DAF4124AAF2B500D6F2BC /* FullScreenMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenMessageVC.swift; sourceTree = "<group>"; };
 		DD7EDCC224AA5AC9001035E8 /* DMMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMMessage.swift; sourceTree = "<group>"; };
 		DD7EDCC424AA5AE6001035E8 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		DD9DB9BC24A3BAE300070888 /* SBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBButton.swift; sourceTree = "<group>"; };
@@ -145,6 +149,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DD7DAF3E24AAE82500D6F2BC /* AdditionalVC */ = {
+			isa = PBXGroup;
+			children = (
+				DD7DAF3F24AAE85900D6F2BC /* UserPageVC.swift */,
+				DD7DAF4124AAF2B500D6F2BC /* FullScreenMessageVC.swift */,
+			);
+			path = AdditionalVC;
+			sourceTree = "<group>";
+		};
 		DD9DB9CB24A406C800070888 /* AccountVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +177,7 @@
 			children = (
 				DDCFA7EE24A44C73007D85FE /* NavbarVC */,
 				DD9DB9CD24A4077700070888 /* RegularVC */,
+				DD7DAF3E24AAE82500D6F2BC /* AdditionalVC */,
 				DD9DB9CB24A406C800070888 /* AccountVC */,
 			);
 			path = VC;
@@ -474,6 +488,7 @@
 				DDE5D98A24A7DDD90029E3FD /* Protocols.swift in Sources */,
 				DDCB6F9524A5106D0080517E /* DMUserCells.swift in Sources */,
 				DD0A959424A9295A0088BF53 /* EverythingVC.swift in Sources */,
+				DD7DAF4024AAE85900D6F2BC /* UserPageVC.swift in Sources */,
 				DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */,
 				DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */,
 				DD6E849C24A8433200CD7D94 /* Video.swift in Sources */,
@@ -492,6 +507,7 @@
 				DDCB6FBC24A5BE8F0080517E /* CreateTabBar.swift in Sources */,
 				DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */,
 				DDCFA7F624A44D1B007D85FE /* AddShortVC.swift in Sources */,
+				DD7DAF4224AAF2B500D6F2BC /* FullScreenMessageVC.swift in Sources */,
 				DDEBF6C724A3B377006D45A1 /* SceneDelegate.swift in Sources */,
 				DD7EDCC324AA5AC9001035E8 /* DMMessage.swift in Sources */,
 				DDAD9D9724A6B29F006DE756 /* SearchVideosVC.swift in Sources */,

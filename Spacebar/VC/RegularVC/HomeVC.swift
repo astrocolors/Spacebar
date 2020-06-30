@@ -143,5 +143,14 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let userPageVC = UserPageVC()
+        
+        navigationController?.pushViewController(userPageVC, animated: true)
+        
+        
+    }
+    
     
 }
