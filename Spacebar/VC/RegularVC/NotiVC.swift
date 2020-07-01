@@ -12,22 +12,30 @@ import UIKit
 class NotiVC: UIViewController {
     
     var notificationTable = UITableView()
+    var segmentedController = UISegmentedControl()
     
     var delegate: ViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.2784313725, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3921568627, alpha: 1)
         
-        configureNavBar()
+        configureSegmentedController()
         configureTableView()
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        configureNavBar()
+    }
+    
     func configureNavBar(){
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3529411765, alpha: 1)
         navigationController?.hidesBarsOnSwipe = true
         
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
@@ -49,10 +57,32 @@ class NotiVC: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            notificationTable.topAnchor.constraint(equalTo: view.topAnchor),
+            notificationTable.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 10),
             notificationTable.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             notificationTable.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             notificationTable.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
+        
+        
+        
+    }
+    
+    func configureSegmentedController(){
+        
+        let mediaType = ["Messages", "Clips", "Videos"]
+        segmentedController = UISegmentedControl(items: mediaType)
+        
+        segmentedController.selectedSegmentIndex = 0
+        segmentedController.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(segmentedController)
+        
+        NSLayoutConstraint.activate([
+            
+            segmentedController.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            segmentedController.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            segmentedController.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            segmentedController.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
             
         ])
         

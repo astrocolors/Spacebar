@@ -37,7 +37,8 @@ class HomeVC: UIViewController {
     
     func configureNavBar(){
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3529411765, alpha: 1)
         navigationController?.hidesBarsOnSwipe = true
         
         let messageItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushAddMessageVC))
@@ -77,6 +78,7 @@ class HomeVC: UIViewController {
         tableView.rowHeight = 80
         tableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         tableView.separatorInset = .zero
+        //tableView.contentInsetAdjustmentBehavior = .never
         tableView.register(MessagesCell.self, forCellReuseIdentifier: "MessagesCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         

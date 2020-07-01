@@ -16,10 +16,18 @@ class DMVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
+        configureNavBar()
         configureTableView()
+    }
+    
+    func configureNavBar(){
+        
+        let newConverstionItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushNewConvoSearchVC))
+        
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        
+        navigationItem.setRightBarButton(newConverstionItem, animated: true)
+        
     }
     
     func configureTableView(){
@@ -45,6 +53,14 @@ class DMVC: UIViewController {
             DMTableView.heightAnchor.constraint(equalTo: view.heightAnchor)
 
         ])
+        
+    }
+    
+    @objc func pushNewConvoSearchVC(){
+        
+        let newConvoSearchVC = NewConvoSearchVC()
+        
+        navigationController?.pushViewController(newConvoSearchVC, animated: true)
         
     }
     
