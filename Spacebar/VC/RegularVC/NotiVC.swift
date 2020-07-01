@@ -53,12 +53,15 @@ class NotiVC: UIViewController {
         
         notificationTable.translatesAutoresizingMaskIntoConstraints = false
         notificationTable.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        notificationTable.delegate = self
+        notificationTable.dataSource = self
         notificationTable.separatorInset = .zero
         notificationTable.rowHeight = 60
+        notificationTable.register(NotificationCell.self, forCellReuseIdentifier: NotificationCell.reuseID)
         
         NSLayoutConstraint.activate([
             
-            notificationTable.topAnchor.constraint(equalTo: segmentedController.bottomAnchor),
+            notificationTable.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 5),
             notificationTable.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             notificationTable.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             notificationTable.heightAnchor.constraint(equalTo: view.heightAnchor)
@@ -109,4 +112,22 @@ class NotiVC: UIViewController {
         
     }
 
+}
+
+extension NotiVC: UITableViewDelegate, UITableViewDataSource {
+   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 40
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: NotificationCell.reuseID, for: indexPath) as! NotificationCell
+        
+        return cell
+        
+    }
+    
 }

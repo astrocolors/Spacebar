@@ -60,6 +60,7 @@
 		DDCFA7FA24A45AF9007D85FE /* AccountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7F924A45AF9007D85FE /* AccountSettingsVC.swift */; };
 		DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */; };
 		DDD5186224A3B77200EADA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDD5186124A3B77200EADA93 /* GoogleService-Info.plist */; };
+		DDE0300024AD37890078FBBE /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE02FFF24AD37890078FBBE /* NotificationCell.swift */; };
 		DDE5D98A24A7DDD90029E3FD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5D98924A7DDD90029E3FD /* Protocols.swift */; };
 		DDEBF6C524A3B377006D45A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBF6C424A3B377006D45A1 /* AppDelegate.swift */; };
 		DDEBF6C724A3B377006D45A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBF6C624A3B377006D45A1 /* SceneDelegate.swift */; };
@@ -122,6 +123,7 @@
 		DDCFA7F924A45AF9007D85FE /* AccountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsVC.swift; sourceTree = "<group>"; };
 		DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageVC.swift; sourceTree = "<group>"; };
 		DDD5186124A3B77200EADA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DDE02FFF24AD37890078FBBE /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		DDE5D98924A7DDD90029E3FD /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DDEBF6C124A3B377006D45A1 /* Spacebar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacebar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEBF6C424A3B377006D45A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				DDCB6F9424A5106D0080517E /* DMUserCells.swift */,
 				DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */,
 				DD662C5B24A9D71A00F95319 /* SettingsCell.swift */,
+				DDE02FFF24AD37890078FBBE /* NotificationCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */,
 				DD9DB9D924A4083000070888 /* ProfileVC.swift in Sources */,
 				DDCB6F9924A510B90080517E /* VideosCell.swift in Sources */,
+				DDE0300024AD37890078FBBE /* NotificationCell.swift in Sources */,
 				DD9DB9CF24A407D700070888 /* HomeVC.swift in Sources */,
 				DD9DB9C524A4015A00070888 /* SignUpV1VC.swift in Sources */,
 				DD9DB9D724A4081D00070888 /* NotiVC.swift in Sources */,

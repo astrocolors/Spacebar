@@ -25,7 +25,7 @@ class ProfileVC: UIViewController {
         //configureUserAvatar()
         //configureUserLabel()
         configureSegmentedController()
-        configureTableView()
+        //configureTableView()
         
     }
     
