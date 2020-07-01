@@ -13,23 +13,32 @@ class ProfileVC: UIViewController {
     
     let userAvatar = UIImageView()
     let userLabel = UILabel()
+    let tableView = UITableView()
+    let segmentedController = UISegmentedControl()
     var delegate: ViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.2784313725, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        //configureUserAvatar()
+        //configureUserLabel()
+        configureSegmentedController()
+        configureTableView()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         configureNavBar()
-        configureUserAvatar()
-        configureUserLabel()
-        configureSegmentedController()
         
     }
     
     func configureNavBar(){
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3921568627, alpha: 1)
         
         let accountSettingsItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(pushAccountSettingsVC)) 
         
@@ -37,6 +46,7 @@ class ProfileVC: UIViewController {
         
         navigationItem.setRightBarButton(accountSettingsItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
+        navigationItem.title = "@Username"
 
     }
     
@@ -79,8 +89,14 @@ class ProfileVC: UIViewController {
     
     func configureSegmentedController(){
         
-        let mediaType = ["Photos", "Clips", "Videos", "Interactions"]
+        let mediaType = ["", "", "", ""]
         let segmentedController = UISegmentedControl(items: mediaType)
+        
+        segmentedController.setImage(UIImage(systemName: "text.bubble.fill"), forSegmentAt: 0)
+        segmentedController.setImage(UIImage(systemName: "film.fill"), forSegmentAt: 1)
+        segmentedController.setImage(UIImage(systemName: "play.rectangle.fill"), forSegmentAt: 2)
+        segmentedController.setImage(UIImage(systemName: "hand.draw.fill"), forSegmentAt: 3)
+        
         
         segmentedController.selectedSegmentIndex = 0
         segmentedController.translatesAutoresizingMaskIntoConstraints = false
@@ -92,7 +108,26 @@ class ProfileVC: UIViewController {
             segmentedController.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             segmentedController.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             segmentedController.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            segmentedController.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            segmentedController.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 250),
+        ])
+        
+    }
+    
+    func configureTableView(){
+        
+    
+        let tableView = UITableView()
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            
+            tableView.topAnchor.constraint(equalTo: segmentedController.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
             
         ])
         

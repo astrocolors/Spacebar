@@ -19,7 +19,7 @@ class NotiVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3921568627, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         configureSegmentedController()
         configureTableView()
@@ -52,27 +52,32 @@ class NotiVC: UIViewController {
         view.addSubview(notificationTable)
         
         notificationTable.translatesAutoresizingMaskIntoConstraints = false
-        
-        notificationTable.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        notificationTable.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        notificationTable.separatorInset = .zero
+        notificationTable.rowHeight = 60
         
         NSLayoutConstraint.activate([
             
-            notificationTable.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 10),
+            notificationTable.topAnchor.constraint(equalTo: segmentedController.bottomAnchor),
             notificationTable.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             notificationTable.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             notificationTable.heightAnchor.constraint(equalTo: view.heightAnchor)
             
         ])
         
-        
-        
     }
     
     func configureSegmentedController(){
+
         
-        let mediaType = ["Messages", "Clips", "Videos"]
+        let mediaType = ["", "", ""]
+        
         segmentedController = UISegmentedControl(items: mediaType)
         
+        segmentedController.setImage(UIImage(systemName: "text.bubble.fill"), forSegmentAt: 0)
+        segmentedController.setImage(UIImage(systemName: "film.fill"), forSegmentAt: 1)
+        segmentedController.setImage(UIImage(systemName: "play.rectangle.fill"), forSegmentAt: 2)
+ 
         segmentedController.selectedSegmentIndex = 0
         segmentedController.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedController)

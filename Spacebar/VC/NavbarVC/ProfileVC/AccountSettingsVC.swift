@@ -17,6 +17,8 @@ class AccountSettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         configureTableView()
@@ -27,7 +29,7 @@ class AccountSettingsVC: UIViewController {
         view.addSubview(settingsTableView)
         
         settingsTableView.rowHeight = 50
-        settingsTableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        //settingsTableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         settingsTableView.delegate = self
         settingsTableView.dataSource = self
         settingsTableView.separatorStyle = .singleLine
@@ -69,7 +71,8 @@ extension AccountSettingsVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        
+        print("You tapped cell number \(indexPath.row).") // Remove at some point
         
         if (indexPath.row == 3) {
             

@@ -22,10 +22,11 @@ class DMVC: UIViewController {
     
     func configureNavBar(){
         
+        let searchBar = UISearchBar()
         let newConverstionItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushNewConvoSearchVC))
         
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
-        
+        navigationItem.titleView = searchBar
         navigationItem.setRightBarButton(newConverstionItem, animated: true)
         
     }

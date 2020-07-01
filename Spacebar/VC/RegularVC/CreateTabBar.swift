@@ -27,7 +27,7 @@ class CreateTabBar: UITabBarController {
         
         homeVC.delegate = self
         
-        homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 4)
+        homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "text.bubble.fill"), tag: 4)
     
         return UINavigationController(rootViewController: homeVC)
         
@@ -39,7 +39,7 @@ class CreateTabBar: UITabBarController {
         
         shortVC.delegate = self
         
-        shortVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 1)
+        shortVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "film.fill"), tag: 1)
         
         return UINavigationController(rootViewController: shortVC)
         
@@ -51,7 +51,9 @@ class CreateTabBar: UITabBarController {
         
         videosVC.delegate = self
         
-        videosVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 2)
+        videosVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "play.rectangle.fill"), tag: 2)
+        
+        videosVC.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: 0, right: 0)
         
         return UINavigationController(rootViewController: videosVC)
         
@@ -63,7 +65,7 @@ class CreateTabBar: UITabBarController {
         
         notiVC.delegate = self
         
-        notiVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 3)
+        notiVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "bell.fill"), tag: 3)
         
         return UINavigationController(rootViewController: notiVC)
     }
