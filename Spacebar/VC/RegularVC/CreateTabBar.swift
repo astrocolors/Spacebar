@@ -10,7 +10,7 @@
 import UIKit
 
 class CreateTabBar: UITabBarController {
-    
+
     var sideMenuVC: UIViewController!
     var isExpanded = false
 
@@ -28,6 +28,8 @@ class CreateTabBar: UITabBarController {
         homeVC.delegate = self
         
         homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "text.bubble.fill"), tag: 4)
+        
+        homeVC.extendedLayoutIncludesOpaqueBars = true
     
         return UINavigationController(rootViewController: homeVC)
         
@@ -40,6 +42,8 @@ class CreateTabBar: UITabBarController {
         shortVC.delegate = self
         
         shortVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "film.fill"), tag: 1)
+        
+        shortVC.extendedLayoutIncludesOpaqueBars = true
         
         return UINavigationController(rootViewController: shortVC)
         
@@ -55,6 +59,8 @@ class CreateTabBar: UITabBarController {
         
         videosVC.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: 0, right: 0)
         
+        videosVC.extendedLayoutIncludesOpaqueBars = true
+        
         return UINavigationController(rootViewController: videosVC)
         
     }
@@ -67,6 +73,8 @@ class CreateTabBar: UITabBarController {
         
         notiVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "bell.fill"), tag: 3)
         
+        notiVC.extendedLayoutIncludesOpaqueBars = true
+        
         return UINavigationController(rootViewController: notiVC)
     }
     
@@ -78,18 +86,20 @@ class CreateTabBar: UITabBarController {
         
         profileVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 4)
         
+        profileVC.extendedLayoutIncludesOpaqueBars = true
+        
         return UINavigationController(rootViewController: profileVC)
         
     }
     
     func configure() {
         
-        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.2784313725, alpha: 1)
+        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3529411765, alpha: 1)
+        //UITabBar.appearance().barTintColor = .clear
+        UITabBar.appearance().clipsToBounds = true
         UITabBar.appearance().tintColor = .yellow
         
         setViewControllers([createHomeNC(), createShortNC(), createVideosNC(), createNotiNC(), createProfileNC()], animated: true)
-        
-        selectedIndex = 2
 
         //configureSideMenu()
         

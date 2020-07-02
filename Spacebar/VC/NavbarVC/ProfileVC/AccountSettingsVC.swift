@@ -56,7 +56,7 @@ extension AccountSettingsVC: UITableViewDelegate, UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return SettingsCell.settingsChoices.count
         
     }
     
@@ -64,7 +64,7 @@ extension AccountSettingsVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.reuseID, for: indexPath) as! SettingsCell
         
-        cell.settingsLabel.text = cell.settingsChoices[indexPath.row]
+        cell.settingsLabel.text = SettingsCell.settingsChoices[indexPath.row]
         
         return cell
         

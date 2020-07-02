@@ -43,7 +43,7 @@ class SearchUsersVC: UIViewController {
     func configureNavigationBar(){
         
         searchTextField.sizeToFit()
-        searchTextField.placeholder = "@Username"
+        searchTextField.placeholder = "Search Users"
         searchTextField.delegate = self
         navigationItem.hidesBackButton = true
         navigationItem.titleView = searchTextField

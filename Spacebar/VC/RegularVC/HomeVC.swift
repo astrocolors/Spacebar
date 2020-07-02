@@ -31,6 +31,8 @@ class HomeVC: UIViewController {
         configureLoginButton() // temporary
         configureTableView()
         
+        view.backgroundColor = .white
+        
     }
     
     func configureNavBar(){
