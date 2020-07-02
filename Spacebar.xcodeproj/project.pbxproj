@@ -10,6 +10,8 @@
 		786DC1DC42D444D56EA5B147 /* Pods_Spacebar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CC562C1B6CCF938E822F32 /* Pods_Spacebar.framework */; };
 		DD0A959424A9295A0088BF53 /* EverythingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A959324A9295A0088BF53 /* EverythingVC.swift */; };
 		DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD107E0524A3B54200A7E234 /* InitialScreen.swift */; };
+		DD17E7AF24AE7C09002CDC9D /* AdditionalNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17E7AE24AE7C09002CDC9D /* AdditionalNM.swift */; };
+		DD17E7B124AE8464002CDC9D /* AddPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17E7B024AE8464002CDC9D /* AddPhotoVC.swift */; };
 		DD2336AD24A9E187003B0960 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DD2336AC24A9E187003B0960 /* video.mp4 */; };
 		DD368E8924AB527500C7A3C0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD368E8824AB527500C7A3C0 /* Message.swift */; };
 		DD48823124AD096D00EC4BDE /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48823024AD096D00EC4BDE /* HelpVC.swift */; };
@@ -77,6 +79,8 @@
 		728D3490101F6EBBC4264F60 /* Pods-Spacebar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacebar.debug.xcconfig"; path = "Target Support Files/Pods-Spacebar/Pods-Spacebar.debug.xcconfig"; sourceTree = "<group>"; };
 		DD0A959324A9295A0088BF53 /* EverythingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingVC.swift; sourceTree = "<group>"; };
 		DD107E0524A3B54200A7E234 /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
+		DD17E7AE24AE7C09002CDC9D /* AdditionalNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalNM.swift; sourceTree = "<group>"; };
+		DD17E7B024AE8464002CDC9D /* AddPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoVC.swift; sourceTree = "<group>"; };
 		DD2336AC24A9E187003B0960 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		DD368E8824AB527500C7A3C0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DD48823024AD096D00EC4BDE /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
@@ -288,6 +292,7 @@
 				DDCF6B9E24ADB22C000B6806 /* LiveVideosNM.swift */,
 				DDCF6BA024ADB236000B6806 /* NotificationsNM.swift */,
 				DDCF6BA224ADB248000B6806 /* UserProfileNM.swift */,
+				DD17E7AE24AE7C09002CDC9D /* AdditionalNM.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -320,6 +325,7 @@
 			children = (
 				DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */,
 				DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */,
+				DD17E7B024AE8464002CDC9D /* AddPhotoVC.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 				DD9DB9D924A4083000070888 /* ProfileVC.swift in Sources */,
 				DDCB6F9924A510B90080517E /* VideosCell.swift in Sources */,
 				DDCF6B9F24ADB22C000B6806 /* LiveVideosNM.swift in Sources */,
+				DD17E7AF24AE7C09002CDC9D /* AdditionalNM.swift in Sources */,
 				DDE0300024AD37890078FBBE /* NotificationCell.swift in Sources */,
 				DD9DB9CF24A407D700070888 /* HomeVC.swift in Sources */,
 				DD9DB9C524A4015A00070888 /* SignUpV1VC.swift in Sources */,
@@ -521,6 +528,7 @@
 				DDAD9D9124A69A21006DE756 /* SearchUser.swift in Sources */,
 				DD662C5C24A9D71A00F95319 /* SettingsCell.swift in Sources */,
 				DDCF6BA324ADB248000B6806 /* UserProfileNM.swift in Sources */,
+				DD17E7B124AE8464002CDC9D /* AddPhotoVC.swift in Sources */,
 				DD48823324AD097800EC4BDE /* UserPermissionsVC.swift in Sources */,
 				DDE5D98A24A7DDD90029E3FD /* Protocols.swift in Sources */,
 				DDCB6F9524A5106D0080517E /* DMUserCells.swift in Sources */,

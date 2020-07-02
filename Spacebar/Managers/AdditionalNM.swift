@@ -1,45 +1,26 @@
 //
-//  LiveVideosNM.swift
+//  AdditionalNM.swift
 //  Spacebar
 //
 //  Created by Shamik Patro on 7/2/20.
 //  Copyright © 2020 Astronomical. All rights reserved.
 //
-//  Purpose: Network manager for videos and livestreams
+//  Purpose: Additional network managers that aren't directly related to the home screens. 
 
 import UIKit
 import Firebase
 import FirebaseStorage
 
-class LiveVideosNM {
+class AddNM{
     
-    func isSignedIn(){
+    func getMenuFollowers(){
         
         
         
         
     }
     
-    func getVideos(){
-        
-        
-        
-        
-        
-        
-    }
-    
-    func livestream(){
-        
-        // ???
-        
-        
-        
-        
-    }
-    
-    func getLikes(){
-        
+    func getSearchUsers(){
         
         
         
@@ -47,8 +28,14 @@ class LiveVideosNM {
         
     }
     
-    func getComments(){
+    func getSearchVideos(){
         
+        
+        
+        
+    }
+    
+    func getDM(){
         
         
         
@@ -56,15 +43,15 @@ class LiveVideosNM {
         
     }
     
-    func getReposts(){
+    func sendDM(){
         
         
-        
+     
         
         
     }
     
-    func reportPost(){
+    func updateProfile(){
         
         
         

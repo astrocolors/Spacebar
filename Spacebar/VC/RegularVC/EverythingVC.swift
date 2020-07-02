@@ -46,7 +46,5 @@ class EverythingVC: UIViewController {
         }
 
     }
-    
-    
-    
+       
 }

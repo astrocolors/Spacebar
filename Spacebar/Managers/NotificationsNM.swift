@@ -8,6 +8,8 @@
 //  Purpose: Network manager for local/background notifications
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class NotiNM{
     
@@ -47,6 +49,7 @@ class NotiNM{
     }
     
     func getPhotoComments(){
+        
         
         
         

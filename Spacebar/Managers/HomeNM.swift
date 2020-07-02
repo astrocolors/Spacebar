@@ -8,6 +8,8 @@
 //  Purpose: Network manager for Messages & Photos
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class HomeNM {
     
@@ -74,7 +76,7 @@ class HomeNM {
         
     }
     
-    func reportPosts(){
+    func reportPost(){
         
         
         

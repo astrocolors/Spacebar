@@ -8,6 +8,8 @@
 //  Purpose: Network manager for short clips
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class ClipsNM {
     
