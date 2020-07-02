@@ -15,7 +15,6 @@
 		DD48823124AD096D00EC4BDE /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48823024AD096D00EC4BDE /* HelpVC.swift */; };
 		DD48823324AD097800EC4BDE /* UserPermissionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48823224AD097800EC4BDE /* UserPermissionsVC.swift */; };
 		DD48823524AD098600EC4BDE /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48823424AD098600EC4BDE /* PrivacyPolicyVC.swift */; };
-		DD48823724AD1A1E00EC4BDE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48823624AD1A1E00EC4BDE /* Extensions.swift */; };
 		DD54B44B24AA74C500738C35 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54B44A24AA74C500738C35 /* Picture.swift */; };
 		DD662C5C24A9D71A00F95319 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD662C5B24A9D71A00F95319 /* SettingsCell.swift */; };
 		DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */; };
@@ -54,6 +53,11 @@
 		DDCB6FB324A5625B0080517E /* SignUpLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6FB224A5625B0080517E /* SignUpLoadingVC.swift */; };
 		DDCB6FB824A5ABD00080517E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6FB724A5ABD00080517E /* Utilities.swift */; };
 		DDCB6FBC24A5BE8F0080517E /* CreateTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB6FBB24A5BE8F0080517E /* CreateTabBar.swift */; };
+		DDCF6B9B24ADB20A000B6806 /* HomeNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF6B9A24ADB20A000B6806 /* HomeNM.swift */; };
+		DDCF6B9D24ADB216000B6806 /* ClipsNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF6B9C24ADB216000B6806 /* ClipsNM.swift */; };
+		DDCF6B9F24ADB22C000B6806 /* LiveVideosNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF6B9E24ADB22C000B6806 /* LiveVideosNM.swift */; };
+		DDCF6BA124ADB236000B6806 /* NotificationsNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF6BA024ADB236000B6806 /* NotificationsNM.swift */; };
+		DDCF6BA324ADB248000B6806 /* UserProfileNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCF6BA224ADB248000B6806 /* UserProfileNM.swift */; };
 		DDCFA7F224A44CDD007D85FE /* SearchUsersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */; };
 		DDCFA7F424A44CF6007D85FE /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7F324A44CF6007D85FE /* SideMenuVC.swift */; };
 		DDCFA7F624A44D1B007D85FE /* AddShortVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7F524A44D1B007D85FE /* AddShortVC.swift */; };
@@ -78,7 +82,6 @@
 		DD48823024AD096D00EC4BDE /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		DD48823224AD097800EC4BDE /* UserPermissionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPermissionsVC.swift; sourceTree = "<group>"; };
 		DD48823424AD098600EC4BDE /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
-		DD48823624AD1A1E00EC4BDE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DD54B44A24AA74C500738C35 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		DD662C5B24A9D71A00F95319 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
@@ -117,6 +120,11 @@
 		DDCB6FB224A5625B0080517E /* SignUpLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLoadingVC.swift; sourceTree = "<group>"; };
 		DDCB6FB724A5ABD00080517E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		DDCB6FBB24A5BE8F0080517E /* CreateTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTabBar.swift; sourceTree = "<group>"; };
+		DDCF6B9A24ADB20A000B6806 /* HomeNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNM.swift; sourceTree = "<group>"; };
+		DDCF6B9C24ADB216000B6806 /* ClipsNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipsNM.swift; sourceTree = "<group>"; };
+		DDCF6B9E24ADB22C000B6806 /* LiveVideosNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideosNM.swift; sourceTree = "<group>"; };
+		DDCF6BA024ADB236000B6806 /* NotificationsNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsNM.swift; sourceTree = "<group>"; };
+		DDCF6BA224ADB248000B6806 /* UserProfileNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileNM.swift; sourceTree = "<group>"; };
 		DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersVC.swift; sourceTree = "<group>"; };
 		DDCFA7F324A44CF6007D85FE /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		DDCFA7F524A44D1B007D85FE /* AddShortVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShortVC.swift; sourceTree = "<group>"; };
@@ -275,6 +283,11 @@
 			isa = PBXGroup;
 			children = (
 				DDCB6FAB24A5568C0080517E /* NetworkManager.swift */,
+				DDCF6B9A24ADB20A000B6806 /* HomeNM.swift */,
+				DDCF6B9C24ADB216000B6806 /* ClipsNM.swift */,
+				DDCF6B9E24ADB22C000B6806 /* LiveVideosNM.swift */,
+				DDCF6BA024ADB236000B6806 /* NotificationsNM.swift */,
+				DDCF6BA224ADB248000B6806 /* UserProfileNM.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -285,7 +298,6 @@
 				DDCB6FB724A5ABD00080517E /* Utilities.swift */,
 				DDE5D98924A7DDD90029E3FD /* Protocols.swift */,
 				DD2336AC24A9E187003B0960 /* video.mp4 */,
-				DD48823624AD1A1E00EC4BDE /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -501,16 +513,19 @@
 				DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */,
 				DD9DB9D924A4083000070888 /* ProfileVC.swift in Sources */,
 				DDCB6F9924A510B90080517E /* VideosCell.swift in Sources */,
+				DDCF6B9F24ADB22C000B6806 /* LiveVideosNM.swift in Sources */,
 				DDE0300024AD37890078FBBE /* NotificationCell.swift in Sources */,
 				DD9DB9CF24A407D700070888 /* HomeVC.swift in Sources */,
 				DD9DB9C524A4015A00070888 /* SignUpV1VC.swift in Sources */,
 				DD9DB9D724A4081D00070888 /* NotiVC.swift in Sources */,
 				DDAD9D9124A69A21006DE756 /* SearchUser.swift in Sources */,
 				DD662C5C24A9D71A00F95319 /* SettingsCell.swift in Sources */,
+				DDCF6BA324ADB248000B6806 /* UserProfileNM.swift in Sources */,
 				DD48823324AD097800EC4BDE /* UserPermissionsVC.swift in Sources */,
 				DDE5D98A24A7DDD90029E3FD /* Protocols.swift in Sources */,
 				DDCB6F9524A5106D0080517E /* DMUserCells.swift in Sources */,
 				DD0A959424A9295A0088BF53 /* EverythingVC.swift in Sources */,
+				DDCF6BA124ADB236000B6806 /* NotificationsNM.swift in Sources */,
 				DD7DAF4024AAE85900D6F2BC /* UserPageVC.swift in Sources */,
 				DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */,
 				DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */,
@@ -524,6 +539,7 @@
 				DD9DB9D524A407FF00070888 /* ShortVC.swift in Sources */,
 				DDCB6FAC24A5568C0080517E /* NetworkManager.swift in Sources */,
 				DDCB6FB124A561FA0080517E /* LoginLoadingVC.swift in Sources */,
+				DDCF6B9D24ADB216000B6806 /* ClipsNM.swift in Sources */,
 				DD48823124AD096D00EC4BDE /* HelpVC.swift in Sources */,
 				DDCB6F9B24A510EF0080517E /* VideosVC.swift in Sources */,
 				DDCB6FB824A5ABD00080517E /* Utilities.swift in Sources */,
@@ -543,8 +559,8 @@
 				DDCB6F8824A463EC0080517E /* SBButtonV2.swift in Sources */,
 				DD368E8924AB527500C7A3C0 /* Message.swift in Sources */,
 				DDCB6FA124A520830080517E /* SBAvatarImageView.swift in Sources */,
-				DD48823724AD1A1E00EC4BDE /* Extensions.swift in Sources */,
 				DDCFA7F224A44CDD007D85FE /* SearchUsersVC.swift in Sources */,
+				DDCF6B9B24ADB20A000B6806 /* HomeNM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

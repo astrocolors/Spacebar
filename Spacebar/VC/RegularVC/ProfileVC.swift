@@ -11,10 +11,11 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
-    let userAvatar = UIImageView()
-    let userLabel = UILabel()
-    let tableView = UITableView()
-    let segmentedController = UISegmentedControl()
+    let userAvatar                      = UIImageView()
+    let userLabel                       = UILabel()
+    let editProfileButton               = UIButton()
+    let tableView                       = UITableView()
+    let segmentedController             = UISegmentedControl()
     var delegate: ViewControllerDelegate?
 
     override func viewDidLoad() {
@@ -22,8 +23,9 @@ class ProfileVC: UIViewController {
 
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        //configureUserAvatar()
-        //configureUserLabel()
+        configureUserAvatar()
+        configureUserLabel()
+        configureEditProfileButton()
         configureSegmentedController()
         //configureTableView()
         
@@ -84,6 +86,23 @@ class ProfileVC: UIViewController {
             
         ])
         
+        
+    }
+    
+    func configureEditProfileButton(){
+        
+        view.addSubview(editProfileButton)
+        
+        editProfileButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            editProfileButton.topAnchor.constraint(equalTo: view.topAnchor),
+            editProfileButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            editProfileButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            editProfileButton.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
         
     }
     

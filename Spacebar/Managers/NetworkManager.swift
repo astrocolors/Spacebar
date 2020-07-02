@@ -7,6 +7,8 @@
 //
 //  Purpose: This manages the overall network calls in the application
 //
+//  Organization: 'get', 'send', or 'post' function - (e.g. getLikes, sendDM, postMessage)
+//
 //  TODO: Change the base URL to your database!
 
 import UIKit
@@ -20,7 +22,90 @@ class NetworkManager {
     let cache               = NSCache<NSString, UIImage>()
     
     private init(){}
+    
+    func getVideos(){
         
+        // Gets the videos from the server
+        
+        
+        
+        
+        
+    }
+
+    func getLivestream(){
+        
+        // Gets livestreams... from the server?
+        
+        
+        
+        
+        
+    }
+    
+    
+    func getNotifications(){
+        
+        // Gets recent notifications from the server
+        
+        
+        
+        
+    }
+    
+    
+    func getLikes(){
+        
+        // Gets the likes on any post (Message, Photo, Clip, or Video)
+        
+        
+    }
+    
+    func getComments(){
+        
+        // Gets the comments on any post (Message, Photo, Clip, or Video)
+        
+        
+        
+    }
+    
+    func getReposts(){
+        
+        // Gets the reposts on any post (Message, Photo, or Clip)
+        
+        
+        
+    }
+    
+    func getFollowing(){
+        
+        // Gets the 'following' list for the popout side menu - empty if user isn't signed in
+        
+        
+        
+        
+    }
+    
+    func getFollowers(){
+        
+        // Gets the follower list for profiles
+        
+        
+        
+    }
+    
+    func postClip(){
+        
+        // Uploads clip to server
+        
+        
+        
+        
+    }
+    
+    
+        
+    
     func getSearchUsers(for username: String, page: Int, completed: @escaping ([SearchUser]?, String?) -> Void){
             
         let endpoint = baseURLV2 + "/users/\(username)/followers?per_page=100&page=\(page)"
@@ -308,11 +393,23 @@ class NetworkManager {
     
     func sendDM(){
         
+        // Sends Direct Message to specific individual (encrypted)
+        
         let endpoint = baseURLV2 + ""
         
         
         
     }
+    
+    func reportPosts(){
+        
+        // Sends a report on any post (Message, Photo, Clip, or Video)
+        
+        
+        
+        
+    }
+    
     
     
 }
