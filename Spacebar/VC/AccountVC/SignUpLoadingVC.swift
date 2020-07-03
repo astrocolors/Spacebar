@@ -13,18 +13,20 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseFirestore
 
-class SignUpLoadingVC: UIViewController {
+class SignUpLoadingVC: UIViewController { // will change
     
     var username: String?
     var password: String?
     var firstname: String?
     var lastname: String?
+    var email: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
         addNewUserToDatabase()
+        configureNewUser()
         
         // Add custom animation here
         
@@ -51,8 +53,34 @@ class SignUpLoadingVC: UIViewController {
             }
             
         }
+        
+        configureNewUser()
                 
-         transitionHomeVC()
+        transitionHomeVC()
+        
+    }
+    
+    func configureNewUser(){
+        
+        let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+        
+        changeRequest?.displayName = username
+        
+        changeRequest?.commitChanges(completion: { (error) in
+            
+            print(error?.localizedDescription)
+            
+            
+        })
+        
+        Auth.auth().currentUser?.reload(completion: { (error) in
+            if let error = error {
+                
+                print(error.localizedDescription)
+                
+                
+            }
+        })
         
     }
     

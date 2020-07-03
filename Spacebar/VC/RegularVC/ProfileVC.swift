@@ -11,6 +11,8 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
+    var user: String?
+    
     let userAvatar                      = UIImageView()
     let userLabel                       = UILabel()
     let userBio                         = UILabel()
@@ -25,21 +27,39 @@ class ProfileVC: UIViewController {
 
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        configureSegmentedController()
-        configureUserAvatar()
-        configureUserLabel()
-        configureUserBio()
-        //configureEditProfileButton() --> Make this look good
-        configureTableView()
-        
+        user = ProfileNM.shared.getLogin()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        configureNavBar()
+        user = ProfileNM.shared.getLogin()
+        
+        if user != nil {
+            
+            configureSegmentedController()
+            configureUserAvatar()
+            configureUserLabel()
+            configureUserBio()
+            //configureEditProfileButton() --> Make this look good
+            configureTableView()
+            configureNavBar()
+            
+        }
+        
+        else {
+            
+            print("No User")
+            
+            userAvatar.backgroundColor = .green
+            
+            
+        }
+        
         
     }
+
     
     func configureNavBar(){
         
@@ -51,9 +71,10 @@ class ProfileVC: UIViewController {
         
         navigationItem.setRightBarButton(accountSettingsItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
-        navigationItem.title = "Username"
+        navigationItem.title = "@\(user!)"
 
     }
+    
     
     func configureUserAvatar(){
         

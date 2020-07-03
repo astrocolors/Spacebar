@@ -13,17 +13,43 @@ import FirebaseStorage
 
 class ProfileNM{
     
-    func isSignedIn(){
+    static let shared = ProfileNM()
+    let baseURL = "gs://spacebar-21236.appspot.com/Users/"
+    let user = Auth.auth().currentUser
+    let userName = Auth.auth().currentUser?.displayName
+    
+    func isSignedIn() -> String?{
         
+        if user == nil {
+            
+            return nil
+            
+        }
         
+        else {
+            
+            return user?.email
+            
+        }
         
         
     }
     
-    func getLogin(){
+    func getLogin() -> String?{
         
         // Includes profile picture, name, background picture, followers, following, bio, location, birthday, gender, & sex.
         
+        if user != nil {
+            
+            return user?.displayName
+            
+        }
+        
+        else {
+            
+            return nil
+            
+        }
         
     }
     
@@ -34,9 +60,28 @@ class ProfileNM{
         
     }
     
-    func getPhotos(){
+    func getPhotos(completed: @escaping([Data?], String?) -> Void){
         
+        let folderURL = baseURL + "\(userName)/Pictures"
         
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        storageRef.listAll { (result, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+                
+            }
+            
+            for item in result.items {
+                
+                let photos = [item.fullPath]
+                
+            }
+            
+            
+        }
         
         
         

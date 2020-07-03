@@ -20,6 +20,7 @@ class SignUpV3VC: UIViewController {
     var firstname: String?
     var lastname: String?
     var username: String?
+    var email: String?
     
     let passwordTextField = SBTextField(Text: "Password", ReturnType: .continue, KeyboardType: .default)
     let passwordRepeatTextField = SBTextField(Text: "Repeat Password", ReturnType: .go, KeyboardType: .default)
@@ -130,7 +131,7 @@ class SignUpV3VC: UIViewController {
                 
                 if passwordTextField.text! == passwordRepeatTextField.text! {
                     
-                    Auth.auth().createUser(withEmail: username!, password: passwordTextField.text!) { (result, error) in
+                    Auth.auth().createUser(withEmail: email!, password: passwordTextField.text!) { (result, error) in
                         
                         if (error != nil) {
                             
@@ -143,6 +144,7 @@ class SignUpV3VC: UIViewController {
                             
                             signUpLoadingVC.firstname   = self.firstname
                             signUpLoadingVC.lastname    = self.lastname
+                            signUpLoadingVC.email       = self.email
                             signUpLoadingVC.username    = self.username
                             signUpLoadingVC.password    = self.passwordTextField.text!
                              

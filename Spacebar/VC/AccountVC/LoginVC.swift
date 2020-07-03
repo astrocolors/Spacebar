@@ -32,6 +32,7 @@ class LoginVC: UIViewController {
         configurePasswordTextField()
         configureLoginButton()
         configureErrorLabel()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

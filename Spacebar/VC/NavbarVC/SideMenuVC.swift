@@ -9,6 +9,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class SideMenuVC: UIViewController {
     

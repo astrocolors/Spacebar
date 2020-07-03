@@ -29,7 +29,7 @@ class HomeVC: UIViewController {
         
         configureNavBar()
         configureLoginButton() // temporary
-        configureTableView()
+        //configureTableView()
         
         view.backgroundColor = .white
         
@@ -151,7 +151,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(fullScreenMessageVC, animated: true)
         
         
-    }
+    } 
     
     
 }
+

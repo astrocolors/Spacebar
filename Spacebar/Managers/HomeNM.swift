@@ -13,17 +13,39 @@ import FirebaseStorage
 
 class HomeNM {
     
-    func isSignedIn(){
+    static let shared = HomeNM()
+    
+    let user = Firebase.Auth.auth().currentUser
+    
+    private init() {}
+    
+    func isSignedIn() -> String?{
+    
+        if user == nil {
+            
+            return nil
+            
+        }
         
-        
-        
+        else {
+            
+            return user?.email
+            
+        }
         
     }
     
     func getMessages(){
         
-        
-        
+        //Finish
+    
+        if isSignedIn() != nil {
+            
+            let messageRef = Storage.storage().reference().child("gs://spacebar-21236.appspot.com/Users/\(user)/following")
+            
+            
+            
+        }
         
     }
     

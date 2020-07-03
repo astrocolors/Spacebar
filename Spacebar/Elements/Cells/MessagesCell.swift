@@ -39,8 +39,8 @@ class MessagesCell: UITableViewCell {
             
             avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 60),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 60)
+            avatarImageView.heightAnchor.constraint(equalToConstant: 50),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 50)
             
         ])
 
