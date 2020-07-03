@@ -15,20 +15,20 @@ class VideosVC: UIViewController {
     
     var delegate: ViewControllerDelegate?
     var segmentedController = UISegmentedControl()
+    var tableView = UITableView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        configureSegmentedController()
         configureNavBar()
+        configureSegmentedController()
+        configureTableView()
         
     }
     
     func configureNavBar(){
-        
-        //navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3529411765, alpha: 1)
         
@@ -60,6 +60,27 @@ class VideosVC: UIViewController {
             
         ])
 
+    }
+    
+    func configureTableView(){
+        
+        let tableView = UITableView()
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorInset                            = .zero
+        tableView.rowHeight                                 = 120
+        
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            
+            tableView.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 5),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
+        
     }
     
     @objc func pushSideMenuVC(){

@@ -13,21 +13,24 @@ class ProfileVC: UIViewController {
     
     let userAvatar                      = UIImageView()
     let userLabel                       = UILabel()
+    let userBio                         = UILabel()
     let editProfileButton               = UIButton()
     let tableView                       = UITableView()
-    let segmentedController             = UISegmentedControl()
-    var delegate: ViewControllerDelegate?
+    
+    var segmentedController             = UISegmentedControl()
+    var delegate: ViewControllerDelegate? // Is this necessary?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
+        configureSegmentedController()
         configureUserAvatar()
         configureUserLabel()
-        configureEditProfileButton()
-        configureSegmentedController()
-        //configureTableView()
+        configureUserBio()
+        //configureEditProfileButton() --> Make this look good
+        configureTableView()
         
     }
     
@@ -57,13 +60,15 @@ class ProfileVC: UIViewController {
         view.addSubview(userAvatar)
         
         userAvatar.translatesAutoresizingMaskIntoConstraints = false
+        userAvatar.layer.cornerRadius = 20
+        userAvatar.backgroundColor = .blue
         
         NSLayoutConstraint.activate([
             
-            userAvatar.topAnchor.constraint(equalTo: view.topAnchor),
-            userAvatar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            userAvatar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            userAvatar.heightAnchor.constraint(equalTo: view.heightAnchor)
+            userAvatar.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+            userAvatar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            userAvatar.heightAnchor.constraint(equalToConstant: 40),
+            userAvatar.widthAnchor.constraint(equalToConstant: 40)
             
         ])
         
@@ -76,16 +81,35 @@ class ProfileVC: UIViewController {
         view.addSubview(userLabel)
         
         userLabel.translatesAutoresizingMaskIntoConstraints = false
+        userLabel.text = "Astronaut"
         
         NSLayoutConstraint.activate([
             
-            userLabel.topAnchor.constraint(equalTo: view.topAnchor),
-            userLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            userLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            userLabel.heightAnchor.constraint(equalTo: view.heightAnchor)
+            userLabel.leadingAnchor.constraint(equalTo: userAvatar.trailingAnchor, constant: 10),
+            userLabel.topAnchor.constraint(equalTo: userAvatar.topAnchor, constant: 10),
             
         ])
         
+        
+    }
+    
+    func configureUserBio(){
+        
+        view.addSubview(userBio)
+        
+        userBio.translatesAutoresizingMaskIntoConstraints = false
+        userBio.numberOfLines = 0
+        userBio.lineBreakMode = .byWordWrapping
+        
+        userBio.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco"
+        
+        NSLayoutConstraint.activate([
+            
+            userBio.topAnchor.constraint(equalTo: userAvatar.bottomAnchor, constant: 10),
+            userBio.leadingAnchor.constraint(equalTo: userAvatar.trailingAnchor, constant: 10),
+            userBio.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+        ])
         
     }
     
@@ -109,7 +133,8 @@ class ProfileVC: UIViewController {
     func configureSegmentedController(){
         
         let mediaType = ["", "", "", ""]
-        let segmentedController = UISegmentedControl(items: mediaType)
+        
+        segmentedController = UISegmentedControl(items: mediaType)
         
         segmentedController.setImage(UIImage(systemName: "text.bubble.fill"), forSegmentAt: 0)
         segmentedController.setImage(UIImage(systemName: "film.fill"), forSegmentAt: 1)
@@ -119,6 +144,7 @@ class ProfileVC: UIViewController {
         
         segmentedController.selectedSegmentIndex = 0
         segmentedController.translatesAutoresizingMaskIntoConstraints = false
+        
         view.addSubview(segmentedController)
         
         
@@ -127,23 +153,26 @@ class ProfileVC: UIViewController {
             segmentedController.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             segmentedController.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             segmentedController.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            segmentedController.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 250),
+            segmentedController.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
         ])
         
     }
     
     func configureTableView(){
         
-    
         let tableView = UITableView()
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(tableView)
         
+        tableView.rowHeight = 60
+        tableView.separatorInset = .zero
+
+        
         NSLayoutConstraint.activate([
             
-            tableView.topAnchor.constraint(equalTo: segmentedController.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 5),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
