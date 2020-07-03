@@ -16,7 +16,13 @@ class CreateTabBar: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         configure()
         
     }
@@ -27,8 +33,9 @@ class CreateTabBar: UITabBarController {
         
         homeVC.delegate = self
         
-        homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "text.bubble.fill"), tag: 4)
-        
+        homeVC.tabBarItem.image = UIImage(systemName: "text.bubble")
+        homeVC.tabBarItem.selectedImage = UIImage(systemName: "text.bubble.fill")
+            
         homeVC.extendedLayoutIncludesOpaqueBars = true
     
         return UINavigationController(rootViewController: homeVC)
@@ -40,8 +47,9 @@ class CreateTabBar: UITabBarController {
         let shortVC = ShortVC()
         
         shortVC.delegate = self
-        
-        shortVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "film.fill"), tag: 1)
+            
+        shortVC.tabBarItem.image = UIImage(systemName: "film")
+        shortVC.tabBarItem.selectedImage = UIImage(systemName: "film.fill")
         
         shortVC.extendedLayoutIncludesOpaqueBars = true
         
@@ -55,7 +63,8 @@ class CreateTabBar: UITabBarController {
         
         videosVC.delegate = self
         
-        videosVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "play.rectangle.fill"), tag: 2)
+        videosVC.tabBarItem.image = UIImage(systemName: "play.rectangle")
+        videosVC.tabBarItem.selectedImage = UIImage(systemName: "play.rectangle.fill")
         
         videosVC.tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: 0, right: 0)
         
@@ -70,10 +79,12 @@ class CreateTabBar: UITabBarController {
         let notiVC = NotiVC()
         
         notiVC.delegate = self
-        
-        notiVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "bell.fill"), tag: 3)
-        
+            
+        notiVC.tabBarItem.image = UIImage(systemName: "bell")
+        notiVC.tabBarItem.selectedImage = UIImage(systemName: "bell.fill")
+            
         notiVC.extendedLayoutIncludesOpaqueBars = true
+        notiVC.edgesForExtendedLayout = .all
         
         return UINavigationController(rootViewController: notiVC)
     }
@@ -83,9 +94,10 @@ class CreateTabBar: UITabBarController {
         let profileVC = ProfileVC()
         
         profileVC.delegate = self
-        
-        profileVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person.fill"), tag: 4)
-        
+            
+        profileVC.tabBarItem.image = UIImage(systemName: "person")
+        profileVC.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
+    
         profileVC.extendedLayoutIncludesOpaqueBars = true
         
         return UINavigationController(rootViewController: profileVC)
@@ -94,10 +106,12 @@ class CreateTabBar: UITabBarController {
     
     func configure() {
         
-        UITabBar.appearance().barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3529411765, alpha: 1)
-        //UITabBar.appearance().barTintColor = .clear
-        UITabBar.appearance().clipsToBounds = true
-        UITabBar.appearance().tintColor = .yellow
+        tabBar.unselectedItemTintColor = .black
+        tabBar.isTranslucent = true
+        tabBar.tintColor = .black
+        tabBar.barTintColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
+        tabBar.clipsToBounds = true
+        
         
         setViewControllers([createHomeNC(), createShortNC(), createVideosNC(), createNotiNC(), createProfileNC()], animated: true)
 

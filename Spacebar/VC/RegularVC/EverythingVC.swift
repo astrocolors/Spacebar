@@ -11,7 +11,7 @@ import UIKit
 class EverythingVC: UIViewController {
     
     var sideMenuVC: UIViewController!
-    var sideMenuVCNC: UIViewController!
+    var sideMenuVCNC: UINavigationController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,7 @@ class EverythingVC: UIViewController {
             sideMenuVC = SideMenuVC()
             
             sideMenuVCNC = UINavigationController(rootViewController: sideMenuVC)
+            
             
             addChild(sideMenuVCNC)
             sideMenuVCNC.view.frame = self.view.bounds

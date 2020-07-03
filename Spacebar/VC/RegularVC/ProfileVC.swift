@@ -43,7 +43,7 @@ class ProfileVC: UIViewController {
     
     func configureNavBar(){
         
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3921568627, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
         
         let accountSettingsItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(pushAccountSettingsVC)) 
         
@@ -51,7 +51,7 @@ class ProfileVC: UIViewController {
         
         navigationItem.setRightBarButton(accountSettingsItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
-        navigationItem.title = "@Username"
+        navigationItem.title = "Username"
 
     }
     
@@ -65,7 +65,7 @@ class ProfileVC: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            userAvatar.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+            userAvatar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             userAvatar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             userAvatar.heightAnchor.constraint(equalToConstant: 40),
             userAvatar.widthAnchor.constraint(equalToConstant: 40)

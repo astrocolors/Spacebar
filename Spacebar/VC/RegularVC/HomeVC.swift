@@ -37,8 +37,7 @@ class HomeVC: UIViewController {
     
     func configureNavBar(){
         
-        //navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.07450980392, green: 0.1137254902, blue: 0.3529411765, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
         navigationController?.hidesBarsOnSwipe = true
         
         let messageItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushAddMessageVC))
