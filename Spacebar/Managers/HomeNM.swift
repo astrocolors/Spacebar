@@ -55,7 +55,7 @@ class HomeNM {
     
     func getPhotos(){
         
-        let folderURL = baseURL + "\(user!)/Photos/"
+        let folderURL = baseURL + "\(user!)/Photos"
         
         print(folderURL)
         
