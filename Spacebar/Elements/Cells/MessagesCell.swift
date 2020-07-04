@@ -15,6 +15,7 @@ class MessagesCell: UITableViewCell {
     let avatarImageView = SBAvatarImageView(frame: .zero)
     let usernameLabel = SBTitleLabel()
     let messageLabel = UILabel()
+    let interStackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,6 +23,7 @@ class MessagesCell: UITableViewCell {
         configureUserAvatar()
         configureUsernameLabel()
         configureMessageLabel()
+        configureStackView()
     }
     
     required init?(coder: NSCoder) {
@@ -38,7 +40,7 @@ class MessagesCell: UITableViewCell {
         NSLayoutConstraint.activate([
             
             avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10),
             avatarImageView.heightAnchor.constraint(equalToConstant: 50),
             avatarImageView.widthAnchor.constraint(equalToConstant: 50)
             
@@ -56,7 +58,7 @@ class MessagesCell: UITableViewCell {
         NSLayoutConstraint.activate([
             
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
-            usernameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10)
+            usernameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -20)
             
         ])
         
@@ -77,6 +79,44 @@ class MessagesCell: UITableViewCell {
             
         ])
         
+        
+        
+    }
+    
+    private func configureStackView(){
+        
+        let replyButton = UIButton()
+        let repostButton = UIButton()
+        let starButton = UIButton()
+        let reportButton = UIButton()
+        
+        replyButton.setImage(UIImage(systemName: "film"), for: .normal)
+        repostButton.setImage(UIImage(systemName: "person"), for: .normal)
+        starButton.setImage(UIImage(systemName: "film.fill"), for: .normal)
+        reportButton.setImage(UIImage(systemName: "person.fill"), for: .normal)
+        
+        
+        addSubview(interStackView)
+        
+        interStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        interStackView.axis = NSLayoutConstraint.Axis.horizontal
+        
+        interStackView.addArrangedSubview(replyButton)
+        interStackView.addArrangedSubview(repostButton)
+        interStackView.addArrangedSubview(starButton)
+        interStackView.addArrangedSubview(reportButton)
+        
+        
+        NSLayoutConstraint.activate([
+            
+            interStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            interStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            interStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            interStackView.heightAnchor.constraint(equalToConstant: 30)
+            
+        ])
+
         
         
     }

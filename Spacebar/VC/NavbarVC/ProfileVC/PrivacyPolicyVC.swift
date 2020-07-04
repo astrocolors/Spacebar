@@ -15,16 +15,9 @@ class PrivacyPolicyVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configure()
+        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
     }
     
-    func configure(){
-        
-        
-        
-        
-        
-    }
 
 }

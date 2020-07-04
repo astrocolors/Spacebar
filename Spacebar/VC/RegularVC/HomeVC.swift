@@ -29,7 +29,7 @@ class HomeVC: UIViewController {
         
         configureNavBar()
         configureLoginButton() // temporary
-        //configureTableView()
+        configureTableView()
         
         view.backgroundColor = .white
         
@@ -74,7 +74,7 @@ class HomeVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 80
+        tableView.rowHeight = 100
         tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tableView.separatorInset = .zero
         tableView.register(MessagesCell.self, forCellReuseIdentifier: "MessagesCell")
@@ -100,6 +100,8 @@ class HomeVC: UIViewController {
     @objc func pushAddMessageVC(){
         
         let addMessageVC = AddMessageVC()
+        
+        HomeNM.shared.getPhotos()
         
         navigationController?.pushViewController(addMessageVC, animated: true)
         

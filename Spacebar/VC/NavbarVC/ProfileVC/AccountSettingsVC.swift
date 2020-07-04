@@ -72,9 +72,57 @@ extension AccountSettingsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("You tapped cell number \(indexPath.row).") // Remove at some point
+        if (indexPath.row == 0){
+            
+            let aboutVC = AboutVC()
+            
+            navigationController?.pushViewController(aboutVC, animated: true)
+            
+        }
+        
+        if (indexPath.row == 1) {
+            
+            let helpVC = HelpVC()
+            
+            navigationController?.pushViewController(helpVC, animated: true)
+            
+            
+        }
+        
+        if (indexPath.row == 2) {
+            
+            let userPermissionsVC = UserPermissionsVC()
+            
+            navigationController?.pushViewController(userPermissionsVC, animated: true)
+            
+            
+        }
         
         if (indexPath.row == 3) {
+            
+            let notificationsVC = NotificationsVC()
+            
+            navigationController?.pushViewController(notificationsVC, animated: true)
+            
+        }
+        
+        if (indexPath.row == 4) {
+            
+            let termsOfServiceVC = TermsOfServiceVC()
+            
+            navigationController?.pushViewController(termsOfServiceVC, animated: true)
+            
+        }
+        
+        if (indexPath.row == 5) {
+            
+            let privacyPolicyVC = PrivacyPolicyVC()
+            
+            navigationController?.pushViewController(privacyPolicyVC, animated: true)
+            
+        }
+        
+        if (indexPath.row == 6) {
             
             do {
                 try Auth.auth().signOut()

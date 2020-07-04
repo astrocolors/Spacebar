@@ -13,9 +13,13 @@ import FirebaseStorage
 
 class HomeNM {
     
-    static let shared = HomeNM()
+    var messages: [String?] = []
+    var pictures: [Data?] = []
     
-    let user = Firebase.Auth.auth().currentUser
+    
+    static let shared = HomeNM()
+    let baseURL = "gs://spacebar-21236.appspot.com/Users/"
+    let user = Firebase.Auth.auth().currentUser?.email
     
     private init() {}
     
@@ -29,7 +33,7 @@ class HomeNM {
         
         else {
             
-            return user?.email
+            return user
             
         }
         
@@ -51,16 +55,44 @@ class HomeNM {
     
     func getPhotos(){
         
+        let folderURL = baseURL + "\(user!)/Photos/"
         
+        print(folderURL)
         
+        let strorageRef = Storage.storage().reference().child(folderURL)
         
-        
+        strorageRef.listAll { (result, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+                
+            }
+            
+            for item in result.items {
+                
+                item.getData(maxSize: 4*1024*1024) { (data, error) in
+                    
+                    if let error = error {
+                        
+                        print(error.localizedDescription)
+                        
+                        
+                    }
+                    
+                    
+                }
+                
+                
+            }
+            
+        }
         
     }
     
     func postMessages(){
         
-        
+        let folderURL = baseURL + "\(user)/Messages"
         
         
         
@@ -68,7 +100,7 @@ class HomeNM {
     
     func postPhotos(){
         
-        
+        let folderURL = baseURL + "\(user)/Photos"
         
         
         

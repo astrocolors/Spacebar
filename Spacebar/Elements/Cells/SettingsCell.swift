@@ -13,7 +13,7 @@ class SettingsCell: UITableViewCell {
     static let reuseID = "SettingsCell"
     let settingsLabel = UILabel()
     
-    static let settingsChoices: [String] = ["Help", "User Permissions", "Notifications","Terms of Service", "Privacy Policy", "Logout"]
+    static let settingsChoices: [String] = ["About", "Help", "User Permissions", "Notifications","Terms of Service", "Privacy Policy", "Logout"]
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
