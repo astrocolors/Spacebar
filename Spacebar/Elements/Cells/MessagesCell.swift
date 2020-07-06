@@ -11,6 +11,7 @@ import UIKit
 
 protocol MessageCellDelegate { // Options for the boss
     
+    func didPressUserAvatar()
     func didPressReplyButton()
     func didPressRepostButton()
     func didPressStarButton()
@@ -55,14 +56,18 @@ class MessagesCell: UITableViewCell {
     
     private func configureUserAvatar(){
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pushUserPageVC))
+        
         addSubview(avatarImageView)
         
-        avatarImageView.backgroundColor = #colorLiteral(red: 0.03921568627, green: 0.5176470588, blue: 1, alpha: 1)
+        avatarImageView.backgroundColor                 = #colorLiteral(red: 0.03921568627, green: 0.5176470588, blue: 1, alpha: 1)
+        avatarImageView.isUserInteractionEnabled        = true
+        avatarImageView.addGestureRecognizer(tapGestureRecognizer)
         
         NSLayoutConstraint.activate([
             
             avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -15),
+            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -25),
             avatarImageView.heightAnchor.constraint(equalToConstant: 50),
             avatarImageView.widthAnchor.constraint(equalToConstant: 50)
             
@@ -80,7 +85,7 @@ class MessagesCell: UITableViewCell {
         NSLayoutConstraint.activate([
             
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
-            usernameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -30)
+            usernameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -40)
             
         ])
         
@@ -126,7 +131,7 @@ class MessagesCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            interStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4),
+            interStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             interStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             interStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             interStackView.heightAnchor.constraint(equalToConstant: 30)
@@ -148,6 +153,12 @@ class MessagesCell: UITableViewCell {
         repostButton.addTarget(self, action: #selector(pushRepostButton), for: .touchUpInside)
         starButton.addTarget(self, action: #selector(pushStarButton), for: .touchUpInside)
         reportButton.addTarget(self, action: #selector(pushReportPostVC), for: .touchUpInside)
+        
+    }
+    
+    @objc func pushUserPageVC(){
+        
+        delegate?.didPressUserAvatar()
         
     }
     

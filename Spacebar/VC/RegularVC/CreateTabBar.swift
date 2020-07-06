@@ -106,30 +106,14 @@ class CreateTabBar: UITabBarController {
     
     func configure() {
         
-        tabBar.unselectedItemTintColor = .black
+        tabBar.unselectedItemTintColor = .gray
         tabBar.isTranslucent = true
-        tabBar.tintColor = .black
-        tabBar.barTintColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
+        tabBar.tintColor = .white
+        tabBar.barTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         tabBar.clipsToBounds = true
         
         
         setViewControllers([createHomeNC(), createShortNC(), createVideosNC(), createNotiNC(), createProfileNC()], animated: true)
-
-        //configureSideMenu()
-        
-    }
-    
-    func configureSideMenu() {
-        
-        if sideMenuVC == nil {
-            
-            sideMenuVC = SideMenuVC()
-            
-            view.insertSubview(sideMenuVC.view, at: 0)
-            addChild(sideMenuVC)
-            sideMenuVC.didMove(toParent: self)
-            
-        }
         
     }
     
@@ -164,12 +148,6 @@ class CreateTabBar: UITabBarController {
 extension CreateTabBar: ViewControllerDelegate {
     
     func sideMenuToggle() {
-        
-        if !isExpanded {
-            
-            //configureSideMenu()
-            
-        }
 
         isExpanded = !isExpanded
         showSideMenu(shouldExpand: isExpanded)

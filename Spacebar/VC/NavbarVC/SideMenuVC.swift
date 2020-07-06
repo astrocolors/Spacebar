@@ -18,7 +18,7 @@ class SideMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
         configureNavBar()
         configureTableView()
@@ -27,7 +27,7 @@ class SideMenuVC: UIViewController {
     
     func configureNavBar(){
         
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.topItem?.title = "Following"
         navigationController?.hidesBarsOnSwipe = true
@@ -44,7 +44,7 @@ class SideMenuVC: UIViewController {
         tableView.dataSource            = self
         tableView.register(SideMenuCell.self, forCellReuseIdentifier: SideMenuCell.reuseID)
         
-        tableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -73,7 +73,7 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuCell.reuseID, for: indexPath) as! SideMenuCell
         
-        cell.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        cell.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         return cell
         

@@ -36,7 +36,7 @@ class SearchUsersVC: UIViewController {
     
     func configure(){
         
-        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
     }
     
@@ -63,7 +63,7 @@ class SearchUsersVC: UIViewController {
         UserTableView.dataSource = self
         UserTableView.register(SearchUsersCell.self, forCellReuseIdentifier: SearchUsersCell.reuseID)
         
-        UserTableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        UserTableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         UserTableView.translatesAutoresizingMaskIntoConstraints = false
         

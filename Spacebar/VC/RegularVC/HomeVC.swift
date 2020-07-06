@@ -21,7 +21,7 @@ class HomeVC: UIViewController {
     
     var tableView = UITableView()
     var messages: [message] = [] // What is this for?
-    var delegate: ViewControllerDelegate? // What is this for?
+    var delegate: ViewControllerDelegate? 
     let loginButton = SBButtonV2(Text: "Login", Color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), CornerRadius: 0) // Remove this
 
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class HomeVC: UIViewController {
         
         let logo = UIImageView(image: UIImage(named: "Spacebar"))
         
-        navigationController?.navigationBar.barTintColor    = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
+        navigationController?.navigationBar.barTintColor    = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.hidesBarsOnSwipe              = true
         
         let messageItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushAddMessageVC))
@@ -79,7 +79,7 @@ class HomeVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 120
+        tableView.rowHeight = 140
         tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tableView.separatorInset = .zero
         tableView.register(MessagesCell.self, forCellReuseIdentifier: "MessagesCell")
@@ -133,6 +133,14 @@ class HomeVC: UIViewController {
 
 extension HomeVC: MessageCellDelegate {
     
+    func didPressUserAvatar() {
+        
+        let userPageVC = UserPageVC()
+        
+        navigationController?.pushViewController(userPageVC, animated: true)
+        
+    }
+    
     func didPressReplyButton() {
         
         // Add stuff
@@ -140,14 +148,14 @@ extension HomeVC: MessageCellDelegate {
     }
     
     func didPressRepostButton() {
-        // Add stuff
         
+        // Add stuff
         
     }
     
     func didPressStarButton() {
-        // Add stuff
         
+        // Add stuff
         
     }
     

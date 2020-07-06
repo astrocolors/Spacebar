@@ -154,7 +154,9 @@ class HomeNM {
     func reportPost(){
         
         
+        // Actually send a report to the server!
         
+        print("ayylmao")
 
         
     }

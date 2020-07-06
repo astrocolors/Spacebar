@@ -57,20 +57,16 @@ class ShortVC: UIViewController {
     func showImagePickerController(){
         
         let imagePicker = UIImagePickerController()
-        
         let alert = UIAlertController(title: "Choose your video", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Choose from Library", style: .default, handler: { (action) in
             imagePicker.sourceType = .photoLibrary
         }))
-        
-        
         alert.addAction(UIAlertAction(title: "Take from Camera", style: .default, handler: { (action) in
             imagePicker.sourceType = .camera
         }))
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
         present(alert, animated: true)
         
     }

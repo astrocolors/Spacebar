@@ -23,7 +23,7 @@ class UserPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         configureNavBar()
         configureUserAvatar()
@@ -42,8 +42,6 @@ class UserPageVC: UIViewController {
         //let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
         
         //navigationController?.navigationItem.setRightBarButton(<#T##item: UIBarButtonItem?##UIBarButtonItem?#>, animated: <#T##Bool#>)
-        
-        
         
     }
     
@@ -202,7 +200,7 @@ class UserPageVC: UIViewController {
         
         view.addSubview(tableView)
         
-        tableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         tableView.rowHeight = 60
         tableView.separatorInset = .zero

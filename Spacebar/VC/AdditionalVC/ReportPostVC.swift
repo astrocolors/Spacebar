@@ -19,6 +19,8 @@ class ReportPostVC: UIViewController {
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
+        textView.delegate = self
+        
         configureLabel()
         configureTextView()
     }
@@ -52,6 +54,8 @@ class ReportPostVC: UIViewController {
         
         textView.translatesAutoresizingMaskIntoConstraints = false
         
+        textView.returnKeyType = .send
+        
         textView.font = UIFont(name: "Times New Roman", size: 20)
         
         NSLayoutConstraint.activate([
@@ -65,7 +69,26 @@ class ReportPostVC: UIViewController {
         
     }
     
+    @objc func sendReport(){
+        
+        HomeNM.shared.reportPost()
+        
+        navigationController?.popViewController(animated: true)
+        
+    }
     
+}
 
-
+extension ReportPostVC: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            textView.resignFirstResponder()
+            sendReport()
+        }
+        
+        return true
+        
+    }
+    
 }
