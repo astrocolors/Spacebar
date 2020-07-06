@@ -20,8 +20,8 @@ class AddMessageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         configureKeyboardToolbar()
         configureUserAvatar()
@@ -56,7 +56,7 @@ class AddMessageVC: UIViewController {
         messageTextField.font = UIFont.preferredFont(forTextStyle: .body)
         messageTextField.becomeFirstResponder()
         
-        messageTextField.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        messageTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         NSLayoutConstraint.activate([
             
@@ -91,11 +91,9 @@ class AddMessageVC: UIViewController {
     
     @objc func sendMessage(){
         
-        let user = Auth.auth().currentUser?.email
-        
         let messageText = messageTextField.text
         
-        NetworkManager.shared.uploadMessage(for: user!, Message: messageText!)
+        HomeNM.shared.postMessages(Message: messageText)
         
         
     }

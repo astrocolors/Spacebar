@@ -15,14 +15,14 @@ class HomeVC: UIViewController {
     
     enum Section{
         
-        case Main
+        case Main // What the hell is this?
         
     }
     
     var tableView = UITableView()
-    var messages: [message] = []
-    var delegate: ViewControllerDelegate?
-    let loginButton = SBButtonV2(Text: "Login", Color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), CornerRadius: 0)
+    var messages: [message] = [] // What is this for?
+    var delegate: ViewControllerDelegate? // What is this for?
+    let loginButton = SBButtonV2(Text: "Login", Color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), CornerRadius: 0) // Remove this
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +31,16 @@ class HomeVC: UIViewController {
         configureLoginButton() // temporary
         configureTableView()
         
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
     }
     
     func configureNavBar(){
         
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
-        navigationController?.hidesBarsOnSwipe = true
+        let logo = UIImageView(image: UIImage(named: "Spacebar"))
+        
+        navigationController?.navigationBar.barTintColor    = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
+        navigationController?.hidesBarsOnSwipe              = true
         
         let messageItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushAddMessageVC))
         let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pushSearchUsersVC))
@@ -47,10 +49,13 @@ class HomeVC: UIViewController {
         
         navigationItem.setRightBarButtonItems([messageItem, searchItem], animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
+        // navigationItem.titleView = logo -> Change compose button position
         
     }
     
     func configureLoginButton(){
+        
+        // Remove at some point
         
         view.addSubview(loginButton)
         
@@ -74,7 +79,7 @@ class HomeVC: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 100
+        tableView.rowHeight = 120
         tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tableView.separatorInset = .zero
         tableView.register(MessagesCell.self, forCellReuseIdentifier: "MessagesCell")
@@ -101,8 +106,6 @@ class HomeVC: UIViewController {
         
         let addMessageVC = AddMessageVC()
         
-        HomeNM.shared.getPhotos()
-        
         navigationController?.pushViewController(addMessageVC, animated: true)
         
     }
@@ -128,6 +131,37 @@ class HomeVC: UIViewController {
     
 }
 
+extension HomeVC: MessageCellDelegate {
+    
+    func didPressReplyButton() {
+        
+        // Add stuff
+        
+    }
+    
+    func didPressRepostButton() {
+        // Add stuff
+        
+        
+    }
+    
+    func didPressStarButton() {
+        // Add stuff
+        
+        
+    }
+    
+    
+    func didPressReportButton() {
+        
+        let reportPostVC = ReportPostVC()
+        
+        navigationController?.pushViewController(reportPostVC, animated: true)
+        
+    }
+    
+}
+
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -142,6 +176,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
+        cell.delegate = self // Tells the boss who the intern (this view controller) is
+        
         return cell
         
     }
@@ -151,7 +187,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         let fullScreenMessageVC = FullScreenMessageVC()
         
         navigationController?.pushViewController(fullScreenMessageVC, animated: true)
-        
         
     } 
     

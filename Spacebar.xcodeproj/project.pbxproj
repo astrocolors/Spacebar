@@ -25,6 +25,8 @@
 		DD7DAF4224AAF2B500D6F2BC /* FullScreenMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7DAF4124AAF2B500D6F2BC /* FullScreenMessageVC.swift */; };
 		DD7EDCC324AA5AC9001035E8 /* DMMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7EDCC224AA5AC9001035E8 /* DMMessage.swift */; };
 		DD7EDCC524AA5AE6001035E8 /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7EDCC424AA5AE6001035E8 /* Clip.swift */; };
+		DD92A8DF24B0E58B00947B35 /* EditPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92A8DE24B0E58B00947B35 /* EditPhotoVC.swift */; };
+		DD92A8E124B0E5AA00947B35 /* CaptionPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD92A8E024B0E5AA00947B35 /* CaptionPhotoVC.swift */; };
 		DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BC24A3BAE300070888 /* SBButton.swift */; };
 		DD9DB9BF24A3BAF700070888 /* SBTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9BE24A3BAF700070888 /* SBTextField.swift */; };
 		DD9DB9C124A3FB1C00070888 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DB9C024A3FB1C00070888 /* LoginVC.swift */; };
@@ -98,6 +100,8 @@
 		DD7DAF4124AAF2B500D6F2BC /* FullScreenMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenMessageVC.swift; sourceTree = "<group>"; };
 		DD7EDCC224AA5AC9001035E8 /* DMMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMMessage.swift; sourceTree = "<group>"; };
 		DD7EDCC424AA5AE6001035E8 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
+		DD92A8DE24B0E58B00947B35 /* EditPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhotoVC.swift; sourceTree = "<group>"; };
+		DD92A8E024B0E5AA00947B35 /* CaptionPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionPhotoVC.swift; sourceTree = "<group>"; };
 		DD9DB9BC24A3BAE300070888 /* SBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBButton.swift; sourceTree = "<group>"; };
 		DD9DB9BE24A3BAF700070888 /* SBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTextField.swift; sourceTree = "<group>"; };
 		DD9DB9C024A3FB1C00070888 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -191,6 +195,16 @@
 				DDBCCD1F24B00B8F003BDFD6 /* ReportPostVC.swift */,
 			);
 			path = AdditionalVC;
+			sourceTree = "<group>";
+		};
+		DD92A8DD24B0E57300947B35 /* PhotosVC */ = {
+			isa = PBXGroup;
+			children = (
+				DD17E7B024AE8464002CDC9D /* AddPhotoVC.swift */,
+				DD92A8DE24B0E58B00947B35 /* EditPhotoVC.swift */,
+				DD92A8E024B0E5AA00947B35 /* CaptionPhotoVC.swift */,
+			);
+			path = PhotosVC;
 			sourceTree = "<group>";
 		};
 		DD9DB9CB24A406C800070888 /* AccountVC */ = {
@@ -334,7 +348,7 @@
 			children = (
 				DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */,
 				DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */,
-				DD17E7B024AE8464002CDC9D /* AddPhotoVC.swift */,
+				DD92A8DD24B0E57300947B35 /* PhotosVC */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -571,6 +585,7 @@
 				DDCB6FBC24A5BE8F0080517E /* CreateTabBar.swift in Sources */,
 				DDC83EDE24ACEEFC0038BF3C /* NewConvoSearchVC.swift in Sources */,
 				DD9DB9BD24A3BAE300070888 /* SBButton.swift in Sources */,
+				DD92A8DF24B0E58B00947B35 /* EditPhotoVC.swift in Sources */,
 				DDCFA7F624A44D1B007D85FE /* AddShortVC.swift in Sources */,
 				DDBCCD1C24AFFF6A003BDFD6 /* TermsOfServiceVC.swift in Sources */,
 				DD7DAF4224AAF2B500D6F2BC /* FullScreenMessageVC.swift in Sources */,
@@ -582,6 +597,7 @@
 				DDCB6F8624A45EAF0080517E /* DMVC.swift in Sources */,
 				DDCB6F8824A463EC0080517E /* SBButtonV2.swift in Sources */,
 				DD368E8924AB527500C7A3C0 /* Message.swift in Sources */,
+				DD92A8E124B0E5AA00947B35 /* CaptionPhotoVC.swift in Sources */,
 				DDCB6FA124A520830080517E /* SBAvatarImageView.swift in Sources */,
 				DDCFA7F224A44CDD007D85FE /* SearchUsersVC.swift in Sources */,
 				DDCF6B9B24ADB20A000B6806 /* HomeNM.swift in Sources */,

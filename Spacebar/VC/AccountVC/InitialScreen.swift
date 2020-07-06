@@ -53,8 +53,8 @@ class InitialScreen: UIViewController {
         
         NSLayoutConstraint.activate([
         
-            loginButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 520),
             loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             loginButton.heightAnchor.constraint(equalToConstant: 50)
         
@@ -70,8 +70,8 @@ class InitialScreen: UIViewController {
         
         NSLayoutConstraint.activate([
         
-            signupButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 600),
             signupButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            signupButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100),
             signupButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             signupButton.heightAnchor.constraint(equalToConstant: 50)
         

@@ -90,18 +90,39 @@ class HomeNM {
         
     }
     
-    func postMessages(){
+    func postMessages(Message: String?){
         
-        let folderURL = baseURL + "\(user)/Messages"
+        let uniqueID = UUID.init().uuidString
         
+        let folderURL = "Users/\(user!)/Messages/\(uniqueID)"
         
+        let metaData = StorageMetadata()
+        metaData.contentType = "text/plain"
+        
+        let messageData = Message?.data(using: .utf16)
+        
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        storageRef.putData(messageData!, metadata: metaData)
         
     }
     
-    func postPhotos(){
+    func postPhotos(Photo: UIImage){
         
-        let folderURL = baseURL + "\(user)/Photos"
+        // Fix this
+    
+        let uniqueID = UUID.init().uuidString
         
+        let folderURL = "Users/\(user!)/Photos/\(uniqueID)"
+        
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        let photoData = Photo
+        
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        //storageRef.putData(messageData!, metadata: metaData)
         
         
     }

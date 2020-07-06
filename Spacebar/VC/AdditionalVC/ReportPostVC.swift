@@ -29,14 +29,14 @@ class ReportPostVC: UIViewController {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
-        label.text = "Please explain why you find this post is offensive:"
+        label.text = "Please explain why you find this post offensive:"
         
         label.adjustsFontSizeToFitWidth = true
         
         
         NSLayoutConstraint.activate([
             
-            label.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             label.heightAnchor.constraint(equalToConstant: 20)
@@ -48,14 +48,16 @@ class ReportPostVC: UIViewController {
     func configureTextView(){
         
         view.addSubview(textView)
-        textView.placeholder = "What went wrong?"
+        textView.placeholder = "What went wrong? - Times New Roman needs to be changed"
         
         textView.translatesAutoresizingMaskIntoConstraints = false
+        
+        textView.font = UIFont(name: "Times New Roman", size: 20)
         
         NSLayoutConstraint.activate([
             
             textView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 10),
-            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            textView.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: -2),
             textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             textView.heightAnchor.constraint(equalToConstant: 100)
             

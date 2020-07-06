@@ -72,7 +72,7 @@ class SignUpV3VC: UIViewController {
         
         NSLayoutConstraint.activate([
         
-            passwordRepeatTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150),
+            passwordRepeatTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200),
             passwordRepeatTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             passwordRepeatTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             passwordRepeatTextField.heightAnchor.constraint(equalToConstant: 50)

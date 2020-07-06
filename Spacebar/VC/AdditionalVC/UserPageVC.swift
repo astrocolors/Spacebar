@@ -25,6 +25,7 @@ class UserPageVC: UIViewController {
 
         view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
+        configureNavBar()
         configureUserAvatar()
         configureUserLogin()
         configureUserBio()
@@ -33,6 +34,16 @@ class UserPageVC: UIViewController {
         configureUserFollowing()
         configureSegmentedController()
         configureTableView()
+        
+    }
+    
+    func configureNavBar(){
+        
+        //let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
+        
+        //navigationController?.navigationItem.setRightBarButton(<#T##item: UIBarButtonItem?##UIBarButtonItem?#>, animated: <#T##Bool#>)
+        
+        
         
     }
     

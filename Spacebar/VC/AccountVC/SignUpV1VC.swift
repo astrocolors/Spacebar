@@ -37,7 +37,6 @@ class SignUpV1VC: UIViewController {
 
     func configureFirstNameTextField(){
         
-        
         view.addSubview(FirstNameTextField)
         
         NSLayoutConstraint.activate([
