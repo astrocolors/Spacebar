@@ -20,9 +20,18 @@ class FullScreenMessageVC: UIViewController {
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
 
+        configureNavBar()
         configureUserAvatar()
         configureUserLogin()
         configureUserMessage()
+    }
+    
+    func configureNavBar(){
+        
+        let messageOptions = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .done, target: self, action: #selector(presentMessageOptions))
+        
+        navigationItem.setRightBarButton(messageOptions, animated: true)
+        
     }
     
     func configureUserAvatar(){
@@ -77,6 +86,12 @@ class FullScreenMessageVC: UIViewController {
             userMessage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
         ])
+        
+    }
+    
+    @objc func presentMessageOptions(){
+        
+        print("Message Options")
         
     }
 

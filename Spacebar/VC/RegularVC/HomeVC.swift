@@ -143,7 +143,9 @@ extension HomeVC: MessageCellDelegate {
     
     func didPressReplyButton() {
         
-        // Add stuff
+        let replyVC = ReplyVC()
+        
+        present(replyVC, animated: true)
         
     }
     

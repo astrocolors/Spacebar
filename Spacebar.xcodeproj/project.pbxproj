@@ -19,6 +19,7 @@
 		DD48823524AD098600EC4BDE /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48823424AD098600EC4BDE /* PrivacyPolicyVC.swift */; };
 		DD54B44B24AA74C500738C35 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54B44A24AA74C500738C35 /* Picture.swift */; };
 		DD662C5C24A9D71A00F95319 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD662C5B24A9D71A00F95319 /* SettingsCell.swift */; };
+		DD68AED224B2E21100A4243A /* SBPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68AED124B2E21100A4243A /* SBPresentation.swift */; };
 		DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */; };
 		DD6E849C24A8433200CD7D94 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E849B24A8433200CD7D94 /* Video.swift */; };
 		DD7DAF4024AAE85900D6F2BC /* UserPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7DAF3F24AAE85900D6F2BC /* UserPageVC.swift */; };
@@ -72,6 +73,8 @@
 		DDCFA7FA24A45AF9007D85FE /* AccountSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7F924A45AF9007D85FE /* AccountSettingsVC.swift */; };
 		DDCFA7FC24A45B77007D85FE /* AddMessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */; };
 		DDD5186224A3B77200EADA93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDD5186124A3B77200EADA93 /* GoogleService-Info.plist */; };
+		DDD8F7FD24B3933A003D0B86 /* ReplyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8F7FC24B3933A003D0B86 /* ReplyVC.swift */; };
+		DDD8F7FF24B3A274003D0B86 /* UserOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD8F7FE24B3A274003D0B86 /* UserOptionsVC.swift */; };
 		DDE0300024AD37890078FBBE /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE02FFF24AD37890078FBBE /* NotificationCell.swift */; };
 		DDE5D98A24A7DDD90029E3FD /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE5D98924A7DDD90029E3FD /* Protocols.swift */; };
 		DDEBF6C524A3B377006D45A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEBF6C424A3B377006D45A1 /* AppDelegate.swift */; };
@@ -94,6 +97,7 @@
 		DD48823424AD098600EC4BDE /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
 		DD54B44A24AA74C500738C35 /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		DD662C5B24A9D71A00F95319 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		DD68AED124B2E21100A4243A /* SBPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBPresentation.swift; sourceTree = "<group>"; };
 		DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		DD6E849B24A8433200CD7D94 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		DD7DAF3F24AAE85900D6F2BC /* UserPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageVC.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 		DDCFA7F924A45AF9007D85FE /* AccountSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsVC.swift; sourceTree = "<group>"; };
 		DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMessageVC.swift; sourceTree = "<group>"; };
 		DDD5186124A3B77200EADA93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DDD8F7FC24B3933A003D0B86 /* ReplyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyVC.swift; sourceTree = "<group>"; };
+		DDD8F7FE24B3A274003D0B86 /* UserOptionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptionsVC.swift; sourceTree = "<group>"; };
 		DDE02FFF24AD37890078FBBE /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		DDE5D98924A7DDD90029E3FD /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		DDEBF6C124A3B377006D45A1 /* Spacebar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spacebar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,7 +196,7 @@
 		DD7DAF3E24AAE82500D6F2BC /* AdditionalVC */ = {
 			isa = PBXGroup;
 			children = (
-				DD7DAF3F24AAE85900D6F2BC /* UserPageVC.swift */,
+				DDD8F80024B3A29B003D0B86 /* UserPageVC */,
 				DD7DAF4124AAF2B500D6F2BC /* FullScreenMessageVC.swift */,
 				DDBCCD1F24B00B8F003BDFD6 /* ReportPostVC.swift */,
 			);
@@ -257,6 +263,7 @@
 				DDCB6F9E24A51FA60080517E /* SBTitleLabel.swift */,
 				DDAD9D9224A69D81006DE756 /* SBBodyLabel.swift */,
 				DDCB6FA024A520830080517E /* SBAvatarImageView.swift */,
+				DD68AED124B2E21100A4243A /* SBPresentation.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -347,7 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				DDCFA7F124A44CDD007D85FE /* SearchUsersVC.swift */,
-				DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */,
+				DDD8F7FB24B3931C003D0B86 /* MessagesVC */,
 				DD92A8DD24B0E57300947B35 /* PhotosVC */,
 			);
 			path = HomeVC;
@@ -373,6 +380,24 @@
 				DD48823424AD098600EC4BDE /* PrivacyPolicyVC.swift */,
 			);
 			path = ProfileVC;
+			sourceTree = "<group>";
+		};
+		DDD8F7FB24B3931C003D0B86 /* MessagesVC */ = {
+			isa = PBXGroup;
+			children = (
+				DDCFA7FB24A45B77007D85FE /* AddMessageVC.swift */,
+				DDD8F7FC24B3933A003D0B86 /* ReplyVC.swift */,
+			);
+			path = MessagesVC;
+			sourceTree = "<group>";
+		};
+		DDD8F80024B3A29B003D0B86 /* UserPageVC */ = {
+			isa = PBXGroup;
+			children = (
+				DD7DAF3F24AAE85900D6F2BC /* UserPageVC.swift */,
+				DDD8F7FE24B3A274003D0B86 /* UserOptionsVC.swift */,
+			);
+			path = UserPageVC;
 			sourceTree = "<group>";
 		};
 		DDEBF6B824A3B377006D45A1 = {
@@ -554,8 +579,10 @@
 				DDAD9D9124A69A21006DE756 /* SearchUser.swift in Sources */,
 				DD662C5C24A9D71A00F95319 /* SettingsCell.swift in Sources */,
 				DDCF6BA324ADB248000B6806 /* UserProfileNM.swift in Sources */,
+				DDD8F7FF24B3A274003D0B86 /* UserOptionsVC.swift in Sources */,
 				DDBCCD1E24AFFF80003BDFD6 /* NotificationsVC.swift in Sources */,
 				DD17E7B124AE8464002CDC9D /* AddPhotoVC.swift in Sources */,
+				DDD8F7FD24B3933A003D0B86 /* ReplyVC.swift in Sources */,
 				DD48823324AD097800EC4BDE /* UserPermissionsVC.swift in Sources */,
 				DDE5D98A24A7DDD90029E3FD /* Protocols.swift in Sources */,
 				DDCB6F9524A5106D0080517E /* DMUserCells.swift in Sources */,
@@ -601,6 +628,7 @@
 				DDCB6FA124A520830080517E /* SBAvatarImageView.swift in Sources */,
 				DDCFA7F224A44CDD007D85FE /* SearchUsersVC.swift in Sources */,
 				DDCF6B9B24ADB20A000B6806 /* HomeNM.swift in Sources */,
+				DD68AED224B2E21100A4243A /* SBPresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
