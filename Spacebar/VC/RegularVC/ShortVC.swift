@@ -17,28 +17,17 @@ class ShortVC: UIViewController {
     var ImagePicker: UIImagePickerController!
     var alert: UIAlertController!
 
+    let newView = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
-        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!))
-        let layer = AVPlayerLayer(player: player)
-        
-//        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { [weak self] _ in
-//            player.seek(to: CMTime.zero)
-//            player.play()
-//        }
-        
-        layer.frame = view.bounds
-        layer.videoGravity = .resizeAspectFill
-        
-        view.layer.addSublayer(layer)
-        
-        player.play()
-        
-        
+    
         configureNavBar()
+        configurePlayer()
+        setupSwipeRecognizer()
+        configureNewView()
         
     }
     
@@ -52,6 +41,57 @@ class ShortVC: UIViewController {
         navigationItem.setRightBarButton(addItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
         
+    }
+    
+    func configurePlayer(){
+        
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!))
+        let layer = AVPlayerLayer(player: player)
+
+        
+        layer.frame = view.bounds
+        layer.videoGravity = .resizeAspectFill
+        
+        view.layer.addSublayer(layer)
+        
+        
+        player.play()
+        
+    }
+    
+    func setupSwipeRecognizer(){
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture(sender:)))
+        
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture(sender:)))
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture(sender:)))
+        
+        swipeUp.direction = .up
+        swipeDown.direction = .down
+        swipeLeft.direction = .left
+        
+        view.addGestureRecognizer(swipeUp)
+        view.addGestureRecognizer(swipeDown)
+        view.addGestureRecognizer(swipeLeft)
+        
+        
+    }
+    
+    func configureNewView(){
+        
+        view.addSubview(newView)
+        
+        newView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        
+        NSLayoutConstraint.activate([
+            
+            newView.topAnchor.constraint(equalTo: view.topAnchor),
+            newView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            newView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            newView.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
     }
     
     func showImagePickerController(){
@@ -74,6 +114,48 @@ class ShortVC: UIViewController {
     @objc func pushSideMenuVC(){
         
         delegate?.sideMenuToggle()
+        
+    }
+    
+    @objc func swipeGesture(sender: UISwipeGestureRecognizer?) {
+        
+        if let swipeGesture = sender {
+            
+            switch swipeGesture.direction {
+                
+            case .up:
+                
+                UIView.animate(withDuration: 0.3) {
+                    
+                    self.view.center.y -= 900
+                    
+                    self.newView.center.y += 900
+                    
+                }
+                
+            case .down:
+                
+                UIView.animate(withDuration: 0.3) {
+                    
+                    self.view.center.y += 900
+                    
+                }
+                
+            case .left:
+                
+                UIView.animate(withDuration: 0.2) {
+                    
+                    self.view.center.x -= 300
+                    
+                }
+                
+            default:
+                
+                break
+                
+            }
+        
+        }
         
     }
     
