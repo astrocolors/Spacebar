@@ -73,7 +73,7 @@ class SignUpV1VC: UIViewController {
         
         NSLayoutConstraint.activate([
         
-            nextButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 600),
+            nextButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 300),
             nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             nextButton.heightAnchor.constraint(equalToConstant: 50)

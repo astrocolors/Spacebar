@@ -11,15 +11,16 @@ import UIKit
 
 class UserPageVC: UIViewController {
     
-    let userLogin = UILabel()
-    let userBio = UILabel()
-    let userAvatar = UIImageView()
-    let userFollowing = UILabel()
-    let userFollowers = UILabel()
-    let followButton = UIButton()
+    let userLogin           = UILabel()
+    let userBio             = UILabel()
+    let userAvatar          = UIImageView()
+    let userFollowing       = UILabel()
+    let userFollowers       = UILabel()
+    let followButton        = UIButton()
+    let tableView           = UITableView()
+    let containerView       = UIView()
     var segmentedController = UISegmentedControl()
-    let tableView = UITableView()
-    let containerView = UIView()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -221,45 +222,32 @@ class UserPageVC: UIViewController {
         
     }
     
-    func configureContainerView(){
-        
-        let userOptions = ReplyVC() // Temporary
+    func configureUserOptions(){
         
         view.addSubview(containerView)
-        
-        containerView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
             containerView.topAnchor.constraint(equalTo: view.centerYAnchor),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 400)
+            containerView.heightAnchor.constraint(equalTo: view.heightAnchor)
             
         ])
         
-        addChild(userOptions)
-        containerView.addSubview(userOptions.view)
-        userOptions.view.translatesAutoresizingMaskIntoConstraints = false
-    
+        let userOptions = UserOptionsVC()
         
-        NSLayoutConstraint.activate([
-            
-            userOptions.view.topAnchor.constraint(equalTo: containerView.topAnchor),
-            userOptions.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            userOptions.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            userOptions.view.heightAnchor.constraint(equalTo: containerView.heightAnchor)
-            
-        ])
+        userOptions.modalPresentationStyle = .overCurrentContext
+        userOptions.modalTransitionStyle = .coverVertical
         
-        userOptions.didMove(toParent: self)
+        present(userOptions, animated: true)
+        
         
     }
-    
+       
     @objc func presentReportOptions(){
         
-        configureContainerView()
-        
+        configureUserOptions()
         
     }
     
