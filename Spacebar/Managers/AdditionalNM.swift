@@ -13,6 +13,10 @@ import FirebaseStorage
 
 class AddNM{
     
+    static let shared = AddNM()
+    
+    let baseURL = "gs://spacebar-21236.appspot.com/Users"
+    
     func getMenuFollowers(){
         
         
@@ -21,6 +25,28 @@ class AddNM{
     }
     
     func getSearchUsers(){
+        
+        let folderURL = baseURL
+        
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        print(storageRef)
+        
+        storageRef.listAll { (results, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+                
+            }
+            
+            for item in results.items {
+                
+                print(item)
+                
+            }
+            
+        }
         
         
         

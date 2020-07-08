@@ -15,7 +15,7 @@ class ProfileNM{
     
     static let shared = ProfileNM()
     let baseURL = "gs://spacebar-21236.appspot.com/Users/"
-    let user = Auth.auth().currentUser
+    let user = Auth.auth().currentUser?.email
     let userName = Auth.auth().currentUser?.displayName
     
     func isSignedIn() -> String?{
@@ -28,7 +28,7 @@ class ProfileNM{
         
         else {
             
-            return user?.email
+            return user
             
         }
         
@@ -41,7 +41,7 @@ class ProfileNM{
         
         if user != nil {
             
-            return user?.displayName
+            return user
             
         }
         
@@ -55,8 +55,27 @@ class ProfileNM{
     
     func getMessages(){
         
+        let folderURL = baseURL + "\(user!)/Messages"
         
+        print(folderURL)
         
+        let storageRef = Storage.storage().reference().child(folderURL)
+        
+        storageRef.listAll { (result, error) in
+            
+            if let error = error {
+                
+                print(error.localizedDescription)
+            
+            }
+            
+            for item in result.items {
+                
+                print(item)
+                
+            }
+            
+        }
         
     }
     
@@ -82,7 +101,6 @@ class ProfileNM{
             
             
         }
-        
         
         
     }

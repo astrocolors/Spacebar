@@ -11,17 +11,17 @@ import UIKit
 
 class VideosCell: UITableViewCell {
     
-    var videoImageView      = UIImageView()
-    var videoTitleLabel          = UILabel()
+    static let reuseID = "VideosCell"
+    
+    var videoImageView              = UIImageView()
+    var videoTitleLabel             = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configureImageView()
         configureTitleLabel()
-        
-        addSubview(videoImageView)
-        addSubview(videoTitleLabel)
+    
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +38,10 @@ class VideosCell: UITableViewCell {
     
     func configureImageView(){
         
+        addSubview(videoImageView)
+        
+        videoImageView.image = UIImage(named: "Spacebar")
+        
         videoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -53,14 +57,18 @@ class VideosCell: UITableViewCell {
     
     func configureTitleLabel(){
         
+        addSubview(videoTitleLabel)
+        
+        videoTitleLabel.text =  "Video Title"
+        
         videoTitleLabel.numberOfLines                               = 0
         videoTitleLabel.adjustsFontSizeToFitWidth                   = true
         videoTitleLabel.translatesAutoresizingMaskIntoConstraints   = false
         
         NSLayoutConstraint.activate([
             
-            videoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            videoTitleLabel.leadingAnchor.constraint(equalTo: videoImageView.trailingAnchor, constant: 20),
+            videoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10),
+            videoTitleLabel.leadingAnchor.constraint(equalTo: videoImageView.trailingAnchor, constant: 2),
             videoTitleLabel.heightAnchor.constraint(equalToConstant: 80),
             videoTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
             

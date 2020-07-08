@@ -81,23 +81,25 @@ class SearchUsersVC: UIViewController {
     
     func getSearchUsers(){
         
-        NetworkManager.shared.getSearchUsers(for: username, page: 1) { [weak self] (SearchUsers, errorMessage) in
-            
-            guard let self = self else { return }
-            
-            guard SearchUsers != nil else {
-                
-             print("Network Failure")
-                
-                return
-            }
-            
-            self.searchUsers = SearchUsers
-            
-            self.updateData()
-            
-            
-        }
+//        NetworkManager.shared.getSearchUsers(for: username, page: 1) { [weak self] (SearchUsers, errorMessage) in
+//
+//            guard let self = self else { return }
+//
+//            guard SearchUsers != nil else {
+//
+//             print("Network Failure")
+//
+//                return
+//            }
+//
+//            self.searchUsers = SearchUsers
+//
+//            self.updateData()
+//
+//
+//        }
+        
+        AddNM.shared.getSearchUsers()
         
     }
     

@@ -29,7 +29,7 @@ class HomeVC: UIViewController {
         
         configureNavBar()
         configureLoginButton() // temporary
-        configureTableView()
+        configureTableView()    
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         

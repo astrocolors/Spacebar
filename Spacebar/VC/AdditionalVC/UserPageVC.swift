@@ -39,7 +39,6 @@ class UserPageVC: UIViewController {
             
             self.didTapCancel()
             
-            
         }
         
         return BLTNItemManager(rootItem: item)
@@ -251,6 +250,8 @@ class UserPageVC: UIViewController {
         print("User Blocked")
         
         dismiss(animated: true)
+        
+        ProfileNM.shared.getMessages()
         
         
     }
