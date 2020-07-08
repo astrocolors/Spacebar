@@ -8,6 +8,7 @@
 //  Purpose: "User-Page" - What a user sees every time they select another user
 
 import UIKit
+import BLTNBoard
 
 class UserPageVC: UIViewController {
     
@@ -20,6 +21,30 @@ class UserPageVC: UIViewController {
     let tableView           = UITableView()
     let containerView       = UIView()
     var segmentedController = UISegmentedControl()
+    
+    lazy var boardManager: BLTNItemManager = {
+        
+        let item = BLTNPageItem(title: "Options")
+        
+        item.actionButtonTitle = "Block User"
+        item.alternativeButtonTitle = "Cancel"
+        
+        item.actionHandler = { _ in
+            
+            self.didTapBlockUser()
+            
+        }
+        
+        item.alternativeHandler = { _ in
+            
+            self.didTapCancel()
+            
+            
+        }
+        
+        return BLTNItemManager(rootItem: item)
+        
+    }()
 
     
     override func viewDidLoad() {
@@ -219,35 +244,29 @@ class UserPageVC: UIViewController {
         ])
         
         
+    }
+    
+    func didTapBlockUser(){
+        
+        print("User Blocked")
+        
+        dismiss(animated: true)
+        
         
     }
     
-    func configureUserOptions(){
+    func didTapCancel(){
         
-        view.addSubview(containerView)
+        print("Cancel")
         
-        NSLayoutConstraint.activate([
-            
-            containerView.topAnchor.constraint(equalTo: view.centerYAnchor),
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            containerView.heightAnchor.constraint(equalTo: view.heightAnchor)
-            
-        ])
-        
-        let userOptions = UserOptionsVC()
-        
-        userOptions.modalPresentationStyle = .overCurrentContext
-        userOptions.modalTransitionStyle = .coverVertical
-        
-        present(userOptions, animated: true)
+        dismiss(animated: true)
         
         
     }
        
     @objc func presentReportOptions(){
         
-        configureUserOptions()
+        boardManager.showBulletin(above: self)
         
     }
     

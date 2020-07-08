@@ -13,5 +13,6 @@ pod 'Firebase/Firestore'
 pod 'Firebase/Analytics'
 pod 'Firebase/Storage'
 pod 'KMPlaceholderTextView'
+pod 'BulletinBoard'
 
 end

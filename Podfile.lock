@@ -164,6 +164,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.3):
     - BoringSSL-GRPC/Interface (= 0.0.3)
   - BoringSSL-GRPC/Interface (0.0.3)
+  - BulletinBoard (4.1.0)
   - Firebase/Analytics (6.13.0):
     - Firebase/Core
   - Firebase/Auth (6.13.0):
@@ -283,6 +284,7 @@ PODS:
   - nanopb/encode (0.3.9011)
 
 DEPENDENCIES:
+  - BulletinBoard
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -294,6 +296,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - abseil
     - BoringSSL-GRPC
+    - BulletinBoard
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -318,6 +321,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
+  BulletinBoard: c774340545b5cfd05a96a89f63b105ecc95c86f9
   Firebase: 458d109512200d1aca2e1b9b6cf7d68a869a4a46
   FirebaseAnalytics: 45f36d9c429fc91d206283900ab75390cd05ee8a
   FirebaseAuth: 7d0f84873926f6648bbd1391a318dfb1a26b5e4f
@@ -339,6 +343,6 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
 
-PODFILE CHECKSUM: a6459fbbf20a75d4d7d5c3fc8cd1c52128c1fc09
+PODFILE CHECKSUM: 336c2aaf3b71599a9a3abc7a4c222cd6c57de0f9
 
 COCOAPODS: 1.7.5
