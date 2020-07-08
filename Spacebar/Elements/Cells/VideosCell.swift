@@ -15,12 +15,14 @@ class VideosCell: UITableViewCell {
     
     var videoImageView              = UIImageView()
     var videoTitleLabel             = UILabel()
+    var viewCount                   = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configureImageView()
         configureTitleLabel()
+        configureViewCount()
     
     }
     
@@ -60,19 +62,40 @@ class VideosCell: UITableViewCell {
         addSubview(videoTitleLabel)
         
         videoTitleLabel.text =  "Video Title"
-        
         videoTitleLabel.numberOfLines                               = 0
         videoTitleLabel.adjustsFontSizeToFitWidth                   = true
         videoTitleLabel.translatesAutoresizingMaskIntoConstraints   = false
         
         NSLayoutConstraint.activate([
             
-            videoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -10),
+            videoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -15),
             videoTitleLabel.leadingAnchor.constraint(equalTo: videoImageView.trailingAnchor, constant: 2),
-            videoTitleLabel.heightAnchor.constraint(equalToConstant: 80),
+            videoTitleLabel.heightAnchor.constraint(equalToConstant: 25),
             videoTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
             
         ])
+        
+    }
+    
+    func configureViewCount(){
+        
+        addSubview(viewCount)
+        
+        viewCount.font = UIFont(name: "Times New Roman", size: 12)
+        
+        viewCount.text = "301 Views"
+        
+        viewCount.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            viewCount.topAnchor.constraint(equalTo: videoTitleLabel.bottomAnchor, constant: -5),
+            viewCount.leadingAnchor.constraint(equalTo: videoTitleLabel.leadingAnchor),
+            viewCount.trailingAnchor.constraint(equalTo: videoTitleLabel.trailingAnchor),
+            viewCount.heightAnchor.constraint(equalToConstant: 20)
+            
+        ])
+        
         
     }
     

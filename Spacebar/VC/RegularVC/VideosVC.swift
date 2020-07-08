@@ -16,6 +16,7 @@ class VideosVC: UIViewController {
     var delegate: ViewControllerDelegate?
     var segmentedController = UISegmentedControl()
     var tableView = UITableView()
+    var refreshController = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class VideosVC: UIViewController {
         configureNavBar()
         configureSegmentedController()
         configureTableView()
+        configureRefreshController()
         
     }
     
@@ -64,8 +66,6 @@ class VideosVC: UIViewController {
     
     func configureTableView(){
         
-        let tableView = UITableView()
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -86,6 +86,15 @@ class VideosVC: UIViewController {
         
     }
     
+    func configureRefreshController(){
+        
+        tableView.addSubview(refreshController)
+        
+        refreshController.addTarget(self, action: #selector(refreshVideos), for: .valueChanged)
+        
+        
+    }
+    
     @objc func pushSideMenuVC(){
         
         delegate?.sideMenuToggle()
@@ -100,7 +109,13 @@ class VideosVC: UIViewController {
         
     }
     
-    
+    @objc func refreshVideos(){
+        
+        print("Videos Refreshed")
+        
+        refreshController.endRefreshing()
+        
+    }
 }
 
 extension VideosVC: UITableViewDelegate, UITableViewDataSource {

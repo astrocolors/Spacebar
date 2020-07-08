@@ -20,8 +20,9 @@ class HomeVC: UIViewController {
     }
     
     var tableView = UITableView()
+    let refreshControl = UIRefreshControl()
     var messages: [message] = [] // What is this for?
-    var delegate: ViewControllerDelegate? 
+    var delegate: ViewControllerDelegate?
     let loginButton = SBButtonV2(Text: "Login", Color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), CornerRadius: 0) // Remove this
 
     override func viewDidLoad() {
@@ -29,7 +30,8 @@ class HomeVC: UIViewController {
         
         configureNavBar()
         configureLoginButton() // temporary
-        configureTableView()    
+        configureTableView()
+        configureRefreshController()
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
@@ -96,6 +98,13 @@ class HomeVC: UIViewController {
         
     }
     
+    func configureRefreshController(){
+        
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshMessages), for: .valueChanged)
+        
+    }
+    
     @objc func pushSideMenuVC(){
         
         delegate?.sideMenuToggle()
@@ -116,6 +125,14 @@ class HomeVC: UIViewController {
         
         navigationController?.pushViewController(searchUsersVC, animated: true)
         
+        
+    }
+    
+    @objc func refreshMessages(){
+        
+        print("Messages Refreshed")
+        
+        self.refreshControl.endRefreshing()
         
     }
     

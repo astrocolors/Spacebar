@@ -18,6 +18,7 @@ class ProfileVC: UIViewController {
     let userBio                         = UILabel()
     let editProfileButton               = UIButton()
     let tableView                       = UITableView()
+    let refreshController               = UIRefreshControl()
     
     var segmentedController             = UISegmentedControl()
     var delegate: ViewControllerDelegate? // Is this necessary?
@@ -36,6 +37,7 @@ class ProfileVC: UIViewController {
         //configureEditProfileButton() --> Make this look good
         configureTableView()
         configureNavBar()
+        configureRefreshController()
 
     }
     
@@ -159,8 +161,6 @@ class ProfileVC: UIViewController {
     
     func configureTableView(){
         
-        let tableView = UITableView()
-        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(tableView)
@@ -180,6 +180,14 @@ class ProfileVC: UIViewController {
         
     }
     
+    func configureRefreshController(){
+        
+        tableView.addSubview(refreshController)
+        
+        refreshController.addTarget(self, action: #selector(refreshMessages), for: .valueChanged)
+        
+    }
+    
     @objc func pushSideMenuVC(){
         
        delegate?.sideMenuToggle()
@@ -194,5 +202,13 @@ class ProfileVC: UIViewController {
         
     }
     
+    @objc func refreshMessages(){
+        
+        print("Messages Refreshed")
+        
+        refreshController.endRefreshing()
+        
+        
+    }
 
 }

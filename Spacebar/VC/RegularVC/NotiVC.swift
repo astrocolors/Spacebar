@@ -13,6 +13,7 @@ class NotiVC: UIViewController {
     
     var notificationTable = UITableView()
     var segmentedController = UISegmentedControl()
+    var refreshController = UIRefreshControl()
     
     var delegate: ViewControllerDelegate?
 
@@ -23,6 +24,7 @@ class NotiVC: UIViewController {
         
         configureSegmentedController()
         configureTableView()
+        configureRefreshController()
 
     }
     
@@ -98,6 +100,14 @@ class NotiVC: UIViewController {
         
     }
     
+    func configureRefreshController(){
+        
+        notificationTable.addSubview(refreshController)
+        
+        refreshController.addTarget(self, action: #selector(refreshNotifications), for: .valueChanged)
+        
+    }
+    
     @objc func pushSideMenuVC(){
         
         delegate?.sideMenuToggle()
@@ -109,6 +119,14 @@ class NotiVC: UIViewController {
         let dmVC = DMVC()
         
         navigationController?.pushViewController(dmVC, animated: true)
+        
+    }
+    
+    @objc func refreshNotifications(){
+        
+        print("Notifications Refreshed")
+        
+        refreshController.endRefreshing()
         
     }
 
