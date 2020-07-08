@@ -39,7 +39,10 @@ class HomeVC: UIViewController {
     
     func configureNavBar(){
         
-        let logo = UIImageView(image: UIImage(named: "Spacebar"))
+        let image: UIImage = UIImage(named: "Astronaut")!
+        let logo = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        logo.contentMode = .scaleAspectFit
+        logo.image = image
         
         navigationController?.navigationBar.barTintColor    = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.hidesBarsOnSwipe              = true
@@ -49,9 +52,10 @@ class HomeVC: UIViewController {
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
        
         
-        navigationItem.setRightBarButtonItems([messageItem, searchItem], animated: true)
+        //navigationItem.setRightBarButtonItems([messageItem, searchItem], animated: true)
+        navigationItem.setRightBarButton(searchItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
-        // navigationItem.titleView = logo -> Change compose button position
+        navigationItem.titleView = logo
         
     }
     

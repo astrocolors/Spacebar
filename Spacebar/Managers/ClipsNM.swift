@@ -13,6 +13,8 @@ import FirebaseStorage
 
 class ClipsNM {
     
+    static let shared = ClipsNM()
+    
     func isSignedIn(){
         
         
@@ -27,6 +29,14 @@ class ClipsNM {
     }
     
     func postClip(){
+        
+        
+        
+        
+        
+    }
+    
+    func sendLike(){
         
         
         

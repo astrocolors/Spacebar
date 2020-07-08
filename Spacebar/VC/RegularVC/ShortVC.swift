@@ -13,11 +13,11 @@ import AVFoundation
 
 class ShortVC: UIViewController {
     
+    let heartView = UIImageView()
+    
     var delegate: ViewControllerDelegate?
     var ImagePicker: UIImagePickerController!
     var alert: UIAlertController!
-
-    let newView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +26,9 @@ class ShortVC: UIViewController {
     
         configureNavBar()
         configurePlayer()
+        configureHeart()
+        setupTapRecognizer()
         setupSwipeRecognizer()
-        configureNewView()
         
     }
     
@@ -54,8 +55,35 @@ class ShortVC: UIViewController {
         
         view.layer.addSublayer(layer)
         
-        
         player.play()
+        
+    }
+    
+    func setupTapRecognizer(){
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTap))
+        tap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    func configureHeart(){
+        
+        view.addSubview(heartView)
+        
+        heartView.image = UIImage(named: "Astronaut")
+        
+        heartView.translatesAutoresizingMaskIntoConstraints = false
+        heartView.contentMode = .scaleAspectFit
+        
+        NSLayoutConstraint.activate([
+            
+            heartView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            heartView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            heartView.heightAnchor.constraint(equalToConstant: 100),
+            heartView.widthAnchor.constraint(equalToConstant: 100)
+            
+        ])
         
     }
     
@@ -76,22 +104,6 @@ class ShortVC: UIViewController {
         view.addGestureRecognizer(swipeLeft)
         
         
-    }
-    
-    func configureNewView(){
-        
-        view.addSubview(newView)
-        
-        newView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
-        NSLayoutConstraint.activate([
-            
-            newView.topAnchor.constraint(equalTo: view.topAnchor),
-            newView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            newView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            newView.heightAnchor.constraint(equalTo: view.heightAnchor)
-            
-        ])
     }
     
     func showImagePickerController(){
@@ -117,6 +129,13 @@ class ShortVC: UIViewController {
         
     }
     
+    @objc func doubleTap(){
+        
+        
+        
+        
+    }
+    
     @objc func swipeGesture(sender: UISwipeGestureRecognizer?) {
         
         if let swipeGesture = sender {
@@ -128,8 +147,6 @@ class ShortVC: UIViewController {
                 UIView.animate(withDuration: 0.3) {
                     
                     self.view.center.y -= 900
-                    
-                    self.newView.center.y += 900
                     
                 }
                 

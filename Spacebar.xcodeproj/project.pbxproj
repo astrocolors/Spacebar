@@ -13,6 +13,7 @@
 		DD17E7AF24AE7C09002CDC9D /* AdditionalNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17E7AE24AE7C09002CDC9D /* AdditionalNM.swift */; };
 		DD17E7B124AE8464002CDC9D /* AddPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17E7B024AE8464002CDC9D /* AddPhotoVC.swift */; };
 		DD2336AD24A9E187003B0960 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DD2336AC24A9E187003B0960 /* video.mp4 */; };
+		DD241DBB24B68F9600B8A130 /* SBLikeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD241DBA24B68F9600B8A130 /* SBLikeAnimation.swift */; };
 		DD368E8924AB527500C7A3C0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD368E8824AB527500C7A3C0 /* Message.swift */; };
 		DD48823124AD096D00EC4BDE /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48823024AD096D00EC4BDE /* HelpVC.swift */; };
 		DD48823324AD097800EC4BDE /* UserPermissionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48823224AD097800EC4BDE /* UserPermissionsVC.swift */; };
@@ -89,6 +90,7 @@
 		DD17E7AE24AE7C09002CDC9D /* AdditionalNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalNM.swift; sourceTree = "<group>"; };
 		DD17E7B024AE8464002CDC9D /* AddPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoVC.swift; sourceTree = "<group>"; };
 		DD2336AC24A9E187003B0960 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		DD241DBA24B68F9600B8A130 /* SBLikeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBLikeAnimation.swift; sourceTree = "<group>"; };
 		DD368E8824AB527500C7A3C0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		DD48823024AD096D00EC4BDE /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		DD48823224AD097800EC4BDE /* UserPermissionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPermissionsVC.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				DDCB6F9E24A51FA60080517E /* SBTitleLabel.swift */,
 				DDAD9D9224A69D81006DE756 /* SBBodyLabel.swift */,
 				DDCB6FA024A520830080517E /* SBAvatarImageView.swift */,
+				DD241DBA24B68F9600B8A130 /* SBLikeAnimation.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				DDCB6F8E24A510030080517E /* MessagesCell.swift in Sources */,
 				DDCB6F8624A45EAF0080517E /* DMVC.swift in Sources */,
 				DDCB6F8824A463EC0080517E /* SBButtonV2.swift in Sources */,
+				DD241DBB24B68F9600B8A130 /* SBLikeAnimation.swift in Sources */,
 				DD368E8924AB527500C7A3C0 /* Message.swift in Sources */,
 				DD92A8E124B0E5AA00947B35 /* CaptionPhotoVC.swift in Sources */,
 				DDCB6FA124A520830080517E /* SBAvatarImageView.swift in Sources */,
