@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		786DC1DC42D444D56EA5B147 /* Pods_Spacebar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CC562C1B6CCF938E822F32 /* Pods_Spacebar.framework */; };
+		DD03694A24B6EC1A00A324C5 /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03694924B6EC1A00A324C5 /* VideoPlayerVC.swift */; };
+		DD03694C24B6EDB000A324C5 /* ShortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD03694B24B6EDB000A324C5 /* ShortCell.swift */; };
 		DD0A959424A9295A0088BF53 /* EverythingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A959324A9295A0088BF53 /* EverythingVC.swift */; };
 		DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD107E0524A3B54200A7E234 /* InitialScreen.swift */; };
 		DD17E7AF24AE7C09002CDC9D /* AdditionalNM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD17E7AE24AE7C09002CDC9D /* AdditionalNM.swift */; };
@@ -85,6 +87,8 @@
 /* Begin PBXFileReference section */
 		68CC562C1B6CCF938E822F32 /* Pods_Spacebar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spacebar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		728D3490101F6EBBC4264F60 /* Pods-Spacebar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spacebar.debug.xcconfig"; path = "Target Support Files/Pods-Spacebar/Pods-Spacebar.debug.xcconfig"; sourceTree = "<group>"; };
+		DD03694924B6EC1A00A324C5 /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
+		DD03694B24B6EDB000A324C5 /* ShortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortCell.swift; sourceTree = "<group>"; };
 		DD0A959324A9295A0088BF53 /* EverythingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingVC.swift; sourceTree = "<group>"; };
 		DD107E0524A3B54200A7E234 /* InitialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScreen.swift; sourceTree = "<group>"; };
 		DD17E7AE24AE7C09002CDC9D /* AdditionalNM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalNM.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				DD7DAF3F24AAE85900D6F2BC /* UserPageVC.swift */,
 				DD7DAF4124AAF2B500D6F2BC /* FullScreenMessageVC.swift */,
 				DDBCCD1F24B00B8F003BDFD6 /* ReportPostVC.swift */,
+				DD03694924B6EC1A00A324C5 /* VideoPlayerVC.swift */,
 			);
 			path = AdditionalVC;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 			children = (
 				DDCB6F8D24A510030080517E /* MessagesCell.swift */,
 				DDCB6F9124A5103E0080517E /* SearchUsersCell.swift */,
+				DD03694B24B6EDB000A324C5 /* ShortCell.swift */,
 				DDCB6F9824A510B90080517E /* VideosCell.swift */,
 				DDCB6F9424A5106D0080517E /* DMUserCells.swift */,
 				DD696F2424A7A03200AD6EC9 /* SideMenuCell.swift */,
@@ -557,6 +563,7 @@
 				DD9DB9C724A4016900070888 /* SignUpV2VC.swift in Sources */,
 				DDCFA7FA24A45AF9007D85FE /* AccountSettingsVC.swift in Sources */,
 				DD696F2524A7A03200AD6EC9 /* SideMenuCell.swift in Sources */,
+				DD03694A24B6EC1A00A324C5 /* VideoPlayerVC.swift in Sources */,
 				DD9DB9D924A4083000070888 /* ProfileVC.swift in Sources */,
 				DDCB6F9924A510B90080517E /* VideosCell.swift in Sources */,
 				DDCF6B9F24ADB22C000B6806 /* LiveVideosNM.swift in Sources */,
@@ -582,6 +589,7 @@
 				DD6E849C24A8433200CD7D94 /* Video.swift in Sources */,
 				DD7EDCC524AA5AE6001035E8 /* Clip.swift in Sources */,
 				DD54B44B24AA74C500738C35 /* Picture.swift in Sources */,
+				DD03694C24B6EDB000A324C5 /* ShortCell.swift in Sources */,
 				DD107E0624A3B54200A7E234 /* InitialScreen.swift in Sources */,
 				DD9DB9C124A3FB1C00070888 /* LoginVC.swift in Sources */,
 				DDEBF6C524A3B377006D45A1 /* AppDelegate.swift in Sources */,

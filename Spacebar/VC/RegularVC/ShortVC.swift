@@ -14,6 +14,7 @@ import AVFoundation
 class ShortVC: UIViewController {
     
     let heartView = UIImageView()
+    let tableView = UITableView()
     
     var delegate: ViewControllerDelegate?
     var ImagePicker: UIImagePickerController!
@@ -25,10 +26,11 @@ class ShortVC: UIViewController {
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     
         configureNavBar()
-        configurePlayer()
-        configureHeart()
-        setupTapRecognizer()
-        setupSwipeRecognizer()
+        configureTableView()
+        //configurePlayer()
+        //configureHeart()
+        //setupTapRecognizer()
+        //setupSwipeRecognizer()
         
     }
     
@@ -42,6 +44,29 @@ class ShortVC: UIViewController {
         navigationItem.setRightBarButton(addItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
         
+    }
+    
+    func configureTableView(){
+        
+        view.addSubview(tableView)
+        
+        tableView.delegate                                  = self
+        tableView.dataSource                                = self
+        tableView.isPagingEnabled                           = true
+        tableView.showsVerticalScrollIndicator              = false
+        tableView.contentInsetAdjustmentBehavior            = .never
+        tableView.register(ShortCell.self, forCellReuseIdentifier: ShortCell.reuseID)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
+            
+        ])
+
     }
     
     func configurePlayer(){
@@ -70,8 +95,6 @@ class ShortVC: UIViewController {
     func configureHeart(){
         
         view.addSubview(heartView)
-        
-        heartView.image = UIImage(named: "Astronaut")
         
         heartView.translatesAutoresizingMaskIntoConstraints = false
         heartView.contentMode = .scaleAspectFit
@@ -186,4 +209,30 @@ class ShortVC: UIViewController {
         
     }
 
+}
+
+extension ShortVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 1
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShortCell") as! ShortCell
+        
+        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return self.tableView.frame.size.height;
+        
+    }
+    
 }

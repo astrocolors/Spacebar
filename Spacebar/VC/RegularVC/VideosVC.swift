@@ -137,4 +137,14 @@ extension VideosVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let videoPlayerVC = VideoPlayerVC()
+        
+        videoPlayerVC.modalPresentationStyle = .fullScreen
+        
+        present(videoPlayerVC, animated: true)
+        
+    }
+    
 }
