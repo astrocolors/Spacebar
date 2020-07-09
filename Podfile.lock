@@ -282,6 +282,13 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - SPPermissions/Camera (5.0.9):
+    - SPPermissions/Core
+  - SPPermissions/Core (5.0.9)
+  - SPPermissions/Location (5.0.9):
+    - SPPermissions/Core
+  - SPPermissions/Microphone (5.0.9):
+    - SPPermissions/Core
 
 DEPENDENCIES:
   - BulletinBoard
@@ -291,6 +298,9 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - KMPlaceholderTextView
+  - SPPermissions/Camera
+  - SPPermissions/Location
+  - SPPermissions/Microphone
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -317,6 +327,7 @@ SPEC REPOS:
     - KMPlaceholderTextView
     - leveldb-library
     - nanopb
+    - SPPermissions
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -342,7 +353,8 @@ SPEC CHECKSUMS:
   KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  SPPermissions: 1f1e6d10e1c3c861b0ab0091f8b3a63ab5d1efd0
 
-PODFILE CHECKSUM: 336c2aaf3b71599a9a3abc7a4c222cd6c57de0f9
+PODFILE CHECKSUM: e0bf2eec05bca44272feee3174daf9cdec1c7b3c
 
 COCOAPODS: 1.7.5

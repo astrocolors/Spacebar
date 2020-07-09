@@ -14,5 +14,8 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Storage'
 pod 'KMPlaceholderTextView'
 pod 'BulletinBoard'
+pod 'SPPermissions/Camera'
+pod 'SPPermissions/Location'
+pod 'SPPermissions/Microphone'
 
 end

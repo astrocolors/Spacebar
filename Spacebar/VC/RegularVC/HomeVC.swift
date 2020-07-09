@@ -10,6 +10,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import SPPermissions
 
 class HomeVC: UIViewController {
     
@@ -32,6 +33,7 @@ class HomeVC: UIViewController {
         configureLoginButton() // temporary
         configureTableView()
         configureRefreshController()
+        configurePermissions()
         
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
@@ -106,6 +108,17 @@ class HomeVC: UIViewController {
         
         tableView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(refreshMessages), for: .valueChanged)
+        
+    }
+    
+    func configurePermissions(){
+        
+        let controller = SPPermissions.list([.camera, .locationWhenInUse, .microphone])
+        
+        controller.titleText = "Permissions"
+        controller.headerText = "In order for you to have the best experience, there are a few things we need to be able to access:"
+        
+        controller.present(on: self)
         
     }
     
