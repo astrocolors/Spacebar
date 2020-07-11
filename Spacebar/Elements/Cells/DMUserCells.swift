@@ -59,7 +59,6 @@ class DMUserCells: UITableViewCell {
         
         userLogin.translatesAutoresizingMaskIntoConstraints = false
         userLogin.text = "Coming Soon!"
-        userLogin.textColor = .darkText
         userLogin.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 14)
         
         NSLayoutConstraint.activate([

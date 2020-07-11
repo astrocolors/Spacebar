@@ -22,7 +22,7 @@ class SearchVideosVC: UIViewController {
     
     private func configure(){
         
-        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        view.backgroundColor = .systemBackground
         
     }
     

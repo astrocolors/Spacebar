@@ -17,9 +17,9 @@ class AccountSettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        view.backgroundColor = .systemBackground
 
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.barTintColor = .systemBackground
         
         configureTableView()
     }

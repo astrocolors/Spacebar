@@ -26,7 +26,7 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = .systemBackground
         
         user = ProfileNM.shared.getLogin()
         
@@ -43,7 +43,7 @@ class ProfileVC: UIViewController {
     
     func configureNavBar(){
         
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
+        navigationController?.navigationBar.barTintColor = .systemBackground
         
         let accountSettingsItem = UIBarButtonItem(image: UIImage(systemName: "gear"), style: .plain, target: self, action: #selector(pushAccountSettingsVC)) 
         
@@ -168,7 +168,6 @@ class ProfileVC: UIViewController {
         tableView.rowHeight = 60
         tableView.separatorInset = .zero
 
-        
         NSLayoutConstraint.activate([
             
             tableView.topAnchor.constraint(equalTo: segmentedController.bottomAnchor, constant: 5),

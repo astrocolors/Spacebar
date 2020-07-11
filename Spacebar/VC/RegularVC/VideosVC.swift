@@ -21,7 +21,7 @@ class VideosVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = .systemBackground
         
         configureNavBar()
         configureSegmentedController()
@@ -30,15 +30,34 @@ class VideosVC: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Deselects the selected tableview cell ~smoothly~
+        
+        let selectedRow: IndexPath? = tableView.indexPathForSelectedRow
+        if let selectedRowNotNill = selectedRow {
+            tableView.deselectRow(at: selectedRowNotNill, animated: true)
+            
+        }
+        
+    }
+    
     func configureNavBar(){
         
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
+        let image: UIImage = UIImage(named: "Astronaut")!
+        let logo = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        logo.contentMode = .scaleAspectFit
+        logo.image = image
+        
+        navigationController?.navigationBar.barTintColor = .systemBackground
         
         let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pushSearchVideosVC))
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
         
         navigationItem.setRightBarButton(searchItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
+        //navigationItem.titleView = logo
         
     }
     
@@ -129,8 +148,6 @@ extension VideosVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideosCell") as! VideosCell
-        
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         return cell
         

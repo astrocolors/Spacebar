@@ -20,7 +20,7 @@ class HomeVC: UIViewController {
         
     }
     
-    var tableView = UITableView()
+    var messagesTable = UITableView()
     let refreshControl = UIRefreshControl()
     var messages: [message] = [] // What is this for?
     var delegate: ViewControllerDelegate?
@@ -35,7 +35,20 @@ class HomeVC: UIViewController {
         configureRefreshController()
         configurePermissions()
         
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.backgroundColor = .systemBackground
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Deselects the selected tableview cell ~smoothly~
+        
+        let selectedRow: IndexPath? = messagesTable.indexPathForSelectedRow
+        if let selectedRowNotNill = selectedRow {
+            messagesTable.deselectRow(at: selectedRowNotNill, animated: true)
+            
+        }
         
     }
     
@@ -46,7 +59,7 @@ class HomeVC: UIViewController {
         logo.contentMode = .scaleAspectFit
         logo.image = image
         
-        navigationController?.navigationBar.barTintColor    = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.barTintColor    = .systemBackground
         navigationController?.hidesBarsOnSwipe              = true
         
         let messageItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushAddMessageVC))
@@ -57,7 +70,7 @@ class HomeVC: UIViewController {
         //navigationItem.setRightBarButtonItems([messageItem, searchItem], animated: true)
         navigationItem.setRightBarButton(searchItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
-        navigationItem.titleView = logo
+        //navigationItem.titleView = logo
         
     }
     
@@ -83,22 +96,21 @@ class HomeVC: UIViewController {
     
     func configureTableView(){
         
-        view.addSubview(tableView)
+        messagesTable.delegate = self
+        messagesTable.dataSource = self
+        messagesTable.rowHeight = 140
+        messagesTable.separatorInset = .zero
+        messagesTable.register(MessagesCell.self, forCellReuseIdentifier: "MessagesCell")
+        messagesTable.translatesAutoresizingMaskIntoConstraints = false
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.rowHeight = 140
-        tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tableView.separatorInset = .zero
-        tableView.register(MessagesCell.self, forCellReuseIdentifier: "MessagesCell")
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(messagesTable)
         
         NSLayoutConstraint.activate([
             
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
+            messagesTable.topAnchor.constraint(equalTo: view.topAnchor),
+            messagesTable.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            messagesTable.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            messagesTable.heightAnchor.constraint(equalTo: view.heightAnchor)
             
         ])
         
@@ -106,7 +118,7 @@ class HomeVC: UIViewController {
     
     func configureRefreshController(){
         
-        tableView.addSubview(refreshControl)
+        messagesTable.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(refreshMessages), for: .valueChanged)
         
     }
@@ -217,8 +229,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
-        
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         cell.delegate = self // Tells the boss who the intern (this view controller) is
         

@@ -36,7 +36,7 @@ class SearchUsersVC: UIViewController {
     
     func configure(){
         
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.backgroundColor = .systemBackground
         
     }
     
@@ -63,13 +63,11 @@ class SearchUsersVC: UIViewController {
         UserTableView.dataSource = self
         UserTableView.register(SearchUsersCell.self, forCellReuseIdentifier: SearchUsersCell.reuseID)
         
-        UserTableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
         UserTableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
-            UserTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            UserTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             UserTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             UserTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             UserTableView.heightAnchor.constraint(equalTo: view.heightAnchor)

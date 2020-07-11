@@ -20,7 +20,7 @@ class NotiVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = .systemBackground
         
         configureSegmentedController()
         configureTableView()
@@ -37,7 +37,7 @@ class NotiVC: UIViewController {
     func configureNavBar(){
         
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9198423028, green: 0.9198423028, blue: 0.9198423028, alpha: 1)
+        navigationController?.navigationBar.barTintColor = .systemBackground
         navigationController?.hidesBarsOnSwipe = true
         
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
@@ -54,7 +54,6 @@ class NotiVC: UIViewController {
         view.addSubview(notificationTable)
         
         notificationTable.translatesAutoresizingMaskIntoConstraints = false
-        notificationTable.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         notificationTable.delegate = self
         notificationTable.dataSource = self
         notificationTable.separatorInset = .zero

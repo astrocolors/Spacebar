@@ -25,7 +25,7 @@ class DMVC: UIViewController {
         let searchBar = UISearchBar()
         let newConverstionItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushNewConvoSearchVC))
         
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        navigationController?.navigationBar.barTintColor = .systemBackground
         navigationItem.titleView = searchBar
         navigationItem.setRightBarButton(newConverstionItem, animated: true)
         
@@ -42,7 +42,7 @@ class DMVC: UIViewController {
         DMTableView.dataSource                      = self
         DMTableView.register(DMUserCells.self, forCellReuseIdentifier: DMUserCells.reuseID)
         
-        DMTableView.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
+        DMTableView.backgroundColor = .systemBackground
         
         DMTableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -78,8 +78,6 @@ extension DMVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: DMUserCells.reuseID, for: indexPath) as! DMUserCells
-        
-        cell.backgroundColor = #colorLiteral(red: 0.968627451, green: 0.7960784314, blue: 0.7960784314, alpha: 1)
         
         return cell
         
