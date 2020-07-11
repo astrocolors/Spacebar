@@ -15,6 +15,7 @@ class ShortVC: UIViewController {
     
     let heartView = UIImageView()
     let tableView = UITableView()
+    let refreshControl = UIRefreshControl()
     
     var delegate: ViewControllerDelegate?
     var ImagePicker: UIImagePickerController!
@@ -23,10 +24,11 @@ class ShortVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     
         configureNavBar()
         configureTableView()
+        configureRefreshView()
         //configurePlayer()
         //configureHeart()
         //setupTapRecognizer()
@@ -36,7 +38,9 @@ class ShortVC: UIViewController {
     
     func configureNavBar(){
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
         
         let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pushAddShortVC))
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
@@ -69,11 +73,18 @@ class ShortVC: UIViewController {
 
     }
     
+    func configureRefreshView(){
+        
+        tableView.addSubview(refreshControl)
+        
+        refreshControl.addTarget(self, action: #selector(refreshClips), for: .touchUpInside)
+        
+    }
+    
     func configurePlayer(){
         
         let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!))
         let layer = AVPlayerLayer(player: player)
-
         
         layer.frame = view.bounds
         layer.videoGravity = .resizeAspectFill
@@ -110,25 +121,6 @@ class ShortVC: UIViewController {
         
     }
     
-    func setupSwipeRecognizer(){
-        
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture(sender:)))
-        
-        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture(sender:)))
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeGesture(sender:)))
-        
-        swipeUp.direction = .up
-        swipeDown.direction = .down
-        swipeLeft.direction = .left
-        
-        view.addGestureRecognizer(swipeUp)
-        view.addGestureRecognizer(swipeDown)
-        view.addGestureRecognizer(swipeLeft)
-        
-        
-    }
-    
     func showImagePickerController(){
         
         let imagePicker = UIImagePickerController()
@@ -159,43 +151,9 @@ class ShortVC: UIViewController {
         
     }
     
-    @objc func swipeGesture(sender: UISwipeGestureRecognizer?) {
+    @objc func refreshClips(){
         
-        if let swipeGesture = sender {
-            
-            switch swipeGesture.direction {
-                
-            case .up:
-                
-                UIView.animate(withDuration: 0.3) {
-                    
-                    self.view.center.y -= 900
-                    
-                }
-                
-            case .down:
-                
-                UIView.animate(withDuration: 0.3) {
-                    
-                    self.view.center.y += 900
-                    
-                }
-                
-            case .left:
-                
-                UIView.animate(withDuration: 0.2) {
-                    
-                    self.view.center.x -= 300
-                    
-                }
-                
-            default:
-                
-                break
-                
-            }
-        
-        }
+        self.refreshControl.endRefreshing()
         
     }
     
@@ -215,7 +173,7 @@ extension ShortVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 5
         
     }
     
