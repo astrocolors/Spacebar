@@ -213,16 +213,17 @@ extension HomeVC: MessageCellDelegate {
     
     func didPressStarButton() {
         
-        // Add stuff
+        
         
     }
     
     
-    func didPressReportButton() {
+    func didPressShareButton() {
         
-        let reportPostVC = ReportPostVC()
+        let shareMessage = UIActivityViewController(activityItems: ["@Astronaut - "], applicationActivities: nil)
         
-        navigationController?.pushViewController(reportPostVC, animated: true)
+        present(shareMessage, animated: true, completion: nil)
+        
         
     }
     
@@ -243,6 +244,46 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self // Tells the boss who the intern (this view controller) is
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let repostAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
+            
+            print("Repost")
+            
+            handler(true)
+            
+        }
+        
+        repostAction.backgroundColor = #colorLiteral(red: 0.03529411765, green: 0.6154810469, blue: 0.06274509804, alpha: 1)
+        
+        repostAction.image = UIImage(systemName: "repeat")
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [repostAction])
+        
+        return swipeActions
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        
+        let likeAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
+            
+            handler(true) 
+            
+        }
+        
+        likeAction.image = UIImage(systemName: "star.fill")
+        
+        likeAction.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.8764484497, blue: 0.01960784314, alpha: 1)
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [likeAction])
+        
+        return swipeActions
         
     }
     

@@ -8,6 +8,7 @@
 //  Purpose: These are the cells that pop up every time there is a message on the screen
 
 import UIKit
+import Lottie
 
 protocol MessageCellDelegate { // Options for the boss
     
@@ -15,7 +16,7 @@ protocol MessageCellDelegate { // Options for the boss
     func didPressReplyButton()
     func didPressRepostButton()
     func didPressStarButton()
-    func didPressReportButton()
+    func didPressShareButton()
     
 }
 
@@ -30,7 +31,7 @@ class MessagesCell: UITableViewCell {
     let replyButton     = UIButton()
     let repostButton    = UIButton()
     let starButton      = UIButton()
-    let reportButton    = UIButton()
+    let shareButton     = UIButton()
     let spacerButton    = UIButton()
     let spacerButtonV2  = UIButton()
     
@@ -126,7 +127,7 @@ class MessagesCell: UITableViewCell {
         interStackView.addArrangedSubview(replyButton)
         interStackView.addArrangedSubview(repostButton)
         interStackView.addArrangedSubview(starButton)
-        interStackView.addArrangedSubview(reportButton)
+        interStackView.addArrangedSubview(shareButton)
         interStackView.addArrangedSubview(spacerButtonV2)
         
         NSLayoutConstraint.activate([
@@ -144,15 +145,15 @@ class MessagesCell: UITableViewCell {
     
     func configureButtons(){
         
-        replyButton.setImage(UIImage(systemName: "arrowshape.turn.up.left"), for: .normal)
+        starButton.setImage(UIImage(systemName: "star"), for: .normal)
         repostButton.setImage(UIImage(systemName: "repeat"), for: .normal)
-        starButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        reportButton.setImage(UIImage(systemName: "exclamationmark.triangle"), for: .normal)
+        replyButton.setImage(UIImage(systemName: "text.bubble"), for: .normal)
+        shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         
         replyButton.addTarget(self, action: #selector(pushReplyScreenVC), for: .touchUpInside)
         repostButton.addTarget(self, action: #selector(pushRepostButton), for: .touchUpInside)
         starButton.addTarget(self, action: #selector(pushStarButton), for: .touchUpInside)
-        reportButton.addTarget(self, action: #selector(pushReportPostVC), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(pushSharePost), for: .touchUpInside)
         
     }
     
@@ -180,9 +181,9 @@ class MessagesCell: UITableViewCell {
         
     }
     
-    @objc func pushReportPostVC(){
+    @objc func pushSharePost(){
         
-        delegate?.didPressReportButton()
+        delegate?.didPressShareButton()
         
     }
     
