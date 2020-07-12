@@ -120,7 +120,7 @@ class HomeVC: UIViewController {
         messagesTable.dataSource = self
         messagesTable.rowHeight = 140
         messagesTable.separatorInset = .zero
-        messagesTable.register(MessagesCell.self, forCellReuseIdentifier: "MessagesCell")
+        messagesTable.register(MessagesCell.self, forCellReuseIdentifier: MessagesCell.reuseID)
         messagesTable.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(messagesTable)
@@ -241,7 +241,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell") as! MessagesCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessagesCell
         
         cell.delegate = self // Tells the boss who the intern (this view controller) is
         

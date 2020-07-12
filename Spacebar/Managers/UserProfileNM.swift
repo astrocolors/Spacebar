@@ -18,55 +18,16 @@ class ProfileNM{
     let user = Auth.auth().currentUser?.email
     let userName = Auth.auth().currentUser?.displayName
     
-    func isSignedIn() -> String?{
-        
-        if user == nil {
-            
-            return nil
-            
-        }
-        
-        else {
-            
-            return user
-            
-        }
-        
-        
-    }
-    
-    func getLogin() -> String?{
-        
-        // Includes profile picture, name, background picture, followers, following, bio, location, birthday, gender, & sex.
-        
-        if user != nil {
-            
-            return user
-            
-        }
-        
-        else {
-            
-            return nil
-            
-        }
-        
-    }
-    
     func getMessages(){
         
-        let folderURL = baseURL + "\(user!)/Messages"
-        
-        print(folderURL)
-        
-        let storageRef = Storage.storage().reference().child(folderURL)
+        let storageRef = Storage.storage().reference(withPath: "Users/\(user!)/Messages")
         
         storageRef.listAll { (result, error) in
             
             if let error = error {
                 
                 print(error.localizedDescription)
-            
+                
             }
             
             for item in result.items {
@@ -79,11 +40,9 @@ class ProfileNM{
         
     }
     
-    func getPhotos(completed: @escaping([Data?], String?) -> Void){
+    func getPhotos(){
         
-        let folderURL = baseURL + "\(userName)/Pictures"
-        
-        let storageRef = Storage.storage().reference().child(folderURL)
+        let storageRef = Storage.storage().reference(withPath: "Users/\(user!)/Photos")
         
         storageRef.listAll { (result, error) in
             
@@ -95,13 +54,11 @@ class ProfileNM{
             
             for item in result.items {
                 
-                let photos = [item.fullPath]
+                print(item)
                 
             }
             
-            
         }
-        
         
     }
     
