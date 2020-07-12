@@ -9,12 +9,14 @@
 import UIKit
 import AVKit
 import AVFoundation
+import Lottie
 
 class ShortCell: UITableViewCell {
 
     static let reuseID = "ShortCell"
     
     var imageViewer = UIImageView()
+    let animationView = AnimationView()
     
     let videoPlayer = AVPlayerLayer(player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!)))
         
@@ -23,6 +25,7 @@ class ShortCell: UITableViewCell {
         
         //configurePlayer()
         configureImage()
+        configureDoubleTap()
     }
     
     required init?(coder: NSCoder) {
@@ -47,6 +50,8 @@ class ShortCell: UITableViewCell {
         
         imageViewer.image = UIImage(named: "Moon")
         
+        imageViewer.isUserInteractionEnabled = true
+        
         imageViewer.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -60,5 +65,52 @@ class ShortCell: UITableViewCell {
         
         
     }
+    
+    func configureDoubleTap(){
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        
+        doubleTap.numberOfTapsRequired = 2
+        
+        imageViewer.addGestureRecognizer(doubleTap)
+        
+    }
+    
+    func configureAnimation(){
+        
+        addSubview(animationView)
+        animationView.alpha = 0
+        animationView.frame = self.bounds
+        animationView.contentMode = .scaleAspectFit
+        animationView.animation = Animation.named("Favorite")
+        
+        UIView.animate(withDuration: 0.2) {
+            
+            UIView.animate(withDuration: 0.2) {
+                
+                self.animationView.alpha = 1
+                
+            }
+            
+            self.animationView.play { (finished) in
+                
+                UIView.animate(withDuration: 0.2) {
+                    
+                    self.animationView.alpha = 0
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    @objc func doubleTapped(){
+        
+        configureAnimation()
+        
+    }
+    
     
 }

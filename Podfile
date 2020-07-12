@@ -17,5 +17,6 @@ pod 'BulletinBoard'
 pod 'SPPermissions/Camera'
 pod 'SPPermissions/Location'
 pod 'SPPermissions/Microphone'
+pod 'lottie-ios'
 
 end

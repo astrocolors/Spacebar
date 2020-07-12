@@ -29,12 +29,13 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configurePermissions()
         configureNavBar()
         configureLoginButton() // temporary
         configureTableView()
         configureRefreshController()
-        configurePermissions()
-        
+ 
+
         view.backgroundColor = .systemBackground
         
     }
@@ -50,6 +51,25 @@ class HomeVC: UIViewController {
             
         }
         
+    }
+    
+    func configurePermissions(){
+        
+        let controller = SPPermissions.list([.camera, .locationWhenInUse, .microphone])
+        
+        controller.titleText = "Permissions"
+        controller.headerText = "In order for you to have the best experience, there are a few things we need to be able to access:"
+        
+        let cameraState = SPPermission.camera.isAuthorized
+        let locationState = SPPermission.locationWhenInUse.isAuthorized
+        let microphoneState = SPPermission.microphone.isAuthorized
+        
+        if (cameraState == false || locationState == false || microphoneState == false) {
+            
+            controller.present(on: self)
+            
+        }
+    
     }
     
     func configureNavBar(){
@@ -123,16 +143,6 @@ class HomeVC: UIViewController {
         
     }
     
-    func configurePermissions(){
-        
-        let controller = SPPermissions.list([.camera, .locationWhenInUse, .microphone])
-        
-        controller.titleText = "Permissions"
-        controller.headerText = "In order for you to have the best experience, there are a few things we need to be able to access:"
-        
-        controller.present(on: self)
-        
-    }
     
     @objc func pushSideMenuVC(){
         

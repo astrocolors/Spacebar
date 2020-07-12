@@ -48,9 +48,10 @@ class VideosCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
 
-            videoImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            videoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
-            videoImageView.heightAnchor.constraint(equalToConstant: 80),
+            videoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            videoImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            videoImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            videoImageView.heightAnchor.constraint(equalToConstant: 180),
             videoImageView.widthAnchor.constraint(equalTo: videoImageView.heightAnchor, multiplier: 16/9)
             
         ])
@@ -68,8 +69,8 @@ class VideosCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            videoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -15),
-            videoTitleLabel.leadingAnchor.constraint(equalTo: videoImageView.trailingAnchor, constant: 2),
+            videoTitleLabel.topAnchor.constraint(equalTo: videoImageView.bottomAnchor, constant: 5),
+            videoTitleLabel.leadingAnchor.constraint(equalTo: videoImageView.leadingAnchor, constant: 10),
             videoTitleLabel.heightAnchor.constraint(equalToConstant: 25),
             videoTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
             
