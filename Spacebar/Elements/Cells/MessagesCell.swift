@@ -25,6 +25,7 @@ class MessagesCell: UITableViewCell {
     static let reuseID  = "MessageCell"
     let avatarImageView = SBAvatarImageView(frame: .zero)
     let usernameLabel   = SBTitleLabel()
+    let nameLabel       = UILabel()
     let messageLabel    = UILabel()
     let interStackView  = UIStackView()
     
@@ -41,6 +42,7 @@ class MessagesCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configureUserAvatar()
+        configureNameLabel()
         configureUsernameLabel()
         configureMessageLabel()
         configureStackView()
@@ -54,6 +56,23 @@ class MessagesCell: UITableViewCell {
         
     }
     
+    private func configureNameLabel(){
+        
+        addSubview(nameLabel)
+        
+        nameLabel.text = "Astronaut"
+        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
+            nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -40),
+            nameLabel.heightAnchor.constraint(equalToConstant: 50),
+            
+        ])
+        
+    }
     
     private func configureUserAvatar(){
         
@@ -67,7 +86,7 @@ class MessagesCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -25),
             avatarImageView.heightAnchor.constraint(equalToConstant: 50),
             avatarImageView.widthAnchor.constraint(equalToConstant: 50)
@@ -83,9 +102,11 @@ class MessagesCell: UITableViewCell {
         
         usernameLabel.text = "@Astronaut"
         
+        usernameLabel.textColor = .gray
+        
         NSLayoutConstraint.activate([
             
-            usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
+            usernameLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 10),
             usernameLabel.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -40)
             
         ])

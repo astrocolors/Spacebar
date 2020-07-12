@@ -20,6 +20,7 @@ class UserPageVC: UIViewController {
     let followButton        = UIButton()
     let tableView           = UITableView()
     let containerView       = UIView()
+    let refreshController   = UIRefreshControl()
     var segmentedController = UISegmentedControl()
     
     lazy var boardManager: BLTNItemManager = {
@@ -49,7 +50,7 @@ class UserPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        view.backgroundColor = .systemBackground
         
         configureNavBar()
         configureUserAvatar()
@@ -60,6 +61,7 @@ class UserPageVC: UIViewController {
         configureUserFollowing()
         configureSegmentedController()
         configureTableView()
+        configureRefreshController()
         
     }
     
@@ -222,14 +224,13 @@ class UserPageVC: UIViewController {
     
     func configureTableView(){
         
-        let tableView = UITableView()
-        
         view.addSubview(tableView)
         
-        tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        
-        tableView.rowHeight = 60
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 140
         tableView.separatorInset = .zero
+        tableView.register(MessagesCell.self, forCellReuseIdentifier: MessagesCell.reuseID)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -238,10 +239,18 @@ class UserPageVC: UIViewController {
             tableView.topAnchor.constraint(equalTo: segmentedController.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.heightAnchor.constraint(equalTo: view.heightAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
             
         ])
         
+        
+    }
+    
+    func configureRefreshController(){
+        
+        tableView.addSubview(refreshController)
+        
+        refreshController.addTarget(self, action: #selector(refreshMessages), for: .valueChanged)
         
     }
     
@@ -262,6 +271,12 @@ class UserPageVC: UIViewController {
         
         dismiss(animated: true)
         
+        
+    }
+    
+    @objc func refreshMessages(){
+        
+        refreshController.endRefreshing()
         
     }
        
@@ -288,4 +303,62 @@ class UserPageVC: UIViewController {
     }
 
 
+}
+
+extension UserPageVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 10
+        
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let repostAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
+            
+            print("Repost")
+            
+            handler(true)
+            
+        }
+        
+        repostAction.backgroundColor = #colorLiteral(red: 0.03529411765, green: 0.6154810469, blue: 0.06274509804, alpha: 1)
+        
+        repostAction.image = UIImage(systemName: "repeat")
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [repostAction])
+        
+        return swipeActions
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        
+        let likeAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
+            
+            handler(true)
+            
+        }
+        
+        likeAction.image = UIImage(systemName: "star.fill")
+        
+        likeAction.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.8764484497, blue: 0.01960784314, alpha: 1)
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [likeAction])
+        
+        return swipeActions
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessagesCell
+        
+        return cell
+        
+    }
+    
 }

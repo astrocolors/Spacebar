@@ -89,7 +89,7 @@ class SignUpV3VC: UIViewController {
         
         NSLayoutConstraint.activate([
         
-            launchButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 300),
+            launchButton.topAnchor.constraint(equalTo: passwordRepeatTextField.bottomAnchor, constant: 100),
             launchButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             launchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             launchButton.heightAnchor.constraint(equalToConstant: 50)

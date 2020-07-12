@@ -81,6 +81,22 @@ class LoginVC: UIViewController {
     
     }
     
+    func configureLoginButton(){
+        
+        loginButton.addTarget(self, action: #selector(pushLoadingVC), for: .touchUpInside)
+        
+        view.addSubview(loginButton)
+        
+        NSLayoutConstraint.activate([
+        
+            loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 100),
+            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            loginButton.heightAnchor.constraint(equalToConstant: 50)
+        
+        ])
+    }
+    
     func configureErrorLabel(){
         
         view.addSubview(errorLabel)
@@ -101,25 +117,6 @@ class LoginVC: UIViewController {
         ])
 
     }
-    
-    
-    func configureLoginButton(){
-        
-        loginButton.addTarget(self, action: #selector(pushLoadingVC), for: .touchUpInside)
-        
-        view.addSubview(loginButton)
-        
-        NSLayoutConstraint.activate([
-        
-            loginButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 600),
-            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-            loginButton.heightAnchor.constraint(equalToConstant: 50)
-        
-        ])
-    }
-    
-    
     
     @objc func pushLoadingVC(){
         
