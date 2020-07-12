@@ -33,7 +33,6 @@ class NotificationCell: UITableViewCell {
         userAvatar.contentMode                                  = .scaleAspectFit
         userAvatar.clipsToBounds                                = true
         userAvatar.layer.masksToBounds                          = true
-        userAvatar.layer.cornerCurve                            = CALayerCornerCurve.circular
         userAvatar.layer.cornerRadius                           = 15
         userAvatar.backgroundColor                              = .blue
         userAvatar.translatesAutoresizingMaskIntoConstraints    = false

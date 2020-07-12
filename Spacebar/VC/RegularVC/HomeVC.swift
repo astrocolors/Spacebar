@@ -213,7 +213,9 @@ extension HomeVC: MessageCellDelegate {
     
     func didPressStarButton() {
         
+        HomeNM.shared.getMessages()
         
+        HomeNM.shared.getPhotos()
         
     }
     

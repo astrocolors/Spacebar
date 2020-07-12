@@ -14,6 +14,7 @@ class FullScreenMessageVC: UIViewController {
     let userAvatar = UIImageView()
     let userLogin = UILabel()
     let userMessage = UILabel()
+    let actionBar = UIStackView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class FullScreenMessageVC: UIViewController {
         configureUserAvatar()
         configureUserLogin()
         configureUserMessage()
+        configureActionBar()
     }
     
     func configureNavBar(){
@@ -84,6 +86,23 @@ class FullScreenMessageVC: UIViewController {
             userMessage.topAnchor.constraint(equalTo: userAvatar.bottomAnchor, constant: 10),
             userMessage.leadingAnchor.constraint(equalTo: userLogin.leadingAnchor),
             userMessage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+        ])
+        
+    }
+    
+    func configureActionBar(){
+        
+        view.addSubview(actionBar)
+        
+        actionBar.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            actionBar.topAnchor.constraint(equalTo: userMessage.bottomAnchor),
+            actionBar.leadingAnchor.constraint(equalTo: userMessage.leadingAnchor),
+            actionBar.trailingAnchor.constraint(equalTo: userMessage.trailingAnchor),
+            actionBar.heightAnchor.constraint(equalToConstant: 60)
             
         ])
         

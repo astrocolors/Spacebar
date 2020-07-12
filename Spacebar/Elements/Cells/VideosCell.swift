@@ -14,6 +14,7 @@ class VideosCell: UITableViewCell {
     static let reuseID = "VideosCell"
     
     var videoImageView              = UIImageView()
+    let avatarImageView             = UIImageView()
     var videoTitleLabel             = UILabel()
     var viewCount                   = UILabel()
     
@@ -21,6 +22,7 @@ class VideosCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configureImageView()
+        configureUserAvatar()
         configureTitleLabel()
         configureViewCount()
     
@@ -58,6 +60,30 @@ class VideosCell: UITableViewCell {
         
     }
     
+    func configureUserAvatar(){
+        
+        addSubview(avatarImageView)
+        
+        avatarImageView.contentMode                                  = .scaleAspectFit
+        avatarImageView.clipsToBounds                                = true
+        avatarImageView.layer.masksToBounds                          = true
+        avatarImageView.backgroundColor                              = .blue
+        avatarImageView.layer.cornerRadius                           = 20
+        
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            avatarImageView.topAnchor.constraint(equalTo: videoImageView.bottomAnchor, constant: 20),
+            avatarImageView.leadingAnchor.constraint(equalTo: videoImageView.leadingAnchor, constant: 20),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 40),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 40)
+            
+        ])
+        
+        
+    }
+    
     func configureTitleLabel(){
         
         addSubview(videoTitleLabel)
@@ -69,8 +95,8 @@ class VideosCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            videoTitleLabel.topAnchor.constraint(equalTo: videoImageView.bottomAnchor, constant: 5),
-            videoTitleLabel.leadingAnchor.constraint(equalTo: videoImageView.leadingAnchor, constant: 10),
+            videoTitleLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
+            videoTitleLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
             videoTitleLabel.heightAnchor.constraint(equalToConstant: 25),
             videoTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
             
