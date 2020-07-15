@@ -16,6 +16,7 @@ class VideosCell: UITableViewCell {
     var videoImageView              = UIImageView()
     let avatarImageView             = UIImageView()
     var videoTitleLabel             = UILabel()
+    var userLabel                   = UILabel()
     var viewCount                   = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -24,6 +25,7 @@ class VideosCell: UITableViewCell {
         configureImageView()
         configureUserAvatar()
         configureTitleLabel()
+        configureUserLabel()
         configureViewCount()
     
     }
@@ -88,7 +90,7 @@ class VideosCell: UITableViewCell {
         
         addSubview(videoTitleLabel)
         
-        videoTitleLabel.text =  "Video Title"
+        videoTitleLabel.text =  "This is going to be the title of the video."
         videoTitleLabel.numberOfLines                               = 0
         videoTitleLabel.adjustsFontSizeToFitWidth                   = true
         videoTitleLabel.translatesAutoresizingMaskIntoConstraints   = false
@@ -104,21 +106,36 @@ class VideosCell: UITableViewCell {
         
     }
     
+    func configureUserLabel(){
+        
+        addSubview(userLabel)
+        
+        userLabel.text = "Astronaut"
+        userLabel.font = UIFont(name: "Times New Roman", size: 14)
+        userLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            
+            userLabel.topAnchor.constraint(equalTo: videoTitleLabel.bottomAnchor, constant: -3),
+            userLabel.leadingAnchor.constraint(equalTo: videoTitleLabel.leadingAnchor),
+            userLabel.heightAnchor.constraint(equalToConstant: 20)
+            
+        ])
+        
+    }
+    
     func configureViewCount(){
         
         addSubview(viewCount)
         
-        viewCount.font = UIFont(name: "Times New Roman", size: 12)
-        
-        viewCount.text = "301 Views"
-        
+        viewCount.font = UIFont(name: "Times New Roman", size: 14)
+        viewCount.text = " • 301 Views"
         viewCount.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
-            viewCount.topAnchor.constraint(equalTo: videoTitleLabel.bottomAnchor, constant: -5),
-            viewCount.leadingAnchor.constraint(equalTo: videoTitleLabel.leadingAnchor),
-            viewCount.trailingAnchor.constraint(equalTo: videoTitleLabel.trailingAnchor),
+            viewCount.topAnchor.constraint(equalTo: videoTitleLabel.bottomAnchor, constant: -3),
+            viewCount.leadingAnchor.constraint(equalTo: userLabel.trailingAnchor, constant: 2),
             viewCount.heightAnchor.constraint(equalToConstant: 20)
             
         ])

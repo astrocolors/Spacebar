@@ -53,13 +53,13 @@ extension DataCollectionVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return 5
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: DataCollectionCell.reuseID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DataCollectionCell") as! DataCollectionCell
         
         return cell
         

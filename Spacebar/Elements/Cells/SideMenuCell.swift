@@ -68,8 +68,6 @@ class SideMenuCell: UITableViewCell {
             
         ])
         
-        
-        
     }
     
 }
