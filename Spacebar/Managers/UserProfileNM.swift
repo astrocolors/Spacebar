@@ -11,14 +11,14 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class ProfileNM{
+class ProfileNM {
     
     static let shared = ProfileNM()
     let baseURL = "gs://spacebar-21236.appspot.com/Users/"
     let user = Auth.auth().currentUser?.email
     let userName = Auth.auth().currentUser?.displayName
     
-    func getMessages(){
+    func getMessages(completed: @escaping([Data]) -> Void){
         
         let storageRef = Storage.storage().reference(withPath: "Users/\(user!)/Messages")
         
@@ -32,11 +32,26 @@ class ProfileNM{
             
             for item in result.items {
                 
-                print(item)
+                item.getData(maxSize: 10*1024*1024) { (data, error) in
+                    
+                    if let error = error {
+                        
+                        print(error.localizedDescription)
+                        
+                        return
+                        
+                    }
+                    
+                    let messages = [data!]
+                    
+                    completed(messages)
+                    
+                }
                 
             }
-            
+    
         }
+        
         
     }
     
@@ -54,7 +69,6 @@ class ProfileNM{
             
             for item in result.items {
                 
-                print(item)
                 
             }
             
@@ -77,7 +91,6 @@ class ProfileNM{
     }
     
     func getInteractions(){
-        
         
         
         

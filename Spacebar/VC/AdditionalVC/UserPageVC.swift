@@ -260,7 +260,11 @@ class UserPageVC: UIViewController {
         
         dismiss(animated: true)
         
-        ProfileNM.shared.getMessages()
+        ProfileNM.shared.getMessages { (message) in
+            
+            
+            
+        }
         
         
     }

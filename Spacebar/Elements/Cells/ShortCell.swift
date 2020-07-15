@@ -18,29 +18,19 @@ class ShortCell: UITableViewCell {
     var imageViewer = UIImageView()
     let animationView = AnimationView()
     
-    let videoPlayer = AVPlayerLayer(player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!)))
-        
+    //let videoPlayer = AVPlayerLayer(player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!)))
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         //configurePlayer()
         configureImage()
         configureDoubleTap()
+
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        
-    }
-    
-    func configurePlayer(){
-        
-        layer.frame = bounds
-        videoPlayer.videoGravity = .resizeAspectFill
-        
-        layer.addSublayer(layer)
-        
-        videoPlayer.player?.play()
         
     }
     
@@ -62,7 +52,6 @@ class ShortCell: UITableViewCell {
             imageViewer.heightAnchor.constraint(equalTo: heightAnchor)
             
         ])
-        
         
     }
     
@@ -111,6 +100,5 @@ class ShortCell: UITableViewCell {
         configureAnimation()
         
     }
-    
     
 }

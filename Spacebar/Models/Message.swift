@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct message: Codable, Hashable {
+struct Message: Codable, Hashable {
     
-    var message: String?
+    var content: String?
     
 }

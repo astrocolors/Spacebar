@@ -56,6 +56,12 @@ class MessagesCell: UITableViewCell {
         
     }
     
+    func set(message: Message) {
+        
+        messageLabel.text = message.content
+        
+    }
+    
     private func configureNameLabel(){
         
         addSubview(nameLabel)
@@ -117,7 +123,7 @@ class MessagesCell: UITableViewCell {
         
         addSubview(messageLabel)
         
-        messageLabel.text = "Testing out the message label. Testing out the message label. Testing out the message label."
+        messageLabel.text = "Testing out what a message looks like. Testing out what a message looks like. Testing out what a message looks like."
         
         messageLabel.translatesAutoresizingMaskIntoConstraints  = false
         messageLabel.numberOfLines                              = 2 // This needs to be changed
@@ -177,6 +183,7 @@ class MessagesCell: UITableViewCell {
         shareButton.addTarget(self, action: #selector(pushSharePost), for: .touchUpInside)
         
     }
+    
     
     @objc func pushUserPageVC(){
         

@@ -22,7 +22,7 @@ class HomeVC: UIViewController {
     
     var messagesTable = UITableView()
     let refreshControl = UIRefreshControl()
-    var messages: [message] = [] // What is this for?
+    var messages: [Message] = [] // What is this for?
     var delegate: ViewControllerDelegate?
     let loginButton = SBButtonV2(Text: "Login", Color: #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), CornerRadius: 0) // Remove this
 
@@ -86,8 +86,8 @@ class HomeVC: UIViewController {
         let sideMenuItem = UIBarButtonItem(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(pushSideMenuVC))
        
         
-        //navigationItem.setRightBarButtonItems([messageItem, searchItem], animated: true)
-        navigationItem.setRightBarButton(searchItem, animated: true)
+        navigationItem.setRightBarButtonItems([messageItem, searchItem], animated: true)
+        //navigationItem.setRightBarButton(searchItem, animated: true)
         navigationItem.setLeftBarButton(sideMenuItem, animated: true)
         //navigationItem.titleView = logo
         
@@ -167,8 +167,6 @@ class HomeVC: UIViewController {
     }
     
     @objc func refreshMessages(){
-        
-        print("Messages Refreshed")
         
         self.refreshControl.endRefreshing()
         
@@ -251,8 +249,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let repostAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
-            
-            print("Repost")
             
             handler(true)
             

@@ -35,8 +35,7 @@ class HomeNM {
             }
             
             for item in result.items {
-                
-                print(item)
+    
                 
             }
             
@@ -57,8 +56,7 @@ class HomeNM {
             }
             
             for item in result.items {
-                
-                print(item)
+
                 
             }
             
@@ -75,7 +73,7 @@ class HomeNM {
         let metaData = StorageMetadata()
         metaData.contentType = "text/plain"
         
-        let messageData = Message?.data(using: .utf16)
+        let messageData = Message?.data(using: .utf8)
         
         let storageRef = Storage.storage().reference().child(folderURL)
         
@@ -124,10 +122,6 @@ class HomeNM {
     
     func reportPost(){
         
-        
-        // Actually send a report to the server!
-        
-        print("ayylmao")
 
         
     }

@@ -13,7 +13,6 @@ import AVFoundation
 
 class ShortVC: UIViewController {
     
-    let heartView = UIImageView()
     let tableView = UITableView()
     let refreshControl = UIRefreshControl()
     
@@ -29,10 +28,6 @@ class ShortVC: UIViewController {
         configureNavBar()
         configureTableView()
         configureRefreshView()
-        //configurePlayer()
-        //configureHeart()
-        //setupTapRecognizer()
-        //setupSwipeRecognizer()
         
     }
     
@@ -81,46 +76,6 @@ class ShortVC: UIViewController {
         
     }
     
-    func configurePlayer(){
-        
-        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "video", ofType: "mp4")!))
-        let layer = AVPlayerLayer(player: player)
-        
-        layer.frame = view.bounds
-        layer.videoGravity = .resizeAspectFill
-        
-        view.layer.addSublayer(layer)
-        
-        player.play()
-        
-    }
-    
-    func setupTapRecognizer(){
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(doubleTap))
-        tap.numberOfTapsRequired = 2
-        view.addGestureRecognizer(tap)
-        
-    }
-    
-    func configureHeart(){
-        
-        view.addSubview(heartView)
-        
-        heartView.translatesAutoresizingMaskIntoConstraints = false
-        heartView.contentMode = .scaleAspectFit
-        
-        NSLayoutConstraint.activate([
-            
-            heartView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            heartView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            heartView.heightAnchor.constraint(equalToConstant: 100),
-            heartView.widthAnchor.constraint(equalToConstant: 100)
-            
-        ])
-        
-    }
-    
     func showImagePickerController(){
         
         let imagePicker = UIImagePickerController()
@@ -141,13 +96,6 @@ class ShortVC: UIViewController {
     @objc func pushSideMenuVC(){
         
         delegate?.sideMenuToggle()
-        
-    }
-    
-    @objc func doubleTap(){
-        
-        
-        
         
     }
     
@@ -173,15 +121,13 @@ extension ShortVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return 4
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShortCell") as! ShortCell
-        
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         return cell
         

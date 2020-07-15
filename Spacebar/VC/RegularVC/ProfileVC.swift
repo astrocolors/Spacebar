@@ -11,6 +11,8 @@ import UIKit
 
 class ProfileVC: UIViewController {
     
+    var messages = [Data]()
+    
     var user: String?
     
     let userAvatar                      = UIImageView()
@@ -180,6 +182,16 @@ class ProfileVC: UIViewController {
         
     }
     
+    func configureMessages(){
+        
+        ProfileNM.shared.getMessages { (messageData) in
+            
+            self.messages = messageData
+            
+        }
+        
+    }
+    
     func configureRefreshController(){
         
         tableView.addSubview(refreshController)
@@ -204,7 +216,7 @@ class ProfileVC: UIViewController {
     
     @objc func refreshMessages(){
         
-        print("Messages Refreshed")
+        configureMessages()
         
         refreshController.endRefreshing()
         
@@ -268,8 +280,7 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessagesCell
         
         return cell
-
-
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

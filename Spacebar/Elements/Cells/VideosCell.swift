@@ -140,7 +140,6 @@ class VideosCell: UITableViewCell {
             
         ])
         
-        
     }
     
 }
