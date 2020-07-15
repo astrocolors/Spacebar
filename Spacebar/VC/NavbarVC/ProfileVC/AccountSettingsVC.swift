@@ -100,13 +100,21 @@ extension AccountSettingsVC: UITableViewDelegate, UITableViewDataSource {
         
         if (indexPath.row == 3) {
             
+            let dataCollectionVC = DataCollectionVC()
+            
+            navigationController?.pushViewController(dataCollectionVC, animated: true)
+            
+        }
+        
+        if (indexPath.row == 4) {
+            
             let notificationsVC = NotificationsVC()
             
             navigationController?.pushViewController(notificationsVC, animated: true)
             
         }
         
-        if (indexPath.row == 4) {
+        if (indexPath.row == 5) {
             
             let termsOfServiceVC = TermsOfServiceVC()
             
@@ -114,7 +122,7 @@ extension AccountSettingsVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        if (indexPath.row == 5) {
+        if (indexPath.row == 6) {
             
             let privacyPolicyVC = PrivacyPolicyVC()
             
@@ -122,7 +130,7 @@ extension AccountSettingsVC: UITableViewDelegate, UITableViewDataSource {
             
         }
         
-        if (indexPath.row == 6) {
+        if (indexPath.row == 7) {
             
             do {
                 try Auth.auth().signOut()

@@ -90,7 +90,7 @@ class VideosVC: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorInset                            = .zero
         tableView.register(VideosCell.self, forCellReuseIdentifier: VideosCell.reuseID)
-        tableView.rowHeight                                 = 400
+        tableView.rowHeight                                 = 350
         
         view.addSubview(tableView)
         

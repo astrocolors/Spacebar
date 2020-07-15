@@ -80,7 +80,6 @@ class HomeVC: UIViewController {
         logo.image = image
         
         navigationController?.navigationBar.barTintColor    = .systemBackground
-        navigationController?.hidesBarsOnSwipe              = true
         
         let messageItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(pushAddMessageVC))
         let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(pushSearchUsersVC))
