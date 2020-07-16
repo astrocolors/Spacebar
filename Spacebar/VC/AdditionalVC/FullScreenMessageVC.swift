@@ -40,9 +40,13 @@ class FullScreenMessageVC: UIViewController {
         
         view.addSubview(userAvatar)
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(pushUserPageVC))
+        
         userAvatar.backgroundColor                              = .blue
         userAvatar.translatesAutoresizingMaskIntoConstraints    = false
         userAvatar.layer.cornerRadius                           = 20
+        userAvatar.isUserInteractionEnabled                     = true
+        userAvatar.addGestureRecognizer(tapGestureRecognizer)
         
         NSLayoutConstraint.activate([
             
@@ -111,6 +115,15 @@ class FullScreenMessageVC: UIViewController {
     @objc func presentMessageOptions(){
         
         print("Message Options")
+        
+    }
+    
+    @objc func pushUserPageVC(){
+        
+        let userPageVC = UserPageVC()
+        
+        navigationController?.pushViewController(userPageVC, animated: true)
+        
         
     }
 

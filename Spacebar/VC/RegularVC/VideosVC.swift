@@ -130,8 +130,6 @@ class VideosVC: UIViewController {
     
     @objc func refreshVideos(){
         
-        print("Videos Refreshed")
-        
         refreshController.endRefreshing()
         
     }
@@ -141,7 +139,7 @@ extension VideosVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return 1
         
     }
     

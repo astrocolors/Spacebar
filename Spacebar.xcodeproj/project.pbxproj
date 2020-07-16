@@ -113,6 +113,7 @@
 		DD7EDCC424AA5AE6001035E8 /* Clip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clip.swift; sourceTree = "<group>"; };
 		DD92A8DE24B0E58B00947B35 /* EditPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhotoVC.swift; sourceTree = "<group>"; };
 		DD92A8E024B0E5AA00947B35 /* CaptionPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionPhotoVC.swift; sourceTree = "<group>"; };
+		DD9548A224BF8322005CB780 /* Spacebar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spacebar.entitlements; sourceTree = "<group>"; };
 		DD9DB9BC24A3BAE300070888 /* SBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBButton.swift; sourceTree = "<group>"; };
 		DD9DB9BE24A3BAF700070888 /* SBTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBTextField.swift; sourceTree = "<group>"; };
 		DD9DB9C024A3FB1C00070888 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -433,6 +434,7 @@
 		DDEBF6C324A3B377006D45A1 /* Spacebar */ = {
 			isa = PBXGroup;
 			children = (
+				DD9548A224BF8322005CB780 /* Spacebar.entitlements */,
 				DDCB6FB624A5ABBD0080517E /* Utilities */,
 				DDCB6FAA24A5567E0080517E /* Managers */,
 				DDCB6FA224A525B00080517E /* Models */,
@@ -781,6 +783,7 @@
 			baseConfigurationReference = 728D3490101F6EBBC4264F60 /* Pods-Spacebar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Spacebar/Spacebar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX2A6NBKPT;
 				INFOPLIST_FILE = Spacebar/Info.plist;
@@ -788,7 +791,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.shamik.Spacebar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -801,6 +804,7 @@
 			baseConfigurationReference = F421AC1CA5A01D863B3C0A5F /* Pods-Spacebar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Spacebar/Spacebar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX2A6NBKPT;
 				INFOPLIST_FILE = Spacebar/Info.plist;
@@ -808,7 +812,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.shamik.Spacebar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

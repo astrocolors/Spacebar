@@ -55,7 +55,6 @@ class VideosCell: UITableViewCell {
             videoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             videoImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             videoImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            videoImageView.heightAnchor.constraint(equalToConstant: 180),
             videoImageView.widthAnchor.constraint(equalTo: videoImageView.heightAnchor, multiplier: 16/9)
             
         ])
@@ -99,7 +98,6 @@ class VideosCell: UITableViewCell {
             
             videoTitleLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             videoTitleLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 10),
-            videoTitleLabel.heightAnchor.constraint(equalToConstant: 25),
             videoTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
             
         ])

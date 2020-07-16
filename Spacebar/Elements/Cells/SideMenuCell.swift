@@ -64,7 +64,6 @@ class SideMenuCell: UITableViewCell {
             userLogin.leadingAnchor.constraint(equalTo: userAvatar.trailingAnchor, constant: 15),
             userLogin.trailingAnchor.constraint(equalTo: trailingAnchor),
             userLogin.heightAnchor.constraint(equalToConstant: 30),
-            userLogin.widthAnchor.constraint(equalToConstant: 100)
             
         ])
         

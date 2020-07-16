@@ -20,6 +20,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>We use the camera in order to allow the users to create their own short video clips to post on the platform.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We use the users location in order to find more relevant messages and topics for the user. Users also have the option to post their location in a message or video if they choose to do so. </string>
+	<key>NSLocationUsageDescription</key>
+	<string>We use the users location in order to find more relevant messages and topics for the user. Users also have the option to post their location in a message or video if they choose to do so. </string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We use the users location in order to find more relevant messages and topics for the user. Users also have the option to post their location in a message or video if they choose to do so. </string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We use the microphone in order to allow the users to add audio to their short video clips to post on the platform.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -54,15 +64,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
-	<key>NSLocationUsageDescription</key>
-	<string></string>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string></string>
 </dict>
 </plist>

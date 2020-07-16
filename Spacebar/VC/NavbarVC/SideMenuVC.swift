@@ -63,7 +63,7 @@ extension SideMenuVC: UITableViewDelegate, UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 40
+        return 1
         
     }
     

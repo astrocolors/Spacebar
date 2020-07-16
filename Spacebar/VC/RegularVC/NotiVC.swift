@@ -123,8 +123,6 @@ class NotiVC: UIViewController {
     
     @objc func refreshNotifications(){
         
-        print("Notifications Refreshed")
-        
         refreshController.endRefreshing()
         
     }

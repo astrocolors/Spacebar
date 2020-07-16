@@ -57,8 +57,8 @@ class UserPageVC: UIViewController {
         configureUserLogin()
         configureUserBio()
         configureFollowButton()
-        configureUserFollowers()
-        configureUserFollowing()
+        //configureUserFollowers()
+        //configureUserFollowing()
         configureSegmentedController()
         configureTableView()
         configureRefreshController()
@@ -260,13 +260,6 @@ class UserPageVC: UIViewController {
         
         dismiss(animated: true)
         
-        ProfileNM.shared.getMessages { (message) in
-            
-            
-            
-        }
-        
-        
     }
     
     func didTapCancel(){
@@ -362,6 +355,15 @@ extension UserPageVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as! MessagesCell
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let fullScreenMessageVC = FullScreenMessageVC()
+        
+        navigationController?.pushViewController(fullScreenMessageVC, animated: true)
+        
         
     }
     
