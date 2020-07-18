@@ -15,6 +15,7 @@ class SBTitleLabel: UILabel {
         super.init(frame: frame)
         
         configure()
+        
     }
     
     required init?(coder: NSCoder) {

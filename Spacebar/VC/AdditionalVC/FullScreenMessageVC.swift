@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BLTNBoard
 import Firebase
 
 class FullScreenMessageVC: UIViewController {
@@ -15,6 +16,30 @@ class FullScreenMessageVC: UIViewController {
     let userLogin = UILabel()
     let userMessage = UILabel()
     let actionBar = UIStackView()
+    
+    lazy var boardManager: BLTNItemManager = {
+        
+        let item = BLTNPageItem(title: "Options")
+        
+        item.actionButtonTitle = "Report Message"
+        item.alternativeButtonTitle = "Cancel"
+        
+        item.actionHandler = { _ in
+            
+            self.didTapReportMessage()
+            
+        }
+        
+        item.alternativeHandler = { _ in
+            
+            self.didTapCancel()
+            
+        }
+        
+        return BLTNItemManager(rootItem: item)
+        
+    }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +55,7 @@ class FullScreenMessageVC: UIViewController {
     
     func configureNavBar(){
         
-        let messageOptions = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .done, target: self, action: #selector(presentMessageOptions))
+        let messageOptions = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .done, target: self, action: #selector(presentReportOptions))
         
         navigationItem.setRightBarButton(messageOptions, animated: true)
         
@@ -112,11 +137,30 @@ class FullScreenMessageVC: UIViewController {
         
     }
     
-    @objc func presentMessageOptions(){
+    @objc func presentReportOptions(){
         
-        print("Message Options")
+        boardManager.showBulletin(above: self)
         
     }
+    
+    func didTapReportMessage(){
+        
+        print("Message Reported")
+        
+        dismiss(animated: true)
+        
+    }
+    
+    func didTapCancel(){
+        
+        print("Cancel")
+        
+        dismiss(animated: true)
+        
+        
+    }
+    
+    
     
     @objc func pushUserPageVC(){
         

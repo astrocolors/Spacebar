@@ -314,8 +314,6 @@ extension UserPageVC: UITableViewDelegate, UITableViewDataSource {
         
         let repostAction = UIContextualAction(style: .normal, title: nil) { (action, view, handler) in
             
-            print("Repost")
-            
             handler(true)
             
         }
